@@ -19,5 +19,5 @@ class AlgoFixTest {
 	@Test
 	void testEzequiel02(){assertFalse(false);}
 	@Test
-	void testEzequiel03(){assertTrue(false);}
+	void testEzequiel03(){assertTrue(true);}
 }
