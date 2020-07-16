@@ -1,0 +1,42 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - uses: actions/cache@v2.0.0
+        with:
+          path: ~/.m2/repository
+          key: '${{ runner.os }}-maven-${{ hashFiles(''**/pom.xml'') }}'
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: ⛏ Building 
+        run: mvn test-compile
+      - name: 🧪 Testing
+        run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
+      - name: Check if test-reports exists
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: target/surefire-reports
+      - name: Publish Tests Report
+        if: steps.check_files.outputs.files_exists == 'true' 
+        uses: scacap/action-surefire-report@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Coverage - codecov.io
+        if: success()
+        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
