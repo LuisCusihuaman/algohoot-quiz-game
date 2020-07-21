@@ -5,7 +5,7 @@ public class Puntos {
 	private int cantidadPuntos;
 	private int multiplicador;
 
-	public Puntos(){
+	public Puntos() {
 		cantidadPuntos = 0;
 		multiplicador = 1;
 	}
@@ -14,20 +14,23 @@ public class Puntos {
 		return cantidadPuntos;
 	}
 
-	public void sumar(Puntos puntos){
+	public void sumar(Puntos puntos) {
 		cantidadPuntos += puntos.getCantidadPuntos();
 	}
 
-	public void sumar (){
+	public void sumar() {
 		cantidadPuntos++;
 	}
-	public void anular (){
+
+	public void anular() {
 		cantidadPuntos = 0;
 	}
-	public void restar(){
+
+	public void restar() {
 		cantidadPuntos--;
 	}
-	public void setMultiplicador(int multiplicador ){
+
+	public void setMultiplicador(int multiplicador) {
 		this.multiplicador = multiplicador;
 	}
 }
