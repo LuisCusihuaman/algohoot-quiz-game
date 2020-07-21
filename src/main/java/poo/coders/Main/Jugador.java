@@ -9,9 +9,8 @@ public class Jugador {
 		this.nombre = nombre;
 		totalPuntos = new Puntos();
 	}
-
 	public void modificarPuntos(Puntos diferencialPuntos){
-
+		totalPuntos.sumar(diferencialPuntos);
 	}
 
 

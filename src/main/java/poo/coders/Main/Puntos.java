@@ -10,6 +10,14 @@ public class Puntos {
 		multiplicador = 1;
 	}
 
+	public int getCantidadPuntos() {
+		return cantidadPuntos;
+	}
+
+	public void sumar(Puntos puntos){
+		cantidadPuntos += puntos.getCantidadPuntos();
+	}
+
 	public void sumar (){
 		cantidadPuntos++;
 	}
