@@ -3,6 +3,9 @@ package poo.coders.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class PreguntaVoFTests {
 
@@ -14,7 +17,9 @@ public class PreguntaVoFTests {
 		Pregunta pregunta = new Pregunta("Este es el mejor TP.", new ComportamientoVoF());
 		RespuestaCorrecta correcta = new RespuestaCorrecta();
 
-		correcta.aplicarComportamiento(new ComportamientoVoF(), diferencialPuntos);
+		ArrayList<Respuesta> listaRespuestas = new ArrayList<Respuesta>();
+		listaRespuestas.add(correcta);
+		pregunta.calcularPuntaje(listaRespuestas);
 
 		Assertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());
 
