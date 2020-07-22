@@ -15,16 +15,16 @@ public class Pregunta {
 		return textoPregunta;
 	}
 
-	private Puntos evaluarRespuesta(Respuesta respuesta) {
+	private Puntos obtenerPuntaje(Respuesta respuesta) {
 		Puntos puntajeRespuesta = new Puntos();
 		respuesta.aplicarComportamiento(tipoComportamiento, puntajeRespuesta);
 		return puntajeRespuesta;
 	}
 
-	public Puntos calcularPuntaje(ArrayList<Respuesta> respuestas) {
+	public Puntos obtenerPuntaje(ArrayList<Respuesta> respuestas) {
 		Puntos puntajeTotalPregunta = new Puntos();
 		for (Respuesta unaRespuesta : respuestas) {
-			puntajeTotalPregunta.sumar(this.evaluarRespuesta(unaRespuesta));
+			puntajeTotalPregunta.sumar(this.obtenerPuntaje(unaRespuesta));
 		}
 		return puntajeTotalPregunta;
 	}
