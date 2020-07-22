@@ -14,6 +14,9 @@ public class Jugador {
 		totalPuntos.sumar(diferencialPuntos);
 	}
 
+	public int getPuntos() {
+		return totalPuntos.getCantidadPuntos();
+	}
 
 	public String getNombre() {
 		return nombre;
