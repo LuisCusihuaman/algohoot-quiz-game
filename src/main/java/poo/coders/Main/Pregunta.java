@@ -2,15 +2,16 @@ package poo.coders.Main;
 
 public class Pregunta {
 	private Comportamiento tipoComportamiento;
-	private String         pregunta;
-	private Respuesta      respuesta;
+	private String         textoPregunta;
 
-	public Pregunta(String pregunta, Respuesta respuesta, Comportamiento comportamiento) {
+	public Pregunta(String textoPregunta, Comportamiento comportamiento) {
 		this.tipoComportamiento = comportamiento;
-		this.pregunta = pregunta;
-		this.respuesta = respuesta;
+		this.textoPregunta = textoPregunta;
 	}
 
+	public String getTextoPregunta() {
+		return textoPregunta;
+	}
 
 	private Puntos evaluarRespuesta(Respuesta respuesta) {
 		Puntos puntajeRespuesta = new Puntos();
