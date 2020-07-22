@@ -11,8 +11,6 @@ public class PreguntaVoFTests {
 
 	@Test
 	void test01CreoPreguntaVoFIndicandoCualEsLaRespuestaCorrecta(){
-		Jugador jugador = new Jugador("Pepito");
-
 		Pregunta pregunta = new Pregunta("Este es el mejor TP.", new ComportamientoVoF());
 		RespuestaCorrecta correcta = new RespuestaCorrecta();
 
@@ -21,6 +19,12 @@ public class PreguntaVoFTests {
 		Puntos diferencialPuntos = pregunta.obtenerPuntaje(listaRespuestas);
 
 		Assertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());
+
+	}
+
+	@Test
+	void test02(){
+
 
 	}
 }
