@@ -24,6 +24,7 @@ public class Puntos {
 
 	public void anular() {
 		cantidadPuntos = 0;
+		multiplicador = 0;
 	}
 
 	public void restar() {
