@@ -1,5 +1,7 @@
 package poo.coders.Main;
 
+import java.util.ArrayList;
+
 public class Pregunta {
 	private Comportamiento tipoComportamiento;
 	private String         textoPregunta;
@@ -19,7 +21,7 @@ public class Pregunta {
 		return puntajeRespuesta;
 	}
 
-	public Puntos calcularPuntaje(Respuesta[] respuestas) {
+	public Puntos calcularPuntaje(ArrayList<Respuesta> respuestas) {
 		Puntos puntajeTotalPregunta = new Puntos();
 		for (Respuesta unaRespuesta : respuestas) {
 			puntajeTotalPregunta.sumar(this.evaluarRespuesta(unaRespuesta));
