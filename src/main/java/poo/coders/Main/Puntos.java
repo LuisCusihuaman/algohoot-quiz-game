@@ -28,7 +28,7 @@ public class Puntos {
 	}
 
 	public void restar() {
-		cantidadPuntos--;
+		cantidadPuntos-= multiplicador;
 	}
 
 	public void setMultiplicador(int multiplicador) {
