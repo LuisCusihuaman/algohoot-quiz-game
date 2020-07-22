@@ -18,7 +18,7 @@ public class PreguntaVoFTests {
 
 		ArrayList<Respuesta> listaRespuestas = new ArrayList<>();
 		listaRespuestas.add(correcta);
-		Puntos diferencialPuntos = pregunta.calcularPuntaje(listaRespuestas);
+		Puntos diferencialPuntos = pregunta.obtenerPuntaje(listaRespuestas);
 
 		Assertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());
 
