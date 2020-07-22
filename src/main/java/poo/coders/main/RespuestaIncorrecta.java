@@ -1,4 +1,4 @@
-package poo.coders.Main;
+package poo.coders.main;
 
 public class RespuestaIncorrecta implements Respuesta {
 	@Override

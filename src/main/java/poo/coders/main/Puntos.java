@@ -1,4 +1,4 @@
-package poo.coders.Main;
+package poo.coders.main;
 
 public class Puntos {
 
@@ -28,7 +28,7 @@ public class Puntos {
 	}
 
 	public void restar() {
-		cantidadPuntos-= multiplicador;
+		cantidadPuntos -= multiplicador;
 	}
 
 	public void setMultiplicador(int multiplicador) {

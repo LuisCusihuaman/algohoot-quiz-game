@@ -1,4 +1,4 @@
-package poo.coders.Main;
+package poo.coders.main;
 
 import java.util.ArrayList;
 
