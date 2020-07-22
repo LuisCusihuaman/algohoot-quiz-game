@@ -20,10 +20,12 @@ jobs:
       - uses: actions/cache@v2.0.0
         with:
           path: ~/.m2/repository
-          key: '${{ runner.os }}-maven-${{ hashFiles(''**/pom.xml'') }}'
+          key: ${{ runner.os }}-maven-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-maven-
-      - name: ⛏ Building 
+              ${{ runner.os }}-maven-${{ env.cache-name }}-
+              ${{ runner.os }}-maven-
+              ${{ runner.os }}-
+      - name: ⛏ Building
         run: mvn test-compile
       - name: 🧪 Testing
         run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
@@ -33,7 +35,7 @@ jobs:
         with:
           files: target/surefire-reports
       - name: Publish Tests Report
-        if: steps.check_files.outputs.files_exists == 'true' 
+        if: steps.check_files.outputs.files_exists == 'true'
         uses: scacap/action-surefire-report@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
