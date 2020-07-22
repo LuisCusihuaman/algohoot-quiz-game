@@ -23,7 +23,7 @@ public class PreguntaVoFTests {
 	}
 
 	@Test
-	void test02(){
+	void test02PreguntaVoFRecibeListaDeRespuestasYAsignaPuntosCorrectamente(){
 
 
 	}
