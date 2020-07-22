@@ -1,6 +1,6 @@
 package poo.coders.main;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Pregunta {
 	private Comportamiento tipoComportamiento;
@@ -21,7 +21,7 @@ public class Pregunta {
 		return puntajeRespuesta;
 	}
 
-	public Puntos obtenerPuntaje(ArrayList<Respuesta> respuestas) {
+	public Puntos obtenerPuntaje(List<Respuesta> respuestas) {
 		Puntos puntajeTotalPregunta = new Puntos();
 		for (Respuesta unaRespuesta : respuestas) {
 			puntajeTotalPregunta.sumar(this.obtenerPuntaje(unaRespuesta));
