@@ -19,7 +19,7 @@ public class Puntos {
 	}
 
 	public void sumar() {
-		cantidadPuntos++;
+		cantidadPuntos += multiplicador;
 	}
 
 	public void anular() {
