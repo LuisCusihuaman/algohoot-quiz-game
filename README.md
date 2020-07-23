@@ -10,6 +10,8 @@ Existen varios tipos de preguntas, que asignan puntaje en forma diferenciada a c
 También existen opciones como los multiplicadores y la exclusividad de puntaje que cada jugador puede utilizar para mejorar sus oportunidades de obtener puntos.
 El objetivo del juego es lograr más puntos que el otro jugador respondiendo correctamente las preguntas.
 
+Informe: https://docs.google.com/document/d/1XKI0ZeenwJU9EhsrE2SpGps43ZtOaTs2KclpOaOsMTA/
+
 ## Grupo N06 - Integrantes
 
 | Padrón | Apellido y Nombre       |
