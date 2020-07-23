@@ -1,6 +1,22 @@
 package poo.coders.main;
 
-public interface Respuesta {
+public abstract class Respuesta {
+	protected String textoRespuesta;
 
-	void aplicarComportamiento(Comportamiento comportamiento, Puntos puntos);
+	public Respuesta() {
+	}
+
+	public Respuesta(String textoRespuesta) {
+		this.textoRespuesta = textoRespuesta;
+	}
+
+	abstract void aplicarComportamiento(Comportamiento comportamiento, Puntos puntos);
+
+	protected void setTextoRespuesta(String textoRespuesta) {
+		this.textoRespuesta = textoRespuesta;
+	}
+
+	protected String getTextoRespuesta(){
+		return this.textoRespuesta;
+	}
 }
