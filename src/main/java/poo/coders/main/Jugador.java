@@ -1,5 +1,7 @@
 package poo.coders.main;
 
+import java.util.List;
+
 public class Jugador {
 
 	private String nombre;
@@ -10,7 +12,11 @@ public class Jugador {
 		totalPuntos = new Puntos();
 	}
 
-	public void modificarPuntos(Puntos diferencialPuntos) {
+	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas){
+		Puntos diferencialPuntos = pregunta.obtenerPuntaje(respuestas);
+		modificarPuntos(diferencialPuntos);
+	}
+	private void modificarPuntos(Puntos diferencialPuntos) {
 		totalPuntos.sumar(diferencialPuntos);
 	}
 
