@@ -5,6 +5,7 @@ import java.util.List;
 public class Pregunta {
 	private Comportamiento tipoComportamiento;
 	private String         textoPregunta;
+	private List<Respuesta> respuestas;
 
 	public Pregunta(String textoPregunta, Comportamiento comportamiento) {
 		this.tipoComportamiento = comportamiento;
