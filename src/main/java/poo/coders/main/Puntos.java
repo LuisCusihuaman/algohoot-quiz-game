@@ -28,6 +28,7 @@ public class Puntos {
 	}
 
 	public void restar() {
+		if(this.cantidadPuntos > 0) cantidadPuntos = 0;
 		cantidadPuntos -= factor;
 	}
 
