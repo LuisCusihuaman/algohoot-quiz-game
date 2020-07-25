@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MultipleChoiceParcialITests {
 	@Test
 	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos(){
-		Pregunta pregunta = new Pregunta("Pregunta", new MultipleChoiceParcial());
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
 		Jugador jugador = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
@@ -23,7 +23,7 @@ public class MultipleChoiceParcialITests {
 	}
 	@Test
 	public void test02JugadorContestaCon2PreguntasCorrectasYUnaIncorrectaAlFinalTienePuntos0(){
-		Pregunta pregunta = new Pregunta("Pregunta", new MultipleChoiceParcial());
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
 		Jugador jugador = new Jugador("Jugador");
 
 		ArrayList<Respuesta>respuestas = new ArrayList<>();
@@ -37,12 +37,12 @@ public class MultipleChoiceParcialITests {
 	}
 	@Test
 	public void test03JugadorContestaConPreguntaIncorrectaYNoGanaPuntosSiVuelveAContestarConRespuestaCorrecta(){
-		Pregunta pregunta = new Pregunta("Pregunta", new MultipleChoiceParcial());
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
 		Jugador jugador = new Jugador("Jugador");
 
 		ArrayList<Respuesta>respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta());
-		jugador.procesarPregunta(pregunta, respuestas);
+		//jugador.procesarPregunta(pregunta, respuestas);
 		respuestas.add(new RespuestaIncorrecta());
 		respuestas.add((new RespuestaCorrecta()));
 
@@ -51,7 +51,7 @@ public class MultipleChoiceParcialITests {
 	}
 	@Test
 	public void test04JuegoEntreDosJugadoresCon3Preguntas(){
-		Pregunta pregunta = new Pregunta("Pregunta", new MultipleChoiceParcial());
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
 		Jugador jugador1 = new Jugador("Jugador 1");
 		Jugador jugador2 = new Jugador("Jugador 2");
 
