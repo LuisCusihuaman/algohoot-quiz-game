@@ -16,8 +16,7 @@ public class Pregunta {
 		return textoPregunta;
 	}
 
-	private Puntos obtenerPuntaje(Respuesta respuesta) {
-		Puntos puntajeRespuesta = new Puntos();
+	private Puntos obtenerPuntaje(Respuesta respuesta, Puntos puntajeRespuesta) {
 		respuesta.aplicarComportamiento(tipoComportamiento, puntajeRespuesta);
 		return puntajeRespuesta;
 	}
@@ -25,7 +24,7 @@ public class Pregunta {
 	public Puntos obtenerPuntaje(List<Respuesta> respuestas) {
 		Puntos puntajeTotalPregunta = new Puntos();
 		for (Respuesta unaRespuesta : respuestas) {
-			puntajeTotalPregunta.sumar(this.obtenerPuntaje(unaRespuesta));
+			this.obtenerPuntaje(unaRespuesta, puntajeTotalPregunta);
 		}
 		return puntajeTotalPregunta;
 	}

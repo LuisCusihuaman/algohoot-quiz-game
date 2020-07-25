@@ -102,6 +102,6 @@ public class MultipleChoiceParcialITests {
 		jugador2.procesarPregunta(pregunta, respuestasDeJugador2);
 
 		Assertions.assertEquals(3, jugador1.getPuntos());
-		Assertions.assertEquals(6, jugador1.getPuntos());
+		Assertions.assertEquals(6, jugador2.getPuntos());
 	}
 }
