@@ -3,11 +3,11 @@ package poo.coders.main;
 public class Puntos {
 
 	private int cantidadPuntos;
-	private int multiplicador;
+	private int factor;
 
 	public Puntos() {
 		cantidadPuntos = 0;
-		multiplicador = 1;
+		factor = 1;
 	}
 
 	public int getCantidadPuntos() {
@@ -19,19 +19,20 @@ public class Puntos {
 	}
 
 	public void sumar() {
-		cantidadPuntos += multiplicador;
+		cantidadPuntos += factor;
 	}
 
 	public void anular() {
 		cantidadPuntos = 0;
-		multiplicador = 0;
+		factor = 0;
 	}
 
 	public void restar() {
-		cantidadPuntos -= multiplicador;
+		if(this.cantidadPuntos > 0) cantidadPuntos = 0;
+		cantidadPuntos -= factor;
 	}
 
-	public void setMultiplicador(int multiplicador) {
-		this.multiplicador = multiplicador;
+	public void setFactor(int factor) {
+		this.factor = factor;
 	}
 }

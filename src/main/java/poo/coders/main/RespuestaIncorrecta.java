@@ -12,7 +12,7 @@ public class RespuestaIncorrecta extends Respuesta {
 
 	@Override
 	public void aplicarComportamiento(Comportamiento comportamiento, Puntos puntos) {
-		comportamiento.erroneo(puntos);
+		comportamiento.incorrecto(puntos);
 	}
 
 	public String getTextoRespuesta(){

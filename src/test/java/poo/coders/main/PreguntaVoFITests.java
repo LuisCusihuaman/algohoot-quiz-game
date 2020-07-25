@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 
-public class PreguntaVoFTests {
+public class PreguntaVoFITests {
 
 	@Test
 	void test01CreoPreguntaVoFIndicandoCualEsLaRespuestaCorrecta() {
@@ -44,14 +44,12 @@ public class PreguntaVoFTests {
 		ArrayList<Respuesta> respuestaJugador1 = new ArrayList<>();
 		ArrayList<Respuesta> respuestaJugador2 = new ArrayList<>();
 
+
 		respuestaJugador1.add(correcta);
 		respuestaJugador2.add(incorrecta);
 
-		Puntos diferencialJugador1 = pregunta.obtenerPuntaje(respuestaJugador1);
-		jugador1.modificarPuntos(diferencialJugador1);
-
-		Puntos diferencialJugador2 = pregunta.obtenerPuntaje(respuestaJugador2);
-		jugador2.modificarPuntos(diferencialJugador2);
+		jugador1.procesarPregunta(pregunta, respuestaJugador1);
+		jugador2.procesarPregunta(pregunta, respuestaJugador2);
 
 		Assertions.assertEquals(1, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());

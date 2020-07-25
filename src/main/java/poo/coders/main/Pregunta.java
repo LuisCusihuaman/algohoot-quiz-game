@@ -5,6 +5,7 @@ import java.util.List;
 public class Pregunta {
 	private Comportamiento tipoComportamiento;
 	private String         textoPregunta;
+	private List<Respuesta> respuestas;
 
 	public Pregunta(String textoPregunta, Comportamiento comportamiento) {
 		this.tipoComportamiento = comportamiento;
@@ -28,4 +29,13 @@ public class Pregunta {
 		}
 		return puntajeTotalPregunta;
 	}
+
+	public void agregarRespuesta(Respuesta respuesta){
+		respuestas.add(respuesta);
+	}
+
+	public void agregarRespuestas(List<Respuesta> respuestas){
+		this.respuestas.addAll(respuestas);
+	}
+
 }

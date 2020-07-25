@@ -1,6 +1,6 @@
 package poo.coders.main;
 
-public class ComportamientoVoF implements Comportamiento {
+public class ComportamientoVoFPenalidad implements Comportamiento {
 	@Override
 	public void correcto(Puntos diferencialPuntos) {
 		diferencialPuntos.sumar();
@@ -8,6 +8,6 @@ public class ComportamientoVoF implements Comportamiento {
 
 	@Override
 	public void incorrecto(Puntos diferencialPuntos) {
-		diferencialPuntos.anular();
+		diferencialPuntos.restar();
 	}
 }
