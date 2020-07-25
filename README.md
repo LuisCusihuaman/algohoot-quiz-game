@@ -16,7 +16,7 @@ Informe: https://docs.google.com/document/d/1XKI0ZeenwJU9EhsrE2SpGps43ZtOaTs2Kcl
 
 | Padrón | Apellido y Nombre       |
 |--------|------------------------ |
-| 97548  | Vazques Kevin    	   |
+| 97548  | Vasquez Kevin    	   |
 | 102110 | Schejtman Ezequiel      |
 | 103268 | Cabral Matias Ezequiel  |
 | 103368 | Esquivel Matias Wilfredo|
