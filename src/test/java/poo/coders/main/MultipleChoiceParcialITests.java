@@ -33,4 +33,22 @@ public class MultipleChoiceParcialITests {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
+	@Test
+	public void test03JugadorContestaConPreguntaIncorrectaYNoGanaPuntosSiVuelveAContestarConRespuestaCorrecta(){
+		Pregunta pregunta = new Pregunta("Pregunta", new MultipleChoiceParcial());
+		Jugador jugador = new Jugador("Jugador");
+
+		ArrayList<Respuesta>respuestas = new ArrayList<>();
+		respuestas.add(new RespuestaCorrecta());
+		jugador.procesarPregunta(pregunta, respuestas);
+		Assertions.assertEquals(1, jugador.getPuntos());
+
+		respuestas.add(new RespuestaIncorrecta());
+		jugador.procesarPregunta(pregunta, respuestas);
+		Assertions.assertEquals(0, jugador.getPuntos());
+
+		respuestas.add((new RespuestaCorrecta()));
+		jugador.procesarPregunta(pregunta, respuestas);
+		Assertions.assertEquals(0, jugador.getPuntos());
+	}
 }
