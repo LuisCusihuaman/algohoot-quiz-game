@@ -31,6 +31,8 @@ public class MultipleChoiceParcialITests {
 		respuestas.add(new RespuestaCorrecta());
 		respuestas.add(new RespuestaIncorrecta());
 
+		jugador.procesarPregunta(pregunta, respuestas);
+
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
 	@Test
