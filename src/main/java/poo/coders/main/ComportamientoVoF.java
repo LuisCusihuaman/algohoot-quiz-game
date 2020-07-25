@@ -7,7 +7,7 @@ public class ComportamientoVoF implements Comportamiento {
 	}
 
 	@Override
-	public void erroneo(Puntos diferencialPuntos) {
+	public void incorrecto(Puntos diferencialPuntos) {
 		diferencialPuntos.anular();
 	}
 }
