@@ -43,13 +43,9 @@ public class MultipleChoiceParcialITests {
 		ArrayList<Respuesta>respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta());
 		jugador.procesarPregunta(pregunta, respuestas);
-		Assertions.assertEquals(1, jugador.getPuntos());
-
 		respuestas.add(new RespuestaIncorrecta());
-		jugador.procesarPregunta(pregunta, respuestas);
-		Assertions.assertEquals(0, jugador.getPuntos());
-
 		respuestas.add((new RespuestaCorrecta()));
+
 		jugador.procesarPregunta(pregunta, respuestas);
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
