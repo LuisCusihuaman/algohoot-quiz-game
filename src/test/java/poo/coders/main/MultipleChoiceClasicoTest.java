@@ -68,4 +68,19 @@ public class MultipleChoiceClasicoTest {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
+
+	@Test
+	public void test05JugadorContesta2CorrectamenteY1IncorrectamenteEnPrimerLugarYRecibe0Punto(){
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
+		Jugador jugador = new Jugador("Pepe");
+
+		ArrayList<Respuesta> respuestas = new ArrayList<>();
+		respuestas.add(new RespuestaIncorrecta());
+		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaCorrecta());
+
+		jugador.procesarPregunta(pregunta, respuestas);
+
+		Assertions.assertEquals(0, jugador.getPuntos());
+	}
 }
