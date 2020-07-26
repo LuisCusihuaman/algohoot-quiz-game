@@ -4,7 +4,8 @@ public class ComportamientoMultipleChoiceClasico implements Comportamiento{
 
 	@Override
 	public void correcto(Puntos puntos){
-		puntos.sumarMatias();
+		puntos.sumar();
+		puntos.setFactor(0);
 	}
 
 	@Override
