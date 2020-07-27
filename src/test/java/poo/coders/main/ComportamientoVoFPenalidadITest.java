@@ -8,12 +8,23 @@ import java.util.ArrayList;
 class ComportamientoVoFPenalidadITest {
 
 	@Test
-	void CreoPreguntaVoFPenalidadIndicandoCualEsLaRespuestaCorrecta() {
+	void deberiaPreguntaVoFPenalidadCrearseCorrectamenteIndicandoleCualEsLaRespuestaCorrecta() {
 		Pregunta             pregunta        = new Pregunta("Este es el mejor TP.", new ComportamientoVoFPenalidad());
 		RespuestaCorrecta    correcta        = new RespuestaCorrecta();
 		ArrayList<Respuesta> listaRespuestas = new ArrayList<>();
 		listaRespuestas.add(correcta);
 		Puntos diferencialPuntos = pregunta.obtenerPuntaje(listaRespuestas);
 		Assertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());
+	}
+
+	@Test
+	void debeberiaPreguntaVoFPenalidadFRecibirUnaListaDeRespuestasIncorrectasYRestarPuntosAlJugador() {
+		Jugador              jugador          = new Jugador("Alan");
+		Pregunta             pregunta         = new Pregunta("El software es tangible.", new ComportamientoVoFPenalidad());
+		ArrayList<Respuesta> respuestaJugador = new ArrayList<>();
+		respuestaJugador.add(new RespuestaIncorrecta());
+		respuestaJugador.add(new RespuestaIncorrecta());
+		jugador.procesarPregunta(pregunta, respuestaJugador);
+		Assertions.assertEquals(-2, jugador.getPuntos());
 	}
 }
