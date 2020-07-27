@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class MultipleChoiceClasicoTest {
+public class MultipleChoiceClasicoITest {
 	@Test
 	public void test01JugadorContestaTodoCorrectamenteYRecibe1Punto() {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());

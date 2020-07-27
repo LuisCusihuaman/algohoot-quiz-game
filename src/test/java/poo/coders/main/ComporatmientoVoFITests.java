@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class PreguntaVoFITests {
+public class ComporatmientoVoFITests {
 
 	@Test
 	void test01CreoPreguntaVoFIndicandoCualEsLaRespuestaCorrecta() {
