@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class MultipleChoiceParcialITests {
 	@Test
-	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos(){
+	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
-		Jugador jugador = new Jugador("Jugador");
+		Jugador  jugador  = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta());
@@ -20,12 +20,13 @@ public class MultipleChoiceParcialITests {
 
 		Assertions.assertEquals(3, jugador.getPuntos());
 	}
-	@Test
-	public void test02JugadorContestaCon2PreguntasCorrectasYUnaIncorrectaAlFinalTienePuntos0(){
-		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
-		Jugador jugador = new Jugador("Jugador");
 
-		ArrayList<Respuesta>respuestas = new ArrayList<>();
+	@Test
+	public void test02JugadorContestaCon2PreguntasCorrectasYUnaIncorrectaAlFinalTienePuntos0() {
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
+		Jugador  jugador  = new Jugador("Jugador");
+
+		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta());
 		respuestas.add(new RespuestaCorrecta());
 		respuestas.add(new RespuestaIncorrecta());
@@ -34,12 +35,13 @@ public class MultipleChoiceParcialITests {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
-	@Test
-	public void test03JugadorContestaConPreguntaIncorrectaYNoGanaPuntosSiVuelveAContestarConRespuestaCorrecta(){
-		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
-		Jugador jugador = new Jugador("Jugador");
 
-		ArrayList<Respuesta>respuestas = new ArrayList<>();
+	@Test
+	public void test03JugadorContestaConPreguntaIncorrectaYNoGanaPuntosSiVuelveAContestarConRespuestaCorrecta() {
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
+		Jugador  jugador  = new Jugador("Jugador");
+
+		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta());
 		//jugador.procesarPregunta(pregunta, respuestas);
 		respuestas.add(new RespuestaIncorrecta());
@@ -48,14 +50,15 @@ public class MultipleChoiceParcialITests {
 		jugador.procesarPregunta(pregunta, respuestas);
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
-	@Test
-	public void test04JuegoEntreDosJugadoresCon3Preguntas(){
-		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
-		Jugador jugador1 = new Jugador("Jugador 1");
-		Jugador jugador2 = new Jugador("Jugador 2");
 
-		ArrayList<Respuesta>respuestasDeJugador1 = new ArrayList<>();
-		ArrayList<Respuesta>respuestasDeJugador2 = new ArrayList<>();
+	@Test
+	public void test04JuegoEntreDosJugadoresCon3Preguntas() {
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
+		Jugador  jugador1 = new Jugador("Jugador 1");
+		Jugador  jugador2 = new Jugador("Jugador 2");
+
+		ArrayList<Respuesta> respuestasDeJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasDeJugador2 = new ArrayList<>();
 
 		//	Multiple Choice con 2 respuestas y una respuesta incorrecta
 		respuestasDeJugador1.add(new RespuestaCorrecta());

@@ -12,10 +12,11 @@ public class Jugador {
 		totalPuntos = new Puntos();
 	}
 
-	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas){
+	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
 		Puntos diferencialPuntos = pregunta.obtenerPuntaje(respuestas);
 		modificarPuntos(diferencialPuntos);
 	}
+
 	private void modificarPuntos(Puntos diferencialPuntos) {
 		totalPuntos.sumar(diferencialPuntos);
 	}
