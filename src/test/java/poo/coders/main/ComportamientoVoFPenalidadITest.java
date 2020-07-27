@@ -18,13 +18,13 @@ class ComportamientoVoFPenalidadITest {
 	}
 
 	@Test
-	void debeberiaPreguntaVoFPenalidadFRecibirUnaListaDeRespuestasIncorrectasYRestarPuntosAlJugador() {
-		Jugador              jugador          = new Jugador("Alan");
+	void jugadorCon5puntosRespondeIncorrectamente2vecesYSuPuntajeDeberiaSer3() {
+		Jugador              jugador          = new Jugador("Alan", 5);
 		Pregunta             pregunta         = new Pregunta("El software es tangible.", new ComportamientoVoFPenalidad());
 		ArrayList<Respuesta> respuestaJugador = new ArrayList<>();
 		respuestaJugador.add(new RespuestaIncorrecta());
 		respuestaJugador.add(new RespuestaIncorrecta());
 		jugador.procesarPregunta(pregunta, respuestaJugador);
-		Assertions.assertEquals(-2, jugador.getPuntos());
+		Assertions.assertEquals(3, jugador.getPuntos());
 	}
 }
