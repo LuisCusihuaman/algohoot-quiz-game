@@ -12,6 +12,11 @@ public class Jugador {
 		totalPuntos = new Puntos();
 	}
 
+	public Jugador(String nombre, int cantidadPuntos) {
+		this.nombre = nombre;
+		totalPuntos = new Puntos(cantidadPuntos);
+	}
+
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
 		Puntos diferencialPuntos = pregunta.obtenerPuntaje(respuestas);
 		modificarPuntos(diferencialPuntos);
