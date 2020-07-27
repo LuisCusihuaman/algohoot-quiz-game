@@ -6,8 +6,14 @@ public class Puntos {
 	private int factor;
 
 	public Puntos() {
-		cantidadPuntos = 0;
+		this.cantidadPuntos = 0;
+		this.factor = 1;
+	}
+
+	public Puntos(int cantidadPuntos) {
+		this.cantidadPuntos = cantidadPuntos;
 		factor = 1;
+
 	}
 
 	public int getCantidadPuntos() {
