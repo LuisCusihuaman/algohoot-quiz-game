@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class RespuestaTest {
 	@Test
-	void deberiaCrearseRespuestaConElTextoCorrespo() {
+	void deberiaCrearseRespuestaConElTextoCorrespondiente() {
 		RespuestaCorrecta   correcta   = new RespuestaCorrecta("Ver.");
 		RespuestaIncorrecta incorrecta = new RespuestaIncorrecta("Falso.");
 		correcta.setTextoRespuesta("Verdadero.");
