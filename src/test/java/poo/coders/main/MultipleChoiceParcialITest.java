@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class MultipleChoiceParcialITests {
+public class MultipleChoiceParcialITest {
 	@Test
 	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
