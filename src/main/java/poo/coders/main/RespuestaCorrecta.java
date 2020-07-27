@@ -14,8 +14,4 @@ public class RespuestaCorrecta extends Respuesta {
 	public void aplicarComportamiento(Comportamiento comportamiento, Puntos puntos) {
 		comportamiento.correcto(puntos);
 	}
-
-	public String getTextoRespuesta(){
-		return this.textoRespuesta;
-	}
 }
