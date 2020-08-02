@@ -15,6 +15,7 @@ public class PuntajeClasico implements Puntaje {
 		factor = 0;
 	}
 
+	@Override
 	public int getPuntajeAcumulado() {
 		return puntajeAcumulado;
 	}

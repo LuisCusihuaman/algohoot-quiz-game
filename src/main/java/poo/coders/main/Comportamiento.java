@@ -1,7 +1,9 @@
 package poo.coders.main;
 
 public interface Comportamiento {
-	void correcto(Puntos diferencialPuntos);
+	void correcto(Puntaje puntaje);
 
-	void incorrecto(Puntos diferencialPuntos);
+	void incorrecto(Puntaje puntaje);
+
+	Puntaje crearPuntaje();
 }

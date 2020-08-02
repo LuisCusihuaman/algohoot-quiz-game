@@ -1,15 +1,18 @@
 package poo.coders.main;
 
 public class ComportamientoMultipleChoiceClasico implements Comportamiento {
-
 	@Override
-	public void correcto(Puntos puntos) {
-		puntos.sumar();
-		puntos.setFactor(0);
+	public void correcto(Puntaje puntaje) {
+		puntaje.incrementarPuntaje();
 	}
 
 	@Override
-	public void incorrecto(Puntos puntos) {
-		puntos.anular();
+	public void incorrecto(Puntaje puntaje) {
+		puntaje.anularPuntaje();
+	}
+
+	@Override
+	public Puntaje crearPuntaje() {
+		return new PuntajeClasico();
 	}
 }

@@ -5,32 +5,16 @@ import java.util.List;
 public class Jugador {
 
 	private String nombre;
-	private Puntos totalPuntos;
+	private int puntajeJugador = 0;
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
-		totalPuntos = new Puntos();
 	}
-
-	public Jugador(String nombre, int cantidadPuntos) {
-		this.nombre = nombre;
-		totalPuntos = new Puntos(cantidadPuntos);
-	}
-
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
-		Puntos diferencialPuntos = pregunta.obtenerPuntaje(respuestas);
-		modificarPuntos(diferencialPuntos);
-	}
-
-	private void modificarPuntos(Puntos diferencialPuntos) {
-		totalPuntos.sumar(diferencialPuntos);
+		puntajeJugador += pregunta.obtenerPuntaje(respuestas);
 	}
 
 	public int getPuntos() {
-		return totalPuntos.getCantidadPuntos();
-	}
-
-	public String getNombre() {
-		return nombre;
+		return puntajeJugador;
 	}
 }

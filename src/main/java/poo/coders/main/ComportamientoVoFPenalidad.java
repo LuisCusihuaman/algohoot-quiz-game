@@ -2,12 +2,17 @@ package poo.coders.main;
 
 public class ComportamientoVoFPenalidad implements Comportamiento {
 	@Override
-	public void correcto(Puntos diferencialPuntos) {
-		diferencialPuntos.sumar();
+	public void correcto(Puntaje puntaje) {
+		puntaje.incrementarPuntaje();
 	}
 
 	@Override
-	public void incorrecto(Puntos diferencialPuntos) {
-		diferencialPuntos.restar();
+	public void incorrecto(Puntaje puntaje) {
+		puntaje.anularPuntaje();
+	}
+
+	@Override
+	public Puntaje crearPuntaje() {
+		return new PuntajeParcial();
 	}
 }

@@ -15,7 +15,7 @@ public class Pregunta {
 	public String getTextoPregunta() {
 		return textoPregunta;
 	}
-
+/*
 	private Puntos obtenerPuntaje(Respuesta respuesta, Puntos puntajeRespuesta) {
 		respuesta.aplicarComportamiento(tipoComportamiento, puntajeRespuesta);
 		return puntajeRespuesta;
@@ -27,6 +27,15 @@ public class Pregunta {
 			this.obtenerPuntaje(unaRespuesta, puntajeTotalPregunta);
 		}
 		return puntajeTotalPregunta;
+	}
+*/
+	public int obtenerPuntaje(List<Respuesta> respuestas) {
+		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
+
+		for (Respuesta unaRespuesta : respuestas) {
+			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
+		}
+		return puntajePregunta.getPuntajeAcumulado();
 	}
 
 	public void agregarRespuesta(Respuesta respuesta) {

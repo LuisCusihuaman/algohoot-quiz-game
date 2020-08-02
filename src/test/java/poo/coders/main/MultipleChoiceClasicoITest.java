@@ -11,9 +11,9 @@ public class MultipleChoiceClasicoITest {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador              jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -25,9 +25,9 @@ public class MultipleChoiceClasicoITest {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador              jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -39,11 +39,11 @@ public class MultipleChoiceClasicoITest {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador              jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaIncorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -55,10 +55,10 @@ public class MultipleChoiceClasicoITest {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador              jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add(new RespuestaIncorrecta());
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -70,9 +70,9 @@ public class MultipleChoiceClasicoITest {
 		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador              jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
