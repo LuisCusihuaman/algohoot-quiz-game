@@ -22,4 +22,20 @@ public class JuegoConDiferentesTiposDePreguntasITests {
 
 		Assertions.assertEquals(2, jugador.getPuntos());
 	}
+
+	@Test
+	public void test02JugadorContestaCon2CorrectasDeChoiceClasicoYUnaIncorrectaDeVoFTienePuntaje2() {
+		Jugador jugador = new Jugador("");
+		Pregunta preguntaMultipleChoiceClasico = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new RespuestaCorrecta(""));
+		respuestasJugador.add(new RespuestaCorrecta(""));
+		jugador.procesarPregunta(preguntaMultipleChoiceClasico, respuestasJugador);
+		respuestasJugador.clear();
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoVoF());
+		respuestasJugador.add(new RespuestaCorrecta(""));
+		jugador.procesarPregunta(preguntaVoF, respuestasJugador);
+
+		Assertions.assertEquals(2, jugador.getPuntos());
+	}
 }
