@@ -6,13 +6,12 @@ public class PuntajePenalidad implements Puntaje {
 
 	@Override
 	public void accionCorrecta() {
-		puntaje = factor;
+		puntaje += factor;
 	}
 
 	@Override
 	public void accionIncorrecta() {
-		factor = -1;
-		puntaje = factor;
+		puntaje -= factor;
 	}
 
 	@Override
