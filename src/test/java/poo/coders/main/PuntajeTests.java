@@ -48,4 +48,21 @@ public class PuntajeTests {
 		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
 	}
 
+	@Test
+	public void test05PuntajePenalidadSeIncrementa1VezDevuelvePuntaje1() {
+		Puntaje puntaje = new PuntajePenalidad();
+
+		puntaje.incrementarPuntaje();
+
+		Assertions.assertEquals(1, puntaje.getPuntajeAcumulado());
+	}
+
+	@Test
+	public void test06PuntajePenalidadSeAnulaDevuelvePuntajeMenos1() {
+		Puntaje puntaje = new PuntajePenalidad();
+
+		puntaje.anularPuntaje();
+
+		Assertions.assertEquals(-1, puntaje.getPuntajeAcumulado());
+	}
 }
