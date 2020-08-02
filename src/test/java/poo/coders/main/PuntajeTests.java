@@ -15,4 +15,15 @@ public class PuntajeTests {
 		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
 	}
 
+	@Test
+	public void test02PuntajeClasicoSeIncrementaVariasVecesDevuelve1() {
+		PuntajeClasico puntaje = new PuntajeClasico();
+
+		puntaje.incrementarPuntaje();
+		puntaje.incrementarPuntaje();
+		puntaje.incrementarPuntaje();
+
+		Assertions.assertEquals(1, puntaje.getPuntajeAcumulado());
+	}
+	
 }

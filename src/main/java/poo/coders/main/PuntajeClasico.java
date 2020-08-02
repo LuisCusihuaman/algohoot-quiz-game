@@ -2,7 +2,7 @@ package poo.coders.main;
 
 public class PuntajeClasico implements Puntaje {
 	int puntajeAcumulado = 0;
-	int factor = 0;
+	int factor = 1;
 
 	@Override
 	public void incrementarPuntaje(){
