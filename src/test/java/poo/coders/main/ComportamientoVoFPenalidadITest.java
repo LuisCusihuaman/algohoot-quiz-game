@@ -46,12 +46,9 @@ class ComportamientoVoFPenalidadITest {
 		Pregunta pregunta =  new Pregunta("", new ComportamientoVoFPenalidad());
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new RespuestaCorrecta(""));
-		respuestasJugador.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
-
-
 	}
 }
