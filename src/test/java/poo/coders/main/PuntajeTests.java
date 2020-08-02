@@ -47,4 +47,5 @@ public class PuntajeTests {
 
 		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
 	}
+
 }

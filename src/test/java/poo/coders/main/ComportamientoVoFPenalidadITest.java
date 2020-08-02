@@ -16,7 +16,7 @@ class ComportamientoVoFPenalidadITest {
 		Puntos diferencialPuntos = pregunta.obtenerPuntaje(listaRespuestas);
 		Assertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());
 	}
-*/
+
 	@Test
 	void jugadorCon5puntosRespondeIncorrectamente2vecesYSuPuntajeDeberiaSer3() {
 		Jugador              jugador          = new Jugador("Alan");
@@ -27,7 +27,7 @@ class ComportamientoVoFPenalidadITest {
 		jugador.procesarPregunta(pregunta, respuestaJugador);
 		Assertions.assertEquals(3, jugador.getPuntos());
 	}
-
+*/
 	@Test
 	public void test02JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
 		Jugador jugador = new Jugador("");
@@ -41,7 +41,7 @@ class ComportamientoVoFPenalidadITest {
 	}
 
 	@Test
-	public void test03JugadorRespondeCon2CorrectasTienePuntaje2() {
+	public void test03JugadorRespondeCon1CorrectaTienePuntaje1() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta =  new Pregunta("", new ComportamientoVoFPenalidad());
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
@@ -50,7 +50,7 @@ class ComportamientoVoFPenalidadITest {
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
-		Assertions.assertEquals(2, jugador.getPuntos());
+		Assertions.assertEquals(1, jugador.getPuntos());
 
 
 	}
