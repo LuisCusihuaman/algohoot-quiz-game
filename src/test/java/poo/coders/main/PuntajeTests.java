@@ -25,5 +25,26 @@ public class PuntajeTests {
 
 		Assertions.assertEquals(1, puntaje.getPuntajeAcumulado());
 	}
-	
+
+	@Test
+	public void test03PuntajeParcialSeIncrementa3VecesDevuelvePuntaje3() {
+		PuntajeParcial puntaje = new PuntajeParcial();
+
+		puntaje.incrementarPuntaje();
+		puntaje.incrementarPuntaje();
+		puntaje.incrementarPuntaje();
+
+		Assertions.assertEquals(3, puntaje.getPuntajeAcumulado());
+	}
+
+	@Test
+	public void test04PuntajeParcialSeIncrementa2VecesYSeAnulaUnaVezDevuelvePuntaje0() {
+		PuntajeParcial puntaje = new PuntajeParcial();
+
+		puntaje.incrementarPuntaje();
+		puntaje.incrementarPuntaje();
+		puntaje.anularPuntaje();
+
+		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
+	}
 }
