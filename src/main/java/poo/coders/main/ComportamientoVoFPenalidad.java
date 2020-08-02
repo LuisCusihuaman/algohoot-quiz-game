@@ -13,6 +13,6 @@ public class ComportamientoVoFPenalidad implements Comportamiento {
 
 	@Override
 	public Puntaje crearPuntaje() {
-		return new PuntajeParcial();
+		return new PuntajePenalidad();
 	}
 }

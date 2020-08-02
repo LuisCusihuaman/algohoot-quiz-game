@@ -38,12 +38,4 @@ public class Pregunta {
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
-	public void agregarRespuesta(Respuesta respuesta) {
-		respuestas.add(respuesta);
-	}
-
-	public void agregarRespuestas(List<Respuesta> respuestas) {
-		this.respuestas.addAll(respuestas);
-	}
-
 }

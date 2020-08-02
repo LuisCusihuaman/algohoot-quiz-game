@@ -27,4 +27,16 @@ class ComportamientoVoFPenalidadITest {
 		jugador.procesarPregunta(pregunta, respuestaJugador);
 		Assertions.assertEquals(3, jugador.getPuntos());
 	}
+
+	@Test
+	public void test02JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
+		Jugador jugador = new Jugador("");
+		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
+		ArrayList<Respuesta> respuestasJugador  = new ArrayList<>();
+		respuestasJugador.add(new RespuestaIncorrecta(""));
+
+		jugador.procesarPregunta(pregunta, respuestasJugador);
+
+		Assertions.assertEquals(-1, jugador.getPuntos());
+	}
 }

@@ -1,21 +1,23 @@
 package poo.coders.main;
 
-public class PuntajeParcial implements Puntaje {
+public class PuntajePenalidad implements Puntaje {
 	int puntajeAcumulado = 0;
 	int factor = 1;
 
 	@Override
-	public void incrementarPuntaje(){
+	public void incrementarPuntaje() {
 		puntajeAcumulado += factor;
 	}
 
 	@Override
 	public void anularPuntaje() {
+		factor = -1;
 		puntajeAcumulado = 0;
-		factor = 0;
+		puntajeAcumulado += factor;
 	}
-	
-	public int getPuntajeAcumulado(){
+
+	@Override
+	public int getPuntajeAcumulado() {
 		return puntajeAcumulado;
 	}
 }
