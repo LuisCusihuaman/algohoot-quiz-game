@@ -39,4 +39,19 @@ class ComportamientoVoFPenalidadITest {
 
 		Assertions.assertEquals(-1, jugador.getPuntos());
 	}
+
+	@Test
+	public void test03JugadorRespondeCon2CorrectasTienePuntaje2() {
+		Jugador jugador = new Jugador("");
+		Pregunta pregunta =  new Pregunta("", new ComportamientoVoFPenalidad());
+		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new RespuestaCorrecta(""));
+		respuestasJugador.add(new RespuestaCorrecta(""));
+
+		jugador.procesarPregunta(pregunta, respuestasJugador);
+
+		Assertions.assertEquals(2, jugador.getPuntos());
+
+
+	}
 }
