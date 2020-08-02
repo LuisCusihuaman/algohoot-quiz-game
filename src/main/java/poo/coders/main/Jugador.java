@@ -11,7 +11,7 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
-		puntajeJugador += pregunta.obtenerPuntaje(respuestas);
+		puntajeJugador = puntajeJugador + pregunta.obtenerPuntaje(respuestas);
 	}
 
 	public int getPuntos() {
