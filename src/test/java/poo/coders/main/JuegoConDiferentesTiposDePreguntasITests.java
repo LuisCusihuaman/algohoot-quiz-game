@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class JuegoConDiferentesTiposDePreguntasITests {
 	@Test
-	public void test01JugadorRespondeBien3PreguntasDeMultipleChoiceParcialYMalEnVoFPenalidadTienePuntaje2() {
+	public void test01JugadorContestaCon3RespuestasCorrectasDeMultipleChoiceParcialYVoFPenalidadConUnaIncorrectaTienePuntaje2() {
 		Jugador jugador = new Jugador("");
 		Pregunta preguntaMultipleChoice = new Pregunta("", new ComportamientoMultipleChoiceParcial());
 		ArrayList<Respuesta> respuestasDeJugador = new ArrayList<>();
@@ -19,9 +19,7 @@ public class JuegoConDiferentesTiposDePreguntasITests {
 		Pregunta preguntaVoFPenalidad = new Pregunta("", new ComportamientoVoFPenalidad());
 		respuestasDeJugador.add(new RespuestaIncorrecta(""));
 		jugador.procesarPregunta(preguntaVoFPenalidad, respuestasDeJugador);
-		
+
 		Assertions.assertEquals(2, jugador.getPuntos());
-
-
 	}
 }
