@@ -10,6 +10,7 @@ public class Jugador {
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
 		puntajeJugador = puntajeJugador + pregunta.obtenerPuntaje(respuestas);
 	}

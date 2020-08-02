@@ -5,12 +5,12 @@ public class PuntajeClasico implements Puntaje {
 	int factor = 1;
 
 	@Override
-	public void incrementarPuntaje(){
+	public void accionCorrecta(){
 		puntajeAcumulado = factor;
 	}
 
 	@Override
-	public void anularPuntaje(){
+	public void accionIncorrecta(){
 		puntajeAcumulado = 0;
 		factor = 0;
 	}

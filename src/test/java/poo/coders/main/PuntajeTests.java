@@ -8,9 +8,9 @@ public class PuntajeTests {
 	public void test01PuntajeClasicoDevuelveCeroCuandoSeAnula() {
 		PuntajeClasico puntaje = new PuntajeClasico();
 
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
-		puntaje.anularPuntaje();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
+		puntaje.accionIncorrecta();
 
 		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
 	}
@@ -19,9 +19,9 @@ public class PuntajeTests {
 	public void test02PuntajeClasicoSeIncrementaVariasVecesDevuelve1() {
 		PuntajeClasico puntaje = new PuntajeClasico();
 
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
 
 		Assertions.assertEquals(1, puntaje.getPuntajeAcumulado());
 	}
@@ -30,9 +30,9 @@ public class PuntajeTests {
 	public void test03PuntajeParcialSeIncrementa3VecesDevuelvePuntaje3() {
 		PuntajeParcial puntaje = new PuntajeParcial();
 
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
 
 		Assertions.assertEquals(3, puntaje.getPuntajeAcumulado());
 	}
@@ -41,9 +41,9 @@ public class PuntajeTests {
 	public void test04PuntajeParcialSeIncrementa2VecesYSeAnulaUnaVezDevuelvePuntaje0() {
 		PuntajeParcial puntaje = new PuntajeParcial();
 
-		puntaje.incrementarPuntaje();
-		puntaje.incrementarPuntaje();
-		puntaje.anularPuntaje();
+		puntaje.accionCorrecta();
+		puntaje.accionCorrecta();
+		puntaje.accionIncorrecta();
 
 		Assertions.assertEquals(0, puntaje.getPuntajeAcumulado());
 	}
@@ -52,7 +52,7 @@ public class PuntajeTests {
 	public void test05PuntajePenalidadSeIncrementa1VezDevuelvePuntaje1() {
 		Puntaje puntaje = new PuntajePenalidad();
 
-		puntaje.incrementarPuntaje();
+		puntaje.accionCorrecta();
 
 		Assertions.assertEquals(1, puntaje.getPuntajeAcumulado());
 	}
@@ -61,7 +61,7 @@ public class PuntajeTests {
 	public void test06PuntajePenalidadSeAnulaDevuelvePuntajeMenos1() {
 		Puntaje puntaje = new PuntajePenalidad();
 
-		puntaje.anularPuntaje();
+		puntaje.accionIncorrecta();
 
 		Assertions.assertEquals(-1, puntaje.getPuntajeAcumulado());
 	}
