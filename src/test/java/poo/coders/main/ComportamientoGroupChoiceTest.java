@@ -55,6 +55,22 @@ public class ComportamientoGroupChoiceTest {
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
 
+	@Test
+	public void test04JugadorColocaTodasIncorrectasEnElGrupoDeLosCorrectos(){
+		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
+		Jugador jugador = new Jugador("");
+
+		List<String> textoRespuestasCorrectas = List.of("A", "B", "C", "D");
+		List<String> textoRespuestasJugador = List.of("T", "G", "P");
+		InterpretadorGroupChoice interpretador = new InterpretadorGroupChoice(textoRespuestasCorrectas);
+
+		jugador.procesarPregunta(pregunta, interpretador.evaluarRespuestas(textoRespuestasJugador));
+
+		Assertions.assertEquals(0, jugador.getPuntos());
+	}
+
+
+
 	//jugador coloca 3 opciones incorrectamente y no da puntos
 	//jugador coloca 2 opciones incorrectas y 1 correcta y no da puntos
 }
