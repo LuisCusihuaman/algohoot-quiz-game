@@ -3,7 +3,7 @@ package poo.coders.main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PuntajeTests {
+public class PuntajeTest {
 	@Test
 	public void test01PuntajeClasicoDevuelveCeroCuandoSeAnula() {
 		PuntajeClasico puntaje = new PuntajeClasico();
