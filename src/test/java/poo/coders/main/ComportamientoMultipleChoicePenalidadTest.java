@@ -40,5 +40,22 @@ public class ComportamientoMultipleChoicePenalidadTest{
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
 
+	@Test
+	public void test03JugadorResponde4OpcionesIncorrectamenteYDeberiaTenerMenos4Puntos(){
+
+		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoicePenalidad());
+		Jugador jugador = new Jugador("Pepe");
+		ArrayList<Respuesta> respuestas = new ArrayList<>();
+
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
+
+		jugador.procesarPregunta(pregunta, respuestas);
+
+		Assertions.assertEquals((-4), jugador.getPuntos());
+	}
+
 
 }
