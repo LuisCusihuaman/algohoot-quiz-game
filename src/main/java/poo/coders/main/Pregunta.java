@@ -1,5 +1,6 @@
 package poo.coders.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pregunta {
@@ -37,5 +38,10 @@ public class Pregunta {
 		}
 		return puntajePregunta.getPuntajeAcumulado();
 	}
+
+	public int obtenerPuntaje(ArrayList<String> respuestas) {
+		return this.obtenerPuntaje(tipoComportamiento.evaluarRespuestas(respuestas));
+	}
+
 
 }

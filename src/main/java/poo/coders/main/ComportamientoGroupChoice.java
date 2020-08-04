@@ -1,5 +1,7 @@
 package poo.coders.main;
 
+import java.util.List;
+
 public class ComportamientoGroupChoice implements Comportamiento{
 
 	@Override
@@ -16,4 +18,10 @@ public class ComportamientoGroupChoice implements Comportamiento{
 	public Puntaje crearPuntaje() {
 		return new PuntajeClasico();
 	}
+
+	@Override
+	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
+		return null;
+	}
+
 }

@@ -1,6 +1,15 @@
 package poo.coders.main;
 
-public class ComportamientoOrderedChoice implements Comportamiento {
+import java.util.List;
+
+public class ComportamientoOrderedChoice implements Comportamiento, Interpretador{
+
+	InterpretadorOrderedChoice interpretador;
+
+	public ComportamientoOrderedChoice(List<String> respuestasOrdenadas){
+		this.interpretador = new InterpretadorOrderedChoice(respuestasOrdenadas);
+	}
+
 	@Override
 	public void correcto(Puntaje puntaje) {
 		puntaje.accionCorrecta();
@@ -15,4 +24,9 @@ public class ComportamientoOrderedChoice implements Comportamiento {
 	public Puntaje crearPuntaje() {
 		return new PuntajeClasico();
 	}
+
+	public List<Respuesta> evaluarRespuestas(List<String> respuestas){
+		return interpretador.evaluarRespuestas(respuestas);
+	}
+
 }

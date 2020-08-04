@@ -3,7 +3,7 @@ package poo.coders.main;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InterpretadorGroupChoice{
+public class InterpretadorGroupChoice implements Interpretador{
 
 	private List<String> textoRespuestas;
 
@@ -11,6 +11,7 @@ public class InterpretadorGroupChoice{
 		this.textoRespuestas = textoRespuestas;
     }
 
+	@Override
 	public List<Respuesta> evaluarRespuestas(List<String> textoRespuestasJugador){
 		List<Respuesta> listaRespuestas = new ArrayList<>();
 		if(textoRespuestasJugador.containsAll(textoRespuestas))
