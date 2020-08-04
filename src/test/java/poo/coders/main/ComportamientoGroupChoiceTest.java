@@ -28,7 +28,6 @@ public class ComportamientoGroupChoiceTest {
 
 	@Test
 	public void test02JugadorColocaMitadDeLasRespuestasCorrectasEnElGrupoCorrespondienteYDeberiaDeRecibir0Puntos(){
-		//jugador coloca 2 correctas y 1 incorrecta y no da puntos
 		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
 		Jugador jugador = new Jugador("");
 
