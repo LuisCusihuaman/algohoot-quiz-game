@@ -13,7 +13,8 @@ public class InterpretadorOrderedChoiceTest {
 
 		InterpretadorOrderedChoice interpretador = new InterpretadorOrderedChoice(respuestasOrdenadas);
 
-		Assertions.assertEquals("Correcta", interpretador.evaluarRespuestas(respuestasJugador).getTextoRespuesta());
+		List<Respuesta> respuesta = interpretador.evaluarRespuestas(respuestasJugador);
+		Assertions.assertEquals("Correcta", respuesta.get(0).getTextoRespuesta());
 	}
 
 	@Test
@@ -23,6 +24,7 @@ public class InterpretadorOrderedChoiceTest {
 
 		InterpretadorOrderedChoice interpretador = new InterpretadorOrderedChoice(respuestasOrdenadas);
 
-		Assertions.assertEquals("Incorrecta", interpretador.evaluarRespuestas(respuestasJugador).getTextoRespuesta());
+		List<Respuesta> respuesta = interpretador.evaluarRespuestas(respuestasJugador);
+		Assertions.assertEquals("Incorrecta", respuesta.get(0).getTextoRespuesta());
 	}
 }

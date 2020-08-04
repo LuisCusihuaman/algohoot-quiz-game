@@ -1,16 +1,19 @@
 package poo.coders.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InterpretadorOrderedChoice {
-	private List<String> respuestasOrdenadas;
+	private List<String> textoRespuestasOrdenadas;
 
-	public InterpretadorOrderedChoice(List<String> respuestasOrdenadas){
-		this.respuestasOrdenadas = respuestasOrdenadas;
+	public InterpretadorOrderedChoice(List<String> textoRespuestasOrdenadas){
+		this.textoRespuestasOrdenadas = textoRespuestasOrdenadas;
 	}
 
-	public Respuesta evaluarRespuestas(List<String> respuestasJugador){
-		if(respuestasOrdenadas.equals(respuestasJugador)) return new RespuestaCorrecta("Correcta");
-		return new RespuestaIncorrecta("Incorrecta");
+	public List<Respuesta> evaluarRespuestas(List<String> textoRespuestasJugador){
+		List<Respuesta> listaRespuestas = new ArrayList<>();
+		if(textoRespuestasOrdenadas.equals(textoRespuestasJugador)) listaRespuestas.add(new RespuestaCorrecta("Correcta"));
+		else listaRespuestas.add(new RespuestaIncorrecta("Incorrecta"));
+		return listaRespuestas;
 	}
 }
