@@ -18,4 +18,17 @@ public class ComportamientoOrderedChoiceITest {
 
 		Assertions.assertEquals(1, jugador.getPuntos());
 	}
+
+	@Test
+	public void test02OrdenCorrectoEsABCYJugadorRespondeConACBEntoncesTienePuntaje0() {
+		Pregunta pregunta = new Pregunta("", new ComportamientoOrderedChoice());
+		Jugador jugador = new Jugador("");
+		List<String> textoRespuestasOrdenadas = List.of("A", "B", "C");
+		List<String> textoRespuestasJugador = List.of("A", "C", "B");
+		InterpretadorOrderedChoice interpretador = new InterpretadorOrderedChoice(textoRespuestasOrdenadas);
+
+		jugador.procesarPregunta(pregunta, interpretador.evaluarRespuestas(textoRespuestasJugador));
+
+		Assertions.assertEquals(0, jugador.getPuntos());
+	}
 }
