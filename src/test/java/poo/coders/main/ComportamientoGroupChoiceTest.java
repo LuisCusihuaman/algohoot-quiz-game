@@ -68,9 +68,4 @@ public class ComportamientoGroupChoiceTest {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
-
-
-
-	//jugador coloca 3 opciones incorrectamente y no da puntos
-	//jugador coloca 2 opciones incorrectas y 1 correcta y no da puntos
 }
