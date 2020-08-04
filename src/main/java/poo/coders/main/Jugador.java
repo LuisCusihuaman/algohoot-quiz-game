@@ -1,5 +1,6 @@
 package poo.coders.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
@@ -12,6 +13,10 @@ public class Jugador {
 	}
 
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
+		puntajeJugador = puntajeJugador + pregunta.obtenerPuntaje(respuestas);
+	}
+
+	public void procesarPregunta(Pregunta pregunta, ArrayList<String> respuestas) {
 		puntajeJugador = puntajeJugador + pregunta.obtenerPuntaje(respuestas);
 	}
 

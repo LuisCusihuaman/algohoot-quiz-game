@@ -2,7 +2,7 @@ package poo.coders.main;
 
 import java.util.List;
 
-public class ComportamientoMultipleChoicePenalidad implements Comportamiento{
+public class ComportamientoGroupChoice implements Comportamiento{
 
 	@Override
 	public void correcto(Puntaje puntaje) {
@@ -16,11 +16,12 @@ public class ComportamientoMultipleChoicePenalidad implements Comportamiento{
 
 	@Override
 	public Puntaje crearPuntaje() {
-		return new PuntajePenalidad();
+		return new PuntajeClasico();
 	}
 
 	@Override
 	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
 		return null;
 	}
+
 }
