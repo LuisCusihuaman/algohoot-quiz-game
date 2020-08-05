@@ -24,6 +24,10 @@ public class Jugador {
 		multiplicador = 2;
 	}
 
+	public void usarMultiplicadorX3() {
+		multiplicador = 3;
+	}
+
 	public int getPuntos() {
 		return puntajeJugador;
 	}
