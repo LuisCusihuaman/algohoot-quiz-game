@@ -24,7 +24,7 @@ public class PreguntasConMultiplicadorTest {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
 		Jugador jugador = new Jugador("");
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaIncorrecta());
+		respuestasJugador.add(new RespuestaIncorrecta(""));
 
 		jugador.usarMultiplicadorX3();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
