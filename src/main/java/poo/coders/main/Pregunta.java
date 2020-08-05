@@ -1,5 +1,6 @@
 package poo.coders.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pregunta {
@@ -15,7 +16,7 @@ public class Pregunta {
 	public String getTextoPregunta() {
 		return textoPregunta;
 	}
-
+/*
 	private Puntos obtenerPuntaje(Respuesta respuesta, Puntos puntajeRespuesta) {
 		respuesta.aplicarComportamiento(tipoComportamiento, puntajeRespuesta);
 		return puntajeRespuesta;
@@ -28,13 +29,19 @@ public class Pregunta {
 		}
 		return puntajeTotalPregunta;
 	}
+*/
+	public int obtenerPuntaje(List<Respuesta> respuestas) {
+		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
 
-	public void agregarRespuesta(Respuesta respuesta) {
-		respuestas.add(respuesta);
+		for (Respuesta unaRespuesta : respuestas) {
+			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
+		}
+		return puntajePregunta.getPuntajeAcumulado();
 	}
 
-	public void agregarRespuestas(List<Respuesta> respuestas) {
-		this.respuestas.addAll(respuestas);
+	public int obtenerPuntaje(ArrayList<String> respuestas) {
+		return this.obtenerPuntaje(tipoComportamiento.evaluarRespuestas(respuestas));
 	}
+
 
 }

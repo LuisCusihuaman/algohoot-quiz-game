@@ -12,9 +12,9 @@ public class MultipleChoiceParcialITest {
 		Jugador  jugador  = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -27,9 +27,9 @@ public class MultipleChoiceParcialITest {
 		Jugador  jugador  = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaCorrecta());
-		respuestas.add(new RespuestaIncorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaCorrecta(""));
+		respuestas.add(new RespuestaIncorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -42,10 +42,10 @@ public class MultipleChoiceParcialITest {
 		Jugador  jugador  = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta());
+		respuestas.add(new RespuestaCorrecta(""));
 		//jugador.procesarPregunta(pregunta, respuestas);
-		respuestas.add(new RespuestaIncorrecta());
-		respuestas.add((new RespuestaCorrecta()));
+		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add((new RespuestaCorrecta("")));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 		Assertions.assertEquals(0, jugador.getPuntos());
@@ -61,11 +61,11 @@ public class MultipleChoiceParcialITest {
 		ArrayList<Respuesta> respuestasDeJugador2 = new ArrayList<>();
 
 		//	Multiple Choice con 2 respuestas y una respuesta incorrecta
-		respuestasDeJugador1.add(new RespuestaCorrecta());
-		respuestasDeJugador1.add(new RespuestaCorrecta());
+		respuestasDeJugador1.add(new RespuestaCorrecta(""));
+		respuestasDeJugador1.add(new RespuestaCorrecta(""));
 
-		respuestasDeJugador2.add(new RespuestaCorrecta());
-		respuestasDeJugador2.add(new RespuestaIncorrecta());
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
+		respuestasDeJugador2.add(new RespuestaIncorrecta(""));
 
 		jugador1.procesarPregunta(pregunta, respuestasDeJugador1);
 		jugador2.procesarPregunta(pregunta, respuestasDeJugador2);
@@ -77,11 +77,11 @@ public class MultipleChoiceParcialITest {
 		respuestasDeJugador2.clear();
 
 		//	Multiple choice con 3 respuestas correctas y 1 incorrecta
-		respuestasDeJugador1.add(new RespuestaCorrecta());
+		respuestasDeJugador1.add(new RespuestaCorrecta(""));
 
-		respuestasDeJugador2.add(new RespuestaCorrecta());
-		respuestasDeJugador2.add(new RespuestaCorrecta());
-		respuestasDeJugador2.add(new RespuestaCorrecta());
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
 
 		jugador1.procesarPregunta(pregunta, respuestasDeJugador1);
 		jugador2.procesarPregunta(pregunta, respuestasDeJugador2);
@@ -93,12 +93,12 @@ public class MultipleChoiceParcialITest {
 		respuestasDeJugador2.clear();
 
 		//	Multiple choice con 2 respuestas correctas y una incorrecta
-		respuestasDeJugador1.add(new RespuestaCorrecta());
-		respuestasDeJugador1.add(new RespuestaIncorrecta());
+		respuestasDeJugador1.add(new RespuestaCorrecta(""));
+		respuestasDeJugador1.add(new RespuestaIncorrecta(""));
 
-		respuestasDeJugador2.add(new RespuestaCorrecta());
-		respuestasDeJugador2.add(new RespuestaCorrecta());
-		respuestasDeJugador2.add(new RespuestaCorrecta());
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
+		respuestasDeJugador2.add(new RespuestaCorrecta(""));
 
 		jugador1.procesarPregunta(pregunta, respuestasDeJugador1);
 		jugador2.procesarPregunta(pregunta, respuestasDeJugador2);

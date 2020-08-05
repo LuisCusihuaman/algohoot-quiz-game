@@ -1,7 +1,13 @@
 package poo.coders.main;
 
-public interface Comportamiento {
-	void correcto(Puntos diferencialPuntos);
+import java.util.List;
 
-	void incorrecto(Puntos diferencialPuntos);
+public interface Comportamiento {
+	void correcto(Puntaje puntaje);
+
+	void incorrecto(Puntaje puntaje);
+
+	Puntaje crearPuntaje();
+
+	List<Respuesta> evaluarRespuestas(List<String> respuestas);
 }

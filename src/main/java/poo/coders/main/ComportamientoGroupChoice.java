@@ -2,7 +2,14 @@ package poo.coders.main;
 
 import java.util.List;
 
-public class ComportamientoMultipleChoiceClasico implements Comportamiento {
+public class ComportamientoGroupChoice implements Comportamiento{
+
+	InterpretadorGroupChoice interpretador;
+
+	public ComportamientoGroupChoice(List<String> respuestasOrdenadas){
+		this.interpretador = new InterpretadorGroupChoice(respuestasOrdenadas);
+	}
+
 	@Override
 	public void correcto(Puntaje puntaje) {
 		puntaje.accionCorrecta();
@@ -20,6 +27,7 @@ public class ComportamientoMultipleChoiceClasico implements Comportamiento {
 
 	@Override
 	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
-		return null;
+		return interpretador.evaluarRespuestas(respuestas);
 	}
+
 }

@@ -1,12 +1,26 @@
 package poo.coders.main;
 
+import java.util.List;
+
 public class ComportamientoMultipleChoiceParcial implements Comportamiento {
+
 	@Override
-	public void correcto(Puntos puntos) {
-		puntos.sumar();
+	public void correcto(Puntaje puntaje) {
+		puntaje.accionCorrecta();
 	}
 
-	public void incorrecto(Puntos puntos) {
-		puntos.anular();
+	@Override
+	public void incorrecto(Puntaje puntaje) {
+		puntaje.accionIncorrecta();
+	}
+
+	@Override
+	public Puntaje crearPuntaje() {
+		return new PuntajeParcial();
+	}
+
+	@Override
+	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
+		return null;
 	}
 }
