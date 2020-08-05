@@ -14,11 +14,11 @@ public class Jugador {
 	}
 
 	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
-		puntajeJugador = puntajeJugador + pregunta.obtenerPuntaje(respuestas);
+		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
 	}
 
 	public void procesarPregunta(Pregunta pregunta, ArrayList<String> respuestas) {
-		puntajeJugador = puntajeJugador + multiplicador * pregunta.obtenerPuntaje(respuestas);
+		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
 	}
 	public void usarMultiplicadorX2() {
 		multiplicador = 2;
