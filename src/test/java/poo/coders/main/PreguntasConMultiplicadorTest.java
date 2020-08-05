@@ -18,5 +18,18 @@ public class PreguntasConMultiplicadorTest {
 
 		Assertions.assertEquals(2, jugador.getPuntos());
 	}
-	
+
+	@test
+	public void test02JugadorUsaMultiplicadorX3YContestaConRespuestaIncorrectaTieneMenos3Puntos() {
+		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
+		Jugador jugador = new Jugador("");
+		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new RespuestaIncorrecta());
+
+		jugador.usarMultiplicadorX3();
+		jugador.procesarPregunta(pregunta, respuestasJugador);
+
+		Assertions.assertEquals(-3, jugador.getPuntos());
+	}
+
 }
