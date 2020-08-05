@@ -2,16 +2,8 @@ package poo.coders.main;
 
 import java.util.List;
 
-public class ComportamientoVoF implements Comportamiento {
-	@Override
-	public void correcto(Puntaje puntaje) {
-		puntaje.accionCorrecta();
-	}
+public class ComportamientoVoF extends Comportamiento {
 
-	@Override
-	public void incorrecto(Puntaje puntaje) {
-		puntaje.accionIncorrecta();
-	}
 
 	@Override
 	public Puntaje crearPuntaje() {

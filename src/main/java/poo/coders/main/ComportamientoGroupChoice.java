@@ -2,7 +2,7 @@ package poo.coders.main;
 
 import java.util.List;
 
-public class ComportamientoGroupChoice implements Comportamiento{
+public class ComportamientoGroupChoice extends Comportamiento {
 
 	InterpretadorGroupChoice interpretador;
 
@@ -10,22 +10,14 @@ public class ComportamientoGroupChoice implements Comportamiento{
 		this.interpretador = new InterpretadorGroupChoice(respuestasOrdenadas);
 	}
 
-	@Override
-	public void correcto(Puntaje puntaje) {
-		puntaje.accionCorrecta();
-	}
 
-	@Override
-	public void incorrecto(Puntaje puntaje) {
-		puntaje.accionIncorrecta();
-	}
 
 	@Override
 	public Puntaje crearPuntaje() {
 		return new PuntajeClasico();
 	}
 
-	@Override
+
 	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
 		return interpretador.evaluarRespuestas(respuestas);
 	}
