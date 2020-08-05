@@ -17,6 +17,6 @@ public class PreguntasConMultiplicadorTest {
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(2, jugador.getPuntos());
-
 	}
+	
 }
