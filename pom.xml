@@ -13,17 +13,17 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <!-- Version of plugins-->
-        <!-- <javafx-controls.version>13</javafx-controls.version> -->
+        <javafx-controls.version>13</javafx-controls.version>
         <junit-jupiter.version>5.4.0</junit-jupiter.version>
         <mockito-core.version>3.3.0</mockito-core.version>
     </properties>
 
     <dependencies>
-   <!-- <dependency>
+   <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx-controls.version}</version>
-        </dependency> -->
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -35,6 +35,11 @@
             <artifactId>mockito-core</artifactId>
             <version>${mockito-core.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11.0.1</version>
         </dependency>
     </dependencies>
 
@@ -70,14 +75,14 @@
                     </execution>
                 </executions>
             </plugin>
-       <!-- <plugin>
+       <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>poo.coders.App</mainClass>
+                    <mainClass>poo.coders.main.App</mainClass>
                 </configuration>
-            </plugin> -->
+            </plugin>
         </plugins>
     </build>
 </project>
