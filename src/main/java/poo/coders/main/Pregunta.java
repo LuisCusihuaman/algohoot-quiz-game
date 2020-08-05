@@ -16,21 +16,11 @@ public class Pregunta {
 	public String getTextoPregunta() {
 		return textoPregunta;
 	}
-/*
-	private Puntos obtenerPuntaje(Respuesta respuesta, Puntos puntajeRespuesta) {
-		respuesta.aplicarComportamiento(tipoComportamiento, puntajeRespuesta);
-		return puntajeRespuesta;
-	}
 
-	public Puntos obtenerPuntaje(List<Respuesta> respuestas) {
-		Puntos puntajeTotalPregunta = new Puntos();
-		for (Respuesta unaRespuesta : respuestas) {
-			this.obtenerPuntaje(unaRespuesta, puntajeTotalPregunta);
-		}
-		return puntajeTotalPregunta;
-	}
-*/
+
+
 	public int obtenerPuntaje(List<Respuesta> respuestas) {
+
 		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
 
 		for (Respuesta unaRespuesta : respuestas) {

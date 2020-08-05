@@ -2,12 +2,18 @@ package poo.coders.main;
 
 import java.util.List;
 
-public interface Comportamiento {
-	void correcto(Puntaje puntaje);
+public abstract class Comportamiento {
 
-	void incorrecto(Puntaje puntaje);
+	public void correcto(Puntaje puntaje) {
+		puntaje.accionCorrecta();
+	}
 
-	Puntaje crearPuntaje();
 
-	List<Respuesta> evaluarRespuestas(List<String> respuestas);
+	public void incorrecto(Puntaje puntaje) {
+		puntaje.accionIncorrecta();
+	}
+
+	public abstract Puntaje crearPuntaje();
+
+	public abstract List<Respuesta> evaluarRespuestas(List<String> respuestas);
 }

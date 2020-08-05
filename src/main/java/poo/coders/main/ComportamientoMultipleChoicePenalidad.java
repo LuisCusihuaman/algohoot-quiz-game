@@ -2,17 +2,8 @@ package poo.coders.main;
 
 import java.util.List;
 
-public class ComportamientoMultipleChoicePenalidad implements Comportamiento{
+public class ComportamientoMultipleChoicePenalidad extends Comportamiento {
 
-	@Override
-	public void correcto(Puntaje puntaje) {
-		puntaje.accionCorrecta();
-	}
-
-	@Override
-	public void incorrecto(Puntaje puntaje) {
-		puntaje.accionIncorrecta();
-	}
 
 	@Override
 	public Puntaje crearPuntaje() {
