@@ -20,7 +20,7 @@ public class App extends Application {
 	public void start(Stage stage) throws IOException {
 
 		// set up the scene
-		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("app.fxml")));
+		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("VOFClasicoDemo.fxml")));
 		Scene scene = new Scene(root);
 
 		// set up the stage
