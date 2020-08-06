@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class PreguntasConMultiplicadorTest {
+public class JugadorITest {
 	@Test
 	public void test01JugadorUsaMutiplicadorX2YContestaConRespuestaCorrectaGana2Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
