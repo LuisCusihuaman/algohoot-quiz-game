@@ -1,0 +1,61 @@
+Index: src/test/java/poo/coders/main/ComportamientoVoFPenalidadITest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package poo.coders.main;\r\n\r\nimport org.junit.jupiter.api.Assertions;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.util.ArrayList;\r\n\r\nclass ComportamientoVoFPenalidadITest {\r\n\r\n\t@Test\r\n\tvoid deberiaPreguntaVoFPenalidadCrearseCorrectamenteIndicandoleCualEsLaRespuestaCorrecta() {\r\n\t\tPregunta             pregunta        = new Pregunta(\"Este es el mejor TP.\", new ComportamientoVoFPenalidad());\r\n\t\tRespuestaCorrecta    correcta        = new RespuestaCorrecta();\r\n\t\tArrayList<Respuesta> listaRespuestas = new ArrayList<>();\r\n\t\tlistaRespuestas.add(correcta);\r\n\t\tPuntos diferencialPuntos = pregunta.obtenerPuntaje(listaRespuestas);\r\n\t\tAssertions.assertEquals(1, diferencialPuntos.getCantidadPuntos());\r\n\t}\r\n\r\n\t@Test\r\n\tvoid jugadorCon5puntosRespondeIncorrectamente2vecesYSuPuntajeDeberiaSer3() {\r\n\t\tJugador              jugador          = new Jugador(\"Alan\", 5);\r\n\t\tPregunta             pregunta         = new Pregunta(\"El software es tangible.\", new ComportamientoVoFPenalidad());\r\n\t\tArrayList<Respuesta> respuestaJugador = new ArrayList<>();\r\n\t\trespuestaJugador.add(new RespuestaIncorrecta());\r\n\t\trespuestaJugador.add(new RespuestaIncorrecta());\r\n\t\tjugador.procesarPregunta(pregunta, respuestaJugador);\r\n\t\tAssertions.assertEquals(3, jugador.getPuntos());\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/poo/coders/main/ComportamientoVoFPenalidadITest.java	(revision b321a80d4b91525455e66cf74dafdab94aeece74)
++++ src/test/java/poo/coders/main/ComportamientoVoFPenalidadITest.java	(date 1596395563063)
+@@ -6,7 +6,7 @@
+ import java.util.ArrayList;
+ 
+ class ComportamientoVoFPenalidadITest {
+-
++/*
+ 	@Test
+ 	void deberiaPreguntaVoFPenalidadCrearseCorrectamenteIndicandoleCualEsLaRespuestaCorrecta() {
+ 		Pregunta             pregunta        = new Pregunta("Este es el mejor TP.", new ComportamientoVoFPenalidad());
+@@ -19,12 +19,39 @@
+ 
+ 	@Test
+ 	void jugadorCon5puntosRespondeIncorrectamente2vecesYSuPuntajeDeberiaSer3() {
+-		Jugador              jugador          = new Jugador("Alan", 5);
++		Jugador              jugador          = new Jugador("Alan");
+ 		Pregunta             pregunta         = new Pregunta("El software es tangible.", new ComportamientoVoFPenalidad());
+ 		ArrayList<Respuesta> respuestaJugador = new ArrayList<>();
+-		respuestaJugador.add(new RespuestaIncorrecta());
+-		respuestaJugador.add(new RespuestaIncorrecta());
++		respuestaJugador.add(new RespuestaIncorrecta(""));
++		respuestaJugador.add(new RespuestaIncorrecta(""));
+ 		jugador.procesarPregunta(pregunta, respuestaJugador);
+ 		Assertions.assertEquals(3, jugador.getPuntos());
++	}
++*/
++	@Test
++	public void test02JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
++		Jugador jugador = new Jugador("");
++		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
++		ArrayList<Respuesta> respuestasJugador  = new ArrayList<>();
++		respuestasJugador.add(new RespuestaIncorrecta(""));
++
++		jugador.procesarPregunta(pregunta, respuestasJugador);
++
++		Assertions.assertEquals(-1, jugador.getPuntos());
++	}
++
++	@Test
++	public void test03JugadorRespondeCon1CorrectaTienePuntaje1() {
++		Jugador jugador = new Jugador("");
++		Pregunta pregunta =  new Pregunta("", new ComportamientoVoFPenalidad());
++		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
++		respuestasJugador.add(new RespuestaCorrecta(""));
++		respuestasJugador.add(new RespuestaCorrecta(""));
++
++		jugador.procesarPregunta(pregunta, respuestasJugador);
++
++		Assertions.assertEquals(1, jugador.getPuntos());
++
++
+ 	}
+ }
