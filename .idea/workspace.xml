@@ -30,7 +30,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfe4a26a-5510-4219-8604-6ab6b6232ac9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/poo/coders/main/PreguntaConRespuestasGrupalesITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/poo/coders/main/PreguntaConRespuestasGrupalesITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/poo/coders/main/PreguntaConRespuestasGrupalesITest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,7 @@
       <recent name="poo.coders.main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PreguntaConRespuestasOrdenadasITest.test02JugadorRespondeCon3RespuestasDesordenadasNoGanaPuntos">
+  <component name="RunManager" selected="JUnit.PreguntaConRespuestasGrupalesITest">
     <configuration name="ComportamientoOrderedChoiceITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp2-algo3" />
       <extension name="coverage">
@@ -98,6 +99,37 @@
       <option name="PACKAGE_NAME" value="poo.coders.main" />
       <option name="MAIN_CLASS_NAME" value="poo.coders.main.ComportamientoOrderedChoiceITest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PreguntaConRespuestasGrupalesITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2-algo3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="poo.coders.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="poo.coders.main" />
+      <option name="MAIN_CLASS_NAME" value="poo.coders.main.PreguntaConRespuestasGrupalesITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PreguntaConRespuestasGrupalesITest.test02JugadorRespondeCon2GruposConElementosDeDistintosGruposNoGanaPunto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2-algo3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="poo.coders.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="poo.coders.main" />
+      <option name="MAIN_CLASS_NAME" value="poo.coders.main.PreguntaConRespuestasGrupalesITest" />
+      <option name="METHOD_NAME" value="test02JugadorRespondeCon2GruposConElementosDeDistintosGruposNoGanaPunto" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,44 +165,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RespuestasFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tp2-algo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="poo.coders.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="poo.coders.main" />
-      <option name="MAIN_CLASS_NAME" value="poo.coders.main.RespuestasFactoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RespuestasFactoryTest.test06RespuestasFactoryGrupalesRecibeGruposConElementosQueSonDeDistintoGrupoDevuelveRespuestaIncorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tp2-algo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="poo.coders.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="poo.coders.main" />
-      <option name="MAIN_CLASS_NAME" value="poo.coders.main.RespuestasFactoryTest" />
-      <option name="METHOD_NAME" value="test06RespuestasFactoryGrupalesRecibeGruposConElementosQueSonDeDistintoGrupoDevuelveRespuestaIncorrecta" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PreguntaConRespuestasGrupalesITest" />
+        <item itemvalue="JUnit.PreguntaConRespuestasGrupalesITest.test02JugadorRespondeCon2GruposConElementosDeDistintosGruposNoGanaPunto" />
         <item itemvalue="JUnit.PreguntaConRespuestasOrdenadasITest.test02JugadorRespondeCon3RespuestasDesordenadasNoGanaPuntos" />
         <item itemvalue="JUnit.PreguntaConRespuestasOrdenadasITest" />
         <item itemvalue="JUnit.ComportamientoOrderedChoiceITest" />
-        <item itemvalue="JUnit.RespuestasFactoryTest" />
-        <item itemvalue="JUnit.RespuestasFactoryTest.test06RespuestasFactoryGrupalesRecibeGruposConElementosQueSonDeDistintoGrupoDevuelveRespuestaIncorrecta" />
       </list>
     </recent_temporary>
   </component>
@@ -239,25 +240,25 @@
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596683246919" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596337423188" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1596836898626">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1596837752394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596836898626" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596837752394" />
     <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596776648533" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1596836898626">
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1596837752394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596836898626" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596837752394" />
     <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596776648533" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1596836898626">
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1596837752394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596836898626" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596837752394" />
     <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596776648533" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1596836898626">
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1596837752394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596836898626" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1596837752394" />
     <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596776648533" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1596776648534">
       <screen x="0" y="0" width="1366" height="728" />
