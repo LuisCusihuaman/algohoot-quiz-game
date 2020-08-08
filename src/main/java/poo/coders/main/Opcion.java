@@ -1,20 +1,20 @@
 package poo.coders.main;
 
 public class Opcion {
-	int id;
-	public Opcion(int id) {
-		this.id = id;
+	private int clave;
+	public Opcion(int clave) {
+		this.clave = clave;
 	}
 
 	public boolean esMayorQue(Opcion opcion) {
-		return id > opcion.getID();
+		return clave > opcion.getClave();
 	}
 
-	public int getID() {
-		return id;
+	public int getClave() {
+		return this.clave;
 	}
 
 	public boolean esIgualA(Opcion opcion) {
-		return id == opcion.getID();
+		return clave == opcion.getClave();
 	}
 }
