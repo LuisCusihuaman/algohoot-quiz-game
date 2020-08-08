@@ -14,10 +14,9 @@ public class PreguntaConRespuestasOrdenadasITest {
 		opciones.agregarOpcion(new Opcion(1));
 		opciones.agregarOpcion(new Opcion(2));
 		opciones.agregarOpcion(new Opcion(3));
-		RespuestasOrdenadasFactory respuestasFactory = new RespuestasOrdenadasFactory();
-		Respuesta respuesta = respuestasFactory.crearRespuestaEnBaseA(opciones);
+
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(respuesta);
+		respuestasJugador.add(new RespuestaCorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
@@ -32,10 +31,9 @@ public class PreguntaConRespuestasOrdenadasITest {
 		opciones.agregarOpcion(new Opcion(1));
 		opciones.agregarOpcion(new Opcion(3));
 		opciones.agregarOpcion(new Opcion(2));
-		RespuestasOrdenadasFactory respuestasFactory = new RespuestasOrdenadasFactory();
-		Respuesta respuesta = respuestasFactory.crearRespuestaEnBaseA(opciones);
+
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(respuesta);
+		respuestasJugador.add(new RespuestaIncorrecta(""));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 

@@ -9,13 +9,14 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test01JugadorUsaDosOpcionesConClaveIgualANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		respuestasJugador.add(opcionesGrupales.verificarRespuestas());
+		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		ArrayList<Respuesta> respuestasJugador;
 
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+
+		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
@@ -24,12 +25,15 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test02JugadorUsaDosOpcionesConClavesDistintasANumeroGrupoNoGanaPunto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		opcionesGrupales.agregarAGrupo(new Opcion(2));
-		respuestasJugador.add(opcionesGrupales.verificarRespuestas());
+		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		ArrayList<Respuesta> respuestasJugador;
+
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo1(new Opcion(2));
+
+		respuestasJugador = opcionesGrupales.verificarRespuestas();
+		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
@@ -40,17 +44,15 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test03JugadorUsaDosOpcionesEnUnGrupoYOtrosDosEnOtroGrupoConSusClavesIgualesANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
-		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales(2);
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		otrasOpcionesGrupales.agregarAGrupo(new Opcion(2));
-		otrasOpcionesGrupales.agregarAGrupo(new Opcion(2));
-		ArrayList<OpcionesGrupales> gruposDeOpciones = new ArrayList<>();
-		gruposDeOpciones.add(opcionesGrupales);
-		gruposDeOpciones.add(otrasOpcionesGrupales);
-		ArrayList<Respuesta> respuestasJugador = opcionesGrupales.verificarRespuestas(gruposDeOpciones);
+		ArrayList<Respuesta> respuestasJugador;
 
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2));
+
+		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
@@ -60,19 +62,16 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test04JugadorUsaOpcionesEnGruposQueNoCorrespondenNoGanaPuntos() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
-		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales(2);
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		opcionesGrupales.agregarAGrupo(new Opcion(1));
-		otrasOpcionesGrupales.agregarAGrupo(new Opcion(1));
-		otrasOpcionesGrupales.agregarAGrupo(new Opcion(2));
-		ArrayList<OpcionesGrupales> gruposDeOpciones = new ArrayList<>();
-		gruposDeOpciones.add(opcionesGrupales);
-		gruposDeOpciones.add(otrasOpcionesGrupales);
-		ArrayList<Respuesta> respuestasJugador = opcionesGrupales.verificarRespuestas(gruposDeOpciones);
+		ArrayList<Respuesta> respuestasJugador;
 
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo2(new Opcion(1));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2));
+
+		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
-
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
 }
