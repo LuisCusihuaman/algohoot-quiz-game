@@ -17,7 +17,7 @@ public class OpcionesGrupales {
 
 	public Respuesta verificarRespuestas() {
 		for (Opcion opcion : this.grupoOpciones) {
-			if (opcion.getId() != this.numGrupo) return new RespuestaIncorrecta("Incorrecta");
+			if (opcion.getClave() != this.numGrupo) return new RespuestaIncorrecta("Incorrecta");
 		}
 		return new RespuestaCorrecta("Correcta");
 	}

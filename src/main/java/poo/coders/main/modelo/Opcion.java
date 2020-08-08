@@ -8,14 +8,14 @@ public class Opcion {
 	}
 
 	public boolean esMayorQue(Opcion opcion) {
-		return clave > opcion.getId();
+		return clave > opcion.getClave();
 	}
 
-	public int getId() {
+	public int getClave() {
 		return this.clave;
 	}
 
 	public boolean esIgualA(Opcion opcion) {
-		return clave == opcion.getId();
+		return clave == opcion.getClave();
 	}
 }
