@@ -30,15 +30,12 @@ public class ExclusividadTest {
 		Jugador jugador2 = new Jugador("2");
 		Pregunta preguntaVoF = new Pregunta("", new ComportamientoVoF());
 		Exclusividad exclusividad = new Exclusividad();
-
 		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
 		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
-
 		respuestasJugador1.add(new RespuestaCorrecta(""));
 		respuestasJugador2.add(new RespuestaCorrecta(""));
 
-		jugador1.activarExclusividad(exclusividad);
-
+		jugador1.activarExclusividadEnPregunta(preguntaVoF);
 		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
@@ -50,16 +47,12 @@ public class ExclusividadTest {
 		Jugador jugador1 = new Jugador("1");
 		Jugador jugador2 = new Jugador("2");
 		Pregunta preguntaVoF = new Pregunta("", new ComportamientoVoF());
-		Exclusividad exclusividad = new Exclusividad();
-
 		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
 		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
-
 		respuestasJugador1.add(new RespuestaIncorrecta(""));
 		respuestasJugador2.add(new RespuestaIncorrecta(""));
 
 		jugador1.activarExclusividad(exclusividad);
-
 		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
