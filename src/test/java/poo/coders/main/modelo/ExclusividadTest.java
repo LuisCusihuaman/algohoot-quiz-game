@@ -43,8 +43,7 @@ public class ExclusividadTest {
 
 		jugador1.activarExclusividad(exclusividad);
 
-		jugador1.procesarPregunta(preguntaVoF, respuestasJugador1, exclusividad);
-		jugador2.procesarPregunta(preguntaVoF, respuestasJugador2, exclusividad);
+		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
