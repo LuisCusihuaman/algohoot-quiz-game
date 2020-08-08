@@ -14,12 +14,12 @@ public class OpcionesGrupalesTest {
 	}
 
 	@Test
-	public void test02DosOpcionesConClavesDistintasANumeroDeGrupoNoPertenecenAEseGrupo() {
+	public void test02DosOpcionesConClavesDistintasANumeroDeGrupoDevuelveRespuestaIncorrecta() {
 		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(2));
 
-		Assertions.assertFalse(grupoOpciones.elementosSonDelMismoGrupo());
+		Assertions.assertEquals("Incorrecta", grupoOpciones.verificarRespuestas().getTextoRespuesta());
 	}
 /*	@Test
 	public void test01GruposConElementosDeMismoIDSonIguales() {
