@@ -9,7 +9,7 @@ public class PreguntaConRespuestasOrdenadasITest {
 	@Test
 	public void test01JugadorRespondeCon3RespuestasQueEstanOrdenadasGana1Punto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
+		Pregunta pregunta = new Pregunta("", new ComportamientoOrderedChoice());
 		OpcionesOrdenadas opciones = new OpcionesOrdenadas();
 		opciones.agregarOpcion(new Opcion(1, ""));
 		opciones.agregarOpcion(new Opcion(2, ""));
@@ -26,7 +26,7 @@ public class PreguntaConRespuestasOrdenadasITest {
 	@Test
 	public void test02JugadorRespondeCon3RespuestasDesordenadasNoGanaPuntos() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
+		Pregunta pregunta = new Pregunta("", new ComportamientoOrderedChoice());
 		OpcionesOrdenadas opciones = new OpcionesOrdenadas();
 		opciones.agregarOpcion(new Opcion(1, ""));
 		opciones.agregarOpcion(new Opcion(3, ""));
