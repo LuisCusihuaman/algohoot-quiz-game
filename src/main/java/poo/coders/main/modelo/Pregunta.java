@@ -28,6 +28,18 @@ public class Pregunta {
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
+	//TODO: Arreglar
+	/*
+	public void decidirSiAplicarExclusividad(Jugador jugador1, List<Respuesta> respuestasJugador1, Jugador jugador2, List<Respuesta> respuestasJugador2){
+		if(this.obtenerPuntaje(respuestasJugador1) > this.obtenerPuntaje(respuestasJugador2)){
+			jugador1.aplicarExclusividad(this, respuestasJugador1);
+		}
+		if(this.obtenerPuntaje())
+
+	}
+
+	 */
+
 
 
 }

@@ -17,6 +17,13 @@ public class Jugador {
 		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
 	}
 
+	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas, Exclusividad exclusividad) {
+		puntajeJugador = puntajeJugador + (exclusividad.aplicar(multiplicador * pregunta.obtenerPuntaje(respuestas)));
+	}
+
+	public void activarExclusividad(Exclusividad exclusividad){
+		exclusividad.activarExclusividad();
+	}
 
 	public void usarMultiplicadorX2() {
 		multiplicador = 2;
@@ -24,6 +31,10 @@ public class Jugador {
 
 	public void usarMultiplicadorX3() {
 		multiplicador = 3;
+	}
+
+	public void aplicarExclusividad(Pregunta pregunta, List<Respuesta> respuestas){
+		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas) * 2);
 	}
 
 	public int getPuntos() {
