@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class MultipleChoiceClasicoITest {
 	@Test
 	public void test01JugadorContestaTodoCorrectamenteYRecibe1Punto() {
-		Pregunta             pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador              jugador    = new Jugador("Pepe");
+		Pregunta pregunta   = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
+		Jugador jugador    = new Jugador("Pepe");
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta(""));
 		respuestas.add(new RespuestaCorrecta(""));

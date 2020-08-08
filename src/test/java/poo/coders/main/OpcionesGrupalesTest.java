@@ -3,10 +3,8 @@ package poo.coders.main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 public class OpcionesGrupalesTest {
-	@Test
+/*	@Test
 	public void test01GruposConElementosDeMismoIDSonIguales() {
 		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales(1);
 		OpcionesGrupales otroGrupoDeOpciones = new OpcionesGrupales(2);
@@ -48,5 +46,5 @@ public class OpcionesGrupalesTest {
 		otroGrupoOpciones.agregarAGrupo(new Opcion(2));
 
 		Assertions.assertFalse(grupoOpciones.esIgualA(otroGrupoOpciones));
-	}
+	}*/
 }

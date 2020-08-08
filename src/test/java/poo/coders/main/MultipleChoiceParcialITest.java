@@ -9,7 +9,7 @@ public class MultipleChoiceParcialITest {
 	@Test
 	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
-		Jugador  jugador  = new Jugador("Jugador");
+		Jugador jugador  = new Jugador("Jugador");
 
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		respuestas.add(new RespuestaCorrecta(""));
