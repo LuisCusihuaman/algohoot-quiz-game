@@ -3,40 +3,28 @@ package poo.coders.main.modelo;
 import java.util.ArrayList;
 
 public class OpcionesGrupales {
-	private ArrayList<Opcion> grupoOpciones;
-	private int numGrupo;
 
-	OpcionesGrupales(int numGrupo) {
-		this.numGrupo = numGrupo;
-		grupoOpciones = new ArrayList<>();
+	private ArrayList<Grupo> grupos;
+
+	OpcionesGrupales() {
+		grupos = new ArrayList<>();
+		grupos.add(new Grupo(1));
+		grupos.add(new Grupo(2));
 	}
 
-	public void agregarAGrupo(Opcion opcion) {
-		grupoOpciones.add(opcion);
+	public void agregarAGrupo1(Opcion opcion) {
+		grupos.get(0).agregarAGrupo(opcion);
+	}
+	public void agregarAGrupo2(Opcion opcion) {
+		grupos.get(1).agregarAGrupo(opcion);
 	}
 
-	public Respuesta verificarRespuestas() {
-		for (Opcion opcion : this.grupoOpciones) {
-			if (opcion.getClave() != this.numGrupo) return new RespuestaIncorrecta("Incorrecta");
-		}
-		return new RespuestaCorrecta("Correcta");
-	}
-
-	public ArrayList<Respuesta> verificarRespuestas(ArrayList<OpcionesGrupales> opcionesGrupales) {
+	public ArrayList<Respuesta> verificarRespuestas() {
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		for (OpcionesGrupales opciones : opcionesGrupales) {
-			respuestas.add(opciones.verificarRespuestas());
+		for (Grupo grupo : grupos) {
+			respuestas.add(grupo.verificarRespuestas());
 		}
 		return respuestas;
 	}
-	//TODO: Borrar este metodo
-	public boolean elementosSonDelMismoGrupo() {
-		Opcion opcion = grupoOpciones.get(0);
-		for (Opcion otraOpcion : grupoOpciones) {
-			if (!opcion.esIgualA(otraOpcion)) {
-				return false;
-			}
-		}
-		return true;
-	}
+
 }

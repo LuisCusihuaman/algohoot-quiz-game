@@ -16,8 +16,5 @@ public class ComportamientoOrderedChoice extends Comportamiento {
 		return new PuntajeClasico();
 	}
 
-	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
-		return interpretador.evaluarRespuestas(respuestas);
-	}
 
 }

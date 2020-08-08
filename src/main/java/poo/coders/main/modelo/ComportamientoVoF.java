@@ -10,8 +10,4 @@ public class ComportamientoVoF extends Comportamiento {
 		return new PuntajeParcial();
 	}
 
-	@Override
-	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
-		return null;
-	}
 }

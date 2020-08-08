@@ -28,9 +28,6 @@ public class Pregunta {
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
-	public int obtenerPuntaje(ArrayList<String> respuestas) {
-		return this.obtenerPuntaje(tipoComportamiento.evaluarRespuestas(respuestas));
-	}
 
 
 }

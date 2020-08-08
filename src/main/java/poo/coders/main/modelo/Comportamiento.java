@@ -15,5 +15,4 @@ public abstract class Comportamiento {
 
 	public abstract Puntaje crearPuntaje();
 
-	public abstract List<Respuesta> evaluarRespuestas(List<String> respuestas);
 }

@@ -9,8 +9,5 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento {
 		return new PuntajeClasico();
 	}
 
-	@Override
-	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
-		return null;
-	}
+
 }

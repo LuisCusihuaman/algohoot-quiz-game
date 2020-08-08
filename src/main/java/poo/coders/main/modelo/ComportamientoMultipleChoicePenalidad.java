@@ -10,8 +10,4 @@ public class ComportamientoMultipleChoicePenalidad extends Comportamiento {
 		return new PuntajePenalidad();
 	}
 
-	@Override
-	public List<Respuesta> evaluarRespuestas(List<String> respuestas) {
-		return null;
-	}
 }
