@@ -7,21 +7,14 @@ import java.util.ArrayList;
 
 public class PreguntaConRespuestasGrupalesITest {
 	@Test
-	public void test01JugadorRespondeCon2GruposConElementosDeSuMismoGrupoGana1Punto() {
+	public void test01JugadorUsaDosOpcionesConClaveIgualANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
-		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales(2);
-		grupoOpciones.agregarAGrupo(new Opcion(1));
-		grupoOpciones.agregarAGrupo(new Opcion(1));
-		otroGrupoOpciones.agregarAGrupo(new Opcion(2));
-		otroGrupoOpciones.agregarAGrupo(new Opcion(2));
-		RespuestasGrupalesFactory respuestasFactory = new RespuestasGrupalesFactory();
-		ArrayList<OpcionesGrupales> opciones = new ArrayList<>();
-		opciones.add(grupoOpciones);
-		opciones.add(otroGrupoOpciones);
-		respuestasJugador.add(respuestasFactory.crearRespuestasSegun(opciones));
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
+		opcionesGrupales.agregarAGrupo(new Opcion(1));
+		opcionesGrupales.agregarAGrupo(new Opcion(1));
+		respuestasJugador.add(opcionesGrupales.verificarRespuestas());
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
