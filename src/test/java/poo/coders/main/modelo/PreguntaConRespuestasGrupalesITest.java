@@ -9,7 +9,7 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test01JugadorUsaDosOpcionesConClaveIgualANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
@@ -25,7 +25,7 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test02JugadorUsaDosOpcionesConClavesDistintasANumeroGrupoNoGanaPunto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
@@ -43,7 +43,7 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test03JugadorUsaDosOpcionesEnUnGrupoYOtrosDosEnOtroGrupoConSusClavesIgualesANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
@@ -61,7 +61,7 @@ public class PreguntaConRespuestasGrupalesITest {
 	@Test
 	public void test04JugadorUsaOpcionesEnGruposQueNoCorrespondenNoGanaPuntos() {
 		Jugador jugador = new Jugador("");
-		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
