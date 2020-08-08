@@ -29,6 +29,10 @@ public class Pregunta {
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
+	public void activarExclusividadEnPregunta() {
+		exclusividad.activarExclusividad();
+	}
+
 	public void aplicarConJugadores(Jugador jugador1, Jugador jugador2, ArrayList<Respuesta>respuestasJugador1, ArrayList<Respuesta> respuestasJugador2) {
 		int puntajeJugador1 = this.obtenerPuntaje(respuestasJugador1);
 		int puntajeJugador2 = this.obtenerPuntaje(respuestasJugador2);
