@@ -40,4 +40,8 @@ public class Jugador {
 	public int getPuntos() {
 		return puntajeJugador;
 	}
+
+	void ganarPuntaje(int puntaje ) {
+		puntajeJugador += puntaje;
+	}
 }
