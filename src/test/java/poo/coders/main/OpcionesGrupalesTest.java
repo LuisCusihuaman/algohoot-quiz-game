@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class OpcionesGrupalesTest {
 	@Test
 	public void test01GruposConElementosDeMismoIDSonIguales() {
-		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales();
-		OpcionesGrupales otroGrupoDeOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales(1);
+		OpcionesGrupales otroGrupoDeOpciones = new OpcionesGrupales(2);
 		Opcion opcion = new Opcion(1);
 		grupoDeOpciones.agregarAGrupo(opcion);
 		otroGrupoDeOpciones.agregarAGrupo(opcion);
@@ -19,7 +19,7 @@ public class OpcionesGrupalesTest {
 
 	@Test
 	public void test02GruposConElementoDeDistintoIDSonDistintos() {
-		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales(1);
 		grupoDeOpciones.agregarAGrupo(new Opcion(1));
 		grupoDeOpciones.agregarAGrupo(new Opcion(2));
 
@@ -28,8 +28,8 @@ public class OpcionesGrupalesTest {
 
 	@Test
 	public void test03GruposCon2ElementosDeMismoIDSonIguales() {
-		OpcionesGrupales grupoOpciones = new OpcionesGrupales();
-		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales(2);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		otroGrupoOpciones.agregarAGrupo(new Opcion(1));
@@ -40,8 +40,8 @@ public class OpcionesGrupalesTest {
 
 	@Test
 	public void test04GruposCon2ElementosDeDistintoIDSonDistintos() {
-		OpcionesGrupales grupoOpciones = new OpcionesGrupales();
-		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales(2);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		otroGrupoOpciones.agregarAGrupo(new Opcion(2));
