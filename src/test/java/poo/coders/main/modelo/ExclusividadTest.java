@@ -88,21 +88,70 @@ public class ExclusividadTest {
 
 	@Test
 	public void test05JugadorUsaExclusivdadEnPreguntaMultipleChoiceParcialEligeLaOpcionCorrectaYSuRivalLaIncorrectaGanaDosPuntos(){
+		Jugador jugador1 = new Jugador("1");
+		Jugador jugador2 = new Jugador("2");
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoMultipleChoiceParcial());
+		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
+		respuestasJugador1.add(new RespuestaCorrecta(""));
+		respuestasJugador2.add(new RespuestaIncorrecta(""));
 
+		jugador2.activarExclusividadEnPregunta(preguntaVoF);
+		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+
+		Assertions.assertEquals(2, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
 	}
 
 	@Test
 	public void test06JugadorUsaExclusivdadEnPreguntaMultipleChoiceParcialEligeLaOpcionCorrectaYSuRivalLaCorrectaGanaCeroPuntos(){
+		Jugador jugador1 = new Jugador("1");
+		Jugador jugador2 = new Jugador("2");
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoMultipleChoiceParcial());
+		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
+		respuestasJugador1.add(new RespuestaCorrecta(""));
+		respuestasJugador2.add(new RespuestaCorrecta(""));
 
+		jugador2.activarExclusividadEnPregunta(preguntaVoF);
+		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
 	}
 
 	@Test
 	public void test07JugadorUsaExclusivdadEnPreguntaMultipleChoiceParcialEligeLaOpcionIncorrectaYSuRivalLaIncorrectaGanaCeroPuntos(){
+		Jugador jugador1 = new Jugador("1");
+		Jugador jugador2 = new Jugador("2");
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoMultipleChoiceParcial());
+		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
+		respuestasJugador1.add(new RespuestaIncorrecta(""));
+		respuestasJugador2.add(new RespuestaIncorrecta(""));
 
+		jugador2.activarExclusividadEnPregunta(preguntaVoF);
+		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
 	}
+
 	@Test
 	public void test08JugadorUsaExclusivdadEnPreguntaMultipleChoiceParcialEligeLaOpcionIncorrectaYSuRivalLaCorrectaYElRivalGanaDosPuntos(){
+		Jugador jugador1 = new Jugador("1");
+		Jugador jugador2 = new Jugador("2");
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoMultipleChoiceParcial());
+		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
+		respuestasJugador1.add(new RespuestaIncorrecta(""));
+		respuestasJugador2.add(new RespuestaCorrecta(""));
 
+		jugador2.activarExclusividadEnPregunta(preguntaVoF);
+		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
+		Assertions.assertEquals(2, jugador2.getPuntos());
 	}
 
 	@Test
