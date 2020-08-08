@@ -35,4 +35,5 @@ public class PreguntaConRespuestasGrupalesITest {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
+
 }

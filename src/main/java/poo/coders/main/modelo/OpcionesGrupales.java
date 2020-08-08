@@ -22,6 +22,13 @@ public class OpcionesGrupales {
 		return new RespuestaCorrecta("Correcta");
 	}
 
+	public ArrayList<Respuesta> verificarRespuestas(ArrayList<OpcionesGrupales> opcionesGrupales) {
+		ArrayList<Respuesta> respuestas = new ArrayList<>();
+		for (OpcionesGrupales opciones : opcionesGrupales) {
+			respuestas.add(opciones.verificarRespuestas());
+		}
+		return respuestas;
+	}
 	//TODO: Borrar este metodo
 	public boolean elementosSonDelMismoGrupo() {
 		Opcion opcion = grupoOpciones.get(0);
