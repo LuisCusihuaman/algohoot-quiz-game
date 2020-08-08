@@ -30,7 +30,24 @@ public class ExclusividadTest {
 
 	@Test
 	public void test02JugadorUsaExclusivdadEnPreguntaVoFEligeLaOpcionCorrectaYSuRivalLaCorrectaGanaCeroPuntos(){
+		Jugador jugador1 = new Jugador("1");
+		Jugador jugador2 = new Jugador("2");
+		Pregunta preguntaVoF = new Pregunta("", new ComportamientoVoF());
+		Exclusividad exclusividad = new Exclusividad();
 
+		ArrayList<Respuesta> respuestasJugador1 = new ArrayList<>();
+		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
+
+		respuestasJugador1.add(new RespuestaCorrecta(""));
+		respuestasJugador2.add(new RespuestaCorrecta(""));
+
+		jugador1.activarExclusividad(exclusividad);
+
+		jugador1.procesarPregunta(preguntaVoF, respuestasJugador1, exclusividad);
+		jugador2.procesarPregunta(preguntaVoF, respuestasJugador2, exclusividad);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
 	}
 
 	@Test
