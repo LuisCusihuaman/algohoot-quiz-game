@@ -4,6 +4,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class OpcionesGrupalesTest {
+	@Test
+	public void test01DosOpcionesConClaveIgualANumeroDeGrupoPertenecenAEseGrupo() {
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		grupoOpciones.agregarAGrupo(new Opcion(1));
+		grupoOpciones.agregarAGrupo(new Opcion(1));
+
+		Assertions.assertTrue(grupoOpciones.elementosSonDelMismoGrupo());
+	}
 /*	@Test
 	public void test01GruposConElementosDeMismoIDSonIguales() {
 		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales(1);
