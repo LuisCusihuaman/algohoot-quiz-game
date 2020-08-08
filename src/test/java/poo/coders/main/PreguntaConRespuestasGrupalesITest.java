@@ -11,8 +11,8 @@ public class PreguntaConRespuestasGrupalesITest {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		OpcionesGrupales grupoOpciones = new OpcionesGrupales();
-		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales(2);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		otroGrupoOpciones.agregarAGrupo(new Opcion(2));
@@ -33,8 +33,8 @@ public class PreguntaConRespuestasGrupalesITest {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		OpcionesGrupales grupoOpciones = new OpcionesGrupales();
-		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales();
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		OpcionesGrupales otroGrupoOpciones = new OpcionesGrupales(2);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(2));
 		otroGrupoOpciones.agregarAGrupo(new Opcion(2));

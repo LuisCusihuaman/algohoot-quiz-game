@@ -32,7 +32,7 @@ public class RespuestasFactoryTest {
 
 	@Test
 	public void test03FactoryRespuestaConOpcionesDelMismoGrupoTieneTextoCorrecto() {
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		ArrayList<OpcionesGrupales> grupoOpciones = new ArrayList<>();
@@ -45,7 +45,7 @@ public class RespuestasFactoryTest {
 
 	@Test
 	public void test04RespuestaConOpcionesDeGruposDistintosTieneTextoIncorrecto() {
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		opcionesGrupales.agregarAGrupo(new Opcion(2));
 		ArrayList<OpcionesGrupales> grupoOpciones = new ArrayList<>();
@@ -60,8 +60,8 @@ public class RespuestasFactoryTest {
 	@Test
 	public void test05RespuestasFactoryGrupalesConElementosEnSusGruposDevuelveRespuestaCorrecta() {
 		RespuestasGrupalesFactory respuestasFactory = new RespuestasGrupalesFactory();
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales();
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
+		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales(2);
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		otrasOpcionesGrupales.agregarAGrupo(new Opcion(2));
@@ -78,8 +78,8 @@ public class RespuestasFactoryTest {
 	@Test
 	public void test06RespuestasFactoryGrupalesRecibeGruposConElementosQueSonDeDistintoGrupoDevuelveRespuestaIncorrecta() {
 		RespuestasGrupalesFactory respuestasFactory = new RespuestasGrupalesFactory();
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales();
+		OpcionesGrupales opcionesGrupales = new OpcionesGrupales(1);
+		OpcionesGrupales otrasOpcionesGrupales = new OpcionesGrupales(2);
 		opcionesGrupales.agregarAGrupo(new Opcion(1));
 		opcionesGrupales.agregarAGrupo(new Opcion(2));
 		otrasOpcionesGrupales.agregarAGrupo(new Opcion(2));
