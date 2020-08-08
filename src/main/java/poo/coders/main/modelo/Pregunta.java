@@ -25,18 +25,18 @@ public class Pregunta {
 		for (Respuesta unaRespuesta : respuestas) {
 			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
 		}
-		exclusividad.reiniciarExclusividad();
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
 	public void activarExclusividadEnPregunta() {
-		exclusividad.activarExclusividad();
+		this.exclusividad.activarExclusividad();
 	}
 
 	public void aplicarConJugadores(Jugador jugador1, Jugador jugador2, ArrayList<Respuesta>respuestasJugador1, ArrayList<Respuesta> respuestasJugador2) {
 		int puntajeJugador1 = this.obtenerPuntaje(respuestasJugador1);
 		int puntajeJugador2 = this.obtenerPuntaje(respuestasJugador2);
 		exclusividad.determinarPuntosGanados(jugador1, jugador2, puntajeJugador1, puntajeJugador2);
+		exclusividad.reiniciarExclusividad();
 	}
 	//TODO: Arreglar
 	/*
