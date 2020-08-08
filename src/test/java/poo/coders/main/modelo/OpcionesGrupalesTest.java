@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 public class OpcionesGrupalesTest {
 	@Test
-	public void test01DosOpcionesConClaveIgualANumeroDeGrupoPertenecenAEseGrupo() {
+	public void test01DosOpcionesConClaveIgualANumeroDeGrupoDevuelveRespuestaCorrecta() {
 		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 		grupoOpciones.agregarAGrupo(new Opcion(1));
 
-		Assertions.assertTrue(grupoOpciones.elementosSonDelMismoGrupo());
+		Assertions.assertEquals("Correcta", grupoOpciones.verificarRespuestas().getTextoRespuesta());
 	}
 
 	@Test
