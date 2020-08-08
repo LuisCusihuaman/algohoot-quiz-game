@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane fx:id="saa" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 100;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.Controller">
+<Pane fx:id="saa" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 100;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.Controller">
    <rotationAxis>
       <Point3D />
    </rotationAxis>
