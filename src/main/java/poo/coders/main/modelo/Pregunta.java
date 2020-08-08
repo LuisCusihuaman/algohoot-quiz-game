@@ -20,12 +20,12 @@ public class Pregunta {
 
 
 	public int obtenerPuntaje(List<Respuesta> respuestas) {
-
 		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
 
 		for (Respuesta unaRespuesta : respuestas) {
 			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
 		}
+		exclusividad.reiniciarExclusividad();
 		return puntajePregunta.getPuntajeAcumulado();
 	}
 
