@@ -8,7 +8,7 @@ public class OpcionesGrupales {
 
 	OpcionesGrupales(int numGrupo){
 		this.numGrupo = numGrupo;
-		grupoOpciones = new ArrayList<Opcion>();
+		grupoOpciones = new ArrayList<>();
 	}
 
 	public void agregarAGrupo(Opcion opcion) {
@@ -16,7 +16,7 @@ public class OpcionesGrupales {
 	}
 
 	public Respuesta verificarRespuestas(){
-		for (Opcion opcion: grupoOpciones) {
+		for (Opcion opcion : this.grupoOpciones) {
 			if(opcion.getClave() != this.numGrupo) return new RespuestaIncorrecta("Incorrecta");
 		}
 		return new RespuestaCorrecta("Correcta");
