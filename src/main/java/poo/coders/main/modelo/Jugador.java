@@ -25,6 +25,10 @@ public class Jugador {
 		exclusividad.activarExclusividad();
 	}
 
+	public void activarExclusividadEnPregunta(Pregunta pregunta) {
+		pregunta.activarExclusividadEnPregunta();
+	}
+
 	public void usarMultiplicadorX2() {
 		multiplicador = 2;
 	}
