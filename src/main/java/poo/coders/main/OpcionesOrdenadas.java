@@ -21,4 +21,9 @@ public class OpcionesOrdenadas {
 	public void agregarOpcion(Opcion opcion) {
 		this.opciones.add(opcion);
 	}
+
+	public Respuesta verificarRespuestas(){
+		if(this.estaOrdenada()) return new RespuestaCorrecta("Correcta");
+		return new RespuestaIncorrecta("Incorrecta");
+	}
 }
