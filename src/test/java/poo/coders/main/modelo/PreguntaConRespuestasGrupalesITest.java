@@ -13,8 +13,8 @@ public class PreguntaConRespuestasGrupalesITest {
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
 
 		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -29,8 +29,8 @@ public class PreguntaConRespuestasGrupalesITest {
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo1(new Opcion(2));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo1(new Opcion(2, ""));
 
 		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -47,10 +47,10 @@ public class PreguntaConRespuestasGrupalesITest {
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
 
 		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -65,10 +65,10 @@ public class PreguntaConRespuestasGrupalesITest {
 		ArrayList<Respuesta> respuestasJugador;
 
 		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1));
-		opcionesGrupales.agregarAGrupo2(new Opcion(1));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo2(new Opcion(1, ""));
+		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
 
 		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);

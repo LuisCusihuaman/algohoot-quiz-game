@@ -11,9 +11,9 @@ public class PreguntaConRespuestasOrdenadasITest {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		OpcionesOrdenadas opciones = new OpcionesOrdenadas();
-		opciones.agregarOpcion(new Opcion(1));
-		opciones.agregarOpcion(new Opcion(2));
-		opciones.agregarOpcion(new Opcion(3));
+		opciones.agregarOpcion(new Opcion(1, ""));
+		opciones.agregarOpcion(new Opcion(2, ""));
+		opciones.agregarOpcion(new Opcion(3, ""));
 
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new RespuestaCorrecta(""));
@@ -28,9 +28,9 @@ public class PreguntaConRespuestasOrdenadasITest {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		OpcionesOrdenadas opciones = new OpcionesOrdenadas();
-		opciones.agregarOpcion(new Opcion(1));
-		opciones.agregarOpcion(new Opcion(3));
-		opciones.agregarOpcion(new Opcion(2));
+		opciones.agregarOpcion(new Opcion(1, ""));
+		opciones.agregarOpcion(new Opcion(3, ""));
+		opciones.agregarOpcion(new Opcion(2, ""));
 
 		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new RespuestaIncorrecta(""));
