@@ -12,6 +12,15 @@ public class OpcionesGrupalesTest {
 
 		Assertions.assertTrue(grupoOpciones.elementosSonDelMismoGrupo());
 	}
+
+	@Test
+	public void test02DosOpcionesConClavesDistintasANumeroDeGrupoNoPertenecenAEseGrupo() {
+		OpcionesGrupales grupoOpciones = new OpcionesGrupales(1);
+		grupoOpciones.agregarAGrupo(new Opcion(1));
+		grupoOpciones.agregarAGrupo(new Opcion(2));
+
+		Assertions.assertFalse(grupoOpciones.elementosSonDelMismoGrupo());
+	}
 /*	@Test
 	public void test01GruposConElementosDeMismoIDSonIguales() {
 		OpcionesGrupales grupoDeOpciones = new OpcionesGrupales(1);
