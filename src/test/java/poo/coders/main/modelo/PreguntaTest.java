@@ -7,6 +7,6 @@ public class PreguntaTest {
 	@Test
 	void deberiaCrearsePreguntaConElTextoCorrespondiente() {
 		Pregunta pregunta = new Pregunta("El texto de una pregunta", null);
-		Assertions.assertEquals("El texto de una pregunta", pregunta.getTextoPregunta());
+		Assertions.assertEquals("El texto de una pregunta", pregunta.getEnunciado());
 	}
 }
