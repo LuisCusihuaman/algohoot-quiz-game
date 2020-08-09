@@ -10,6 +10,9 @@ public class ComportamientoMultipleChoicePenalidad extends Comportamiento {
 		return new PuntajePenalidad();
 	}
 
-
+	@Override
+	protected String getTipoPregunta() {
+		return "Multiple Choice Penalidad";
+	}
 
 }

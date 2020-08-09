@@ -10,5 +10,8 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento {
 		return new PuntajeClasico();
 	}
 
-
+	@Override
+	protected String getTipoPregunta() {
+		return "Multiple Choice Clasico";
+	}
 }

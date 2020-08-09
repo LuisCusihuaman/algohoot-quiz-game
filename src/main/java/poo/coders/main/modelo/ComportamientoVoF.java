@@ -11,5 +11,8 @@ public class ComportamientoVoF extends Comportamiento {
 		return new PuntajeParcial();
 	}
 
-
+	@Override
+	protected String getTipoPregunta() {
+		return "Verdadero o Falso";
+	}
 }

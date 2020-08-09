@@ -5,6 +5,8 @@ import java.util.List;
 
 public abstract class Comportamiento {
 
+
+
 	public void correcto(Puntaje puntaje) {
 		puntaje.accionCorrecta();
 	}
@@ -30,6 +32,8 @@ public abstract class Comportamiento {
 		}
 		return puntaje.getPuntajeAcumulado();
 	}
+
+	protected abstract String getTipoPregunta();
 
 	protected abstract Puntaje crearPuntaje();
 
