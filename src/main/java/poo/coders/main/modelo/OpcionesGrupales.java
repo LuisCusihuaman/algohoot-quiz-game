@@ -8,8 +8,8 @@ public class OpcionesGrupales {
 
 	OpcionesGrupales() {
 		grupos = new ArrayList<>();
-		grupos.add(new Grupo(1));
-		grupos.add(new Grupo(2));
+		grupos.add(new Grupo("1"));
+		grupos.add(new Grupo("2"));
 	}
 
 	public void agregarAGrupo1(Opcion opcion) {

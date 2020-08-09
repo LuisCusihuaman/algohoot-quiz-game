@@ -20,4 +20,13 @@ public class Opcion {
 	public boolean esIgualA(Opcion opcion) {
 		return clave.equals(opcion.getClave());
 	}
+
+	public Respuesta convertirEnRespuesta() throws Exception {
+
+		// TODO: Crear una Exception especifica para esto.
+		throw new Exception("Esta opcion no se puede convertir en Respuesta");
+	}
+
 }
+
+
