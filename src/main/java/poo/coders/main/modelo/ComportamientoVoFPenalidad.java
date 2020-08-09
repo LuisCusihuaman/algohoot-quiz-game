@@ -11,5 +11,8 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return new PuntajePenalidad();
 	}
 
-
+	@Override
+	protected String getTipoPregunta() {
+		return "Verdadero o Falso Penalidad";
+	}
 }

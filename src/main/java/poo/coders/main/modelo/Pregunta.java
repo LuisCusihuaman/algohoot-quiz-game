@@ -18,6 +18,9 @@ public class Pregunta {
 		return textoPregunta;
 	}
 
+	public String getTipoPregunta(){
+		return this.tipoComportamiento.getTipoPregunta();
+	}
 
 	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
 		return tipoComportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
@@ -33,6 +36,7 @@ public class Pregunta {
 		exclusividad.determinarPuntosGanados(jugador1, jugador2, puntajeJugador1, puntajeJugador2);
 		exclusividad.reiniciarExclusividad();
 	}
+
 	//TODO: Arreglar
 	/*
 	public void decidirSiAplicarExclusividad(Jugador jugador1, List<Respuesta> respuestasJugador1, Jugador jugador2, List<Respuesta> respuestasJugador2){

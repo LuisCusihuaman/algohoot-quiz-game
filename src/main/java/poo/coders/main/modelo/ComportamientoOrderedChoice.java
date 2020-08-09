@@ -10,5 +10,9 @@ public class ComportamientoOrderedChoice extends Comportamiento {
 		return new PuntajeClasico();
 	}
 
+	@Override
+	protected String getTipoPregunta() {
+		return "Ordered Choice";
+	}
 
 }

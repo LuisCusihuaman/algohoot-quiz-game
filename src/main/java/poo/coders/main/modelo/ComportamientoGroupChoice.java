@@ -10,6 +10,8 @@ public class ComportamientoGroupChoice extends Comportamiento {
 		return new PuntajeClasico();
 	}
 
-
-
+	@Override
+	protected String getTipoPregunta() {
+		return "Group Choice";
+	}
 }

@@ -10,4 +10,8 @@ public class ComportamientoMultipleChoiceParcial extends Comportamiento {
 		return new PuntajeParcial();
 	}
 
+	@Override
+	protected String getTipoPregunta() {
+		return "Multiple Choice Parcial";
+	}
 }
