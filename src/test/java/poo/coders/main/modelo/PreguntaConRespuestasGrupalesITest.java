@@ -10,13 +10,11 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test01JugadorUsaDosOpcionesConClaveIgualANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
-		ArrayList<Respuesta> respuestasJugador;
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
 
-		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
@@ -26,14 +24,10 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test02JugadorUsaDosOpcionesConClavesDistintasANumeroGrupoNoGanaPunto() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
-		ArrayList<Respuesta> respuestasJugador;
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo1(new Opcion(2, ""));
-
-		respuestasJugador = opcionesGrupales.verificarRespuestas();
-		jugador.procesarPregunta(pregunta, respuestasJugador);
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "2"));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
@@ -44,15 +38,14 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test03JugadorUsaDosOpcionesEnUnGrupoYOtrosDosEnOtroGrupoConSusClavesIgualesANumeroGrupoGana1Punto() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
-		ArrayList<Respuesta> respuestasJugador;
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("2", "chihuahua"), "2"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("2", "chihuahua"), "2"));
 
-		respuestasJugador = opcionesGrupales.verificarRespuestas();
+
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
@@ -62,15 +55,13 @@ public class PreguntaConRespuestasGrupalesITest {
 	public void test04JugadorUsaOpcionesEnGruposQueNoCorrespondenNoGanaPuntos() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoGroupChoice());
-		ArrayList<Respuesta> respuestasJugador;
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 
-		OpcionesGrupales opcionesGrupales = new OpcionesGrupales();
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo1(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo2(new Opcion(1, ""));
-		opcionesGrupales.agregarAGrupo2(new Opcion(2, ""));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "1"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("1", "chihuahua"), "2"));
+		respuestasJugador.add(new OpcionConjunto( new Opcion("2", "chihuahua"), "2"));
 
-		respuestasJugador = opcionesGrupales.verificarRespuestas();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}

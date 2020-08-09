@@ -13,11 +13,11 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 
-	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas) {
+	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
 		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
 	}
 
-	public void procesarPregunta(Pregunta pregunta, List<Respuesta> respuestas, Exclusividad exclusividad) {
+	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas, Exclusividad exclusividad) {
 		puntajeJugador = puntajeJugador + (exclusividad.aplicar(multiplicador * pregunta.obtenerPuntaje(respuestas)));
 	}
 
@@ -37,7 +37,7 @@ public class Jugador {
 		multiplicador = 3;
 	}
 
-	public void aplicarExclusividad(Pregunta pregunta, List<Respuesta> respuestas){
+	public void aplicarExclusividad(Pregunta pregunta, List<Opcion> respuestas){
 		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas) * 2);
 	}
 

@@ -12,6 +12,10 @@ public class Grupo {
 		this.nombreGrupo = nombreGrupo;
 	}
 
+	String getNombreGrupo(){
+		return this.nombreGrupo;
+	}
+
 	public void agregarAGrupo(Opcion opcion){
 		opcionesElegidas.add(opcion);
 	}

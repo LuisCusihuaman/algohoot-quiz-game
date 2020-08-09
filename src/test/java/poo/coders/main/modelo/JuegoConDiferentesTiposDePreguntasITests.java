@@ -10,14 +10,14 @@ public class JuegoConDiferentesTiposDePreguntasITests {
 	public void test01JugadorContestaCon3RespuestasCorrectasDeMultipleChoiceParcialYVoFPenalidadConUnaIncorrectaTienePuntaje2() {
 		Jugador jugador = new Jugador("");
 		Pregunta preguntaMultipleChoice = new Pregunta("", new ComportamientoMultipleChoiceParcial());
-		ArrayList<Respuesta> respuestasDeJugador = new ArrayList<>();
-		respuestasDeJugador.add(new RespuestaCorrecta(""));
-		respuestasDeJugador.add(new RespuestaCorrecta(""));
-		respuestasDeJugador.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestasDeJugador = new ArrayList<>();
+		respuestasDeJugador.add(new OpcionCorrecta("Correcta", ""));
+		respuestasDeJugador.add(new OpcionCorrecta("Correcta", ""));
+		respuestasDeJugador.add(new OpcionCorrecta("Correcta", ""));
 		jugador.procesarPregunta(preguntaMultipleChoice, respuestasDeJugador);
 		respuestasDeJugador.clear();
 		Pregunta preguntaVoFPenalidad = new Pregunta("", new ComportamientoVoFPenalidad());
-		respuestasDeJugador.add(new RespuestaIncorrecta(""));
+		respuestasDeJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 		jugador.procesarPregunta(preguntaVoFPenalidad, respuestasDeJugador);
 
 		Assertions.assertEquals(2, jugador.getPuntos());
@@ -27,13 +27,13 @@ public class JuegoConDiferentesTiposDePreguntasITests {
 	public void test02JugadorContestaCon2CorrectasDeChoiceClasicoYUnaIncorrectaDeVoFTienePuntaje2() {
 		Jugador jugador = new Jugador("");
 		Pregunta preguntaMultipleChoiceClasico = new Pregunta("", new ComportamientoMultipleChoiceClasico());
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaCorrecta(""));
-		respuestasJugador.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 		jugador.procesarPregunta(preguntaMultipleChoiceClasico, respuestasJugador);
 		respuestasJugador.clear();
 		Pregunta preguntaVoF = new Pregunta("", new ComportamientoVoF());
-		respuestasJugador.add(new RespuestaCorrecta(""));
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 		jugador.procesarPregunta(preguntaVoF, respuestasJugador);
 
 		Assertions.assertEquals(2, jugador.getPuntos());

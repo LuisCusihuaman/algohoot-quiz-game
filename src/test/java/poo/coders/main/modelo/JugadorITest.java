@@ -10,8 +10,8 @@ public class JugadorITest {
 	public void test01JugadorUsaMutiplicadorX2YContestaConRespuestaCorrectaGana2Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
 		Jugador jugador = new Jugador("");
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.usarMultiplicadorX2();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -23,8 +23,8 @@ public class JugadorITest {
 	public void test02JugadorUsaMultiplicadorX3YContestaConRespuestaIncorrectaTieneMenos3Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
 		Jugador jugador = new Jugador("");
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.usarMultiplicadorX3();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -36,10 +36,10 @@ public class JugadorITest {
 	public void test03JugadorUsaMultiplicadorPor3YContestaCon3RespuestasCorrectasGana9Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoicePenalidad());
 		Jugador jugador = new Jugador("");
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaCorrecta(""));
-		respuestasJugador.add(new RespuestaCorrecta(""));
-		respuestasJugador.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.usarMultiplicadorX3();
 		jugador.procesarPregunta(pregunta, respuestasJugador);
@@ -51,10 +51,10 @@ public class JugadorITest {
 	public void test04JugadorUsaMultiplicadorPor2YContestaCon3RespuestasIncorrectasTieneMenos6Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoMultipleChoicePenalidad());
 		Jugador jugador = new Jugador("");
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaIncorrecta(""));
-		respuestasJugador.add(new RespuestaIncorrecta(""));
-		respuestasJugador.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.usarMultiplicadorX2();
 		jugador.procesarPregunta(pregunta, respuestasJugador);

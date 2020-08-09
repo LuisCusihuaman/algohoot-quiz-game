@@ -32,8 +32,8 @@ class ComportamientoVoFPenalidadITest {
 	public void test02JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
@@ -44,8 +44,8 @@ class ComportamientoVoFPenalidadITest {
 	public void test03JugadorRespondeCon1CorrectaTienePuntaje1() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
-		ArrayList<Respuesta> respuestasJugador = new ArrayList<>();
-		respuestasJugador.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
+		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 

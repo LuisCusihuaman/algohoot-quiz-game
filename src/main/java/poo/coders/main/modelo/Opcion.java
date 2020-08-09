@@ -16,6 +16,7 @@ public class Opcion {
 	public String getClave() {
 		return this.clave;
 	}
+	public String getTextoOpcion(){ return this.textoOpcion; }
 
 	public boolean esIgualA(Opcion opcion) {
 		return clave.equals(opcion.getClave());
@@ -28,5 +29,4 @@ public class Opcion {
 	}
 
 }
-
 
