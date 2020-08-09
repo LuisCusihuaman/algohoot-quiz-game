@@ -6,7 +6,7 @@ import java.util.List;
 public class ComportamientoMultipleChoiceParcial extends Comportamiento {
 
 	@Override
-	public Puntaje crearPuntaje() {
+	protected Puntaje crearPuntaje() {
 		return new PuntajeParcial();
 	}
 

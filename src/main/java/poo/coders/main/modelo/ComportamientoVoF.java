@@ -7,7 +7,7 @@ public class ComportamientoVoF extends Comportamiento {
 
 
 	@Override
-	public Puntaje crearPuntaje() {
+	protected Puntaje crearPuntaje() {
 		return new PuntajeParcial();
 	}
 
