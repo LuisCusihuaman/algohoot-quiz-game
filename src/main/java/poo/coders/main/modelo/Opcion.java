@@ -1,23 +1,23 @@
 package poo.coders.main.modelo;
 
 public class Opcion {
-	private int clave;
+	private String clave;
 	private String textoOpcion;
 
-	public Opcion(int clave, String textoOpcion) {
+	public Opcion(String clave, String textoOpcion) {
 		this.clave = clave;
 		this.textoOpcion = textoOpcion;
 	}
 
 	public boolean esMayorQue(Opcion opcion) {
-		return clave > opcion.getClave();
+		return Integer.parseInt(clave) > Integer.parseInt(opcion.getClave());
 	}
 
-	public int getClave() {
+	public String getClave() {
 		return this.clave;
 	}
 
 	public boolean esIgualA(Opcion opcion) {
-		return clave == opcion.getClave();
+		return clave.equals(opcion.getClave());
 	}
 }

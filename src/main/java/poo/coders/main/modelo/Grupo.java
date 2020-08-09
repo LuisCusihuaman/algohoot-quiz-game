@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Grupo {
 
 	private ArrayList<Opcion> opcionesElegidas;
-	private int numGrupo;
+	private String nombreGrupo;
 
-	Grupo(int numGrupo){
+	Grupo(String nombreGrupo){
 		opcionesElegidas = new ArrayList<>();
-		this.numGrupo = numGrupo;
+		this.nombreGrupo = nombreGrupo;
 	}
 
 	public void agregarAGrupo(Opcion opcion){
@@ -18,7 +18,7 @@ public class Grupo {
 
 	public Respuesta verificarRespuestas() {
 		for (Opcion opcion : this.opcionesElegidas) {
-			if (opcion.getClave() != this.numGrupo) return new RespuestaIncorrecta("Incorrecta");
+			if (!opcion.getClave().equals(this.nombreGrupo)) return new RespuestaIncorrecta("Incorrecta");
 		}
 		return new RespuestaCorrecta("Correcta");
 	}
