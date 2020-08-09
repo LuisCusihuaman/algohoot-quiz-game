@@ -1,7 +1,7 @@
 package poo.coders.main.modelo;
 
 import com.google.gson.Gson;
-import poo.coders.main.modelo.data.PreguntaData;
+import poo.coders.main.modelo.data.PreguntaSerializada;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,8 +14,8 @@ public class Parser {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader("data.json"));
-			PreguntaData preguntaData = gson.fromJson(br, PreguntaData.class);
-			System.out.println("hola");
+			PreguntaSerializada[] preguntaSerializadas = gson.fromJson(br, PreguntaSerializada[].class);
+			System.out.println("lol");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} finally {

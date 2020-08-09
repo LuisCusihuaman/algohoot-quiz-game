@@ -4,7 +4,7 @@ package poo.coders.main.modelo.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Opcion {
+public class OpcionSerializada {
 
     @SerializedName("clave")
     @Expose
@@ -21,11 +21,6 @@ public class Opcion {
         this.clave = clave;
     }
 
-    public Opcion withClave(String clave) {
-        this.clave = clave;
-        return this;
-    }
-
     public String getTexto() {
         return texto;
     }
@@ -33,10 +28,4 @@ public class Opcion {
     public void setTexto(String texto) {
         this.texto = texto;
     }
-
-    public Opcion withTexto(String texto) {
-        this.texto = texto;
-        return this;
-    }
-
 }

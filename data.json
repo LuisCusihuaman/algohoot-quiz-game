@@ -1,5 +1,4 @@
-{
-  "questions": [
+[
     {
       "type": "vof",
       "enunciado": "Mickey mouse es un raton",
@@ -46,4 +45,3 @@
       "puntaje_type": "clasico"
     }
   ]
-}
