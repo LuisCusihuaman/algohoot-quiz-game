@@ -14,5 +14,7 @@ public class ControladorSeleccionNombreJugador {
 	private Button setjugador;
 
 	@FXML
-	void setearNombre(ActionEvent event) {}
+	void setearNombre(ActionEvent event) {
+		System.out.println("Clickeaste wacho.");
+	}
 }

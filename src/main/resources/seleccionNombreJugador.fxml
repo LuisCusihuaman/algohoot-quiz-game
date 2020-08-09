@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="567.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="567.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.ControladorSeleccionNombreJugador">
    <children>
       <TextField fx:id="jugardor1id" layoutX="504.0" layoutY="209.0" prefHeight="37.0" prefWidth="216.0" />
       <TextField fx:id="jugardor2id" layoutX="504.0" layoutY="278.0" prefHeight="37.0" prefWidth="216.0" />
       <Label layoutX="288.0" layoutY="220.0" text="Jugador 1" />
       <Label layoutX="288.0" layoutY="289.0" text="Jugador 2" />
-      <Button fx:id="setjugador" layoutX="368.0" layoutY="409.0" mnemonicParsing="false" onAction="#setearNombre" text="Iniciar juego" />
+      <Button fx:id="setjugador" layoutX="368.0" layoutY="409.0" mnemonicParsing="false" onAction="#setearNombre" text="Iniciar juego"  />
       <Label alignment="CENTER" layoutX="227.0" layoutY="54.0" prefHeight="83.0" prefWidth="380.0" text="Algohoot">
          <font>
             <Font size="65.0" />
