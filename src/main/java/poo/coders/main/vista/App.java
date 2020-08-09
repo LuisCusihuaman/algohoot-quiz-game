@@ -1,4 +1,4 @@
-package poo.coders.main;
+package poo.coders.main.vista;
 
 import javafx.application.Application;
 
