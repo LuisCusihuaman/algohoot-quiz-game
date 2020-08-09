@@ -15,4 +15,6 @@ public abstract class Comportamiento {
 
 	public abstract Puntaje crearPuntaje();
 
+	public abstract List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador);
+
 }

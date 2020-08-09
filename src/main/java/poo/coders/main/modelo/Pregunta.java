@@ -19,8 +19,9 @@ public class Pregunta {
 	}
 
 
-	public int obtenerPuntaje(List<Respuesta> respuestas) {
+	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
 		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
+		List<Respuesta> respuestas = tipoComportamiento.verificarOpciones(opcionesElegidasPorElJugador);
 
 		for (Respuesta unaRespuesta : respuestas) {
 			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
@@ -32,7 +33,7 @@ public class Pregunta {
 		this.exclusividad.activarExclusividad();
 	}
 
-	public void aplicarConJugadores(Jugador jugador1, Jugador jugador2, ArrayList<Respuesta>respuestasJugador1, ArrayList<Respuesta> respuestasJugador2) {
+	public void aplicarConJugadores(Jugador jugador1, Jugador jugador2, ArrayList<Opcion> respuestasJugador1, ArrayList<Opcion> respuestasJugador2) {
 		int puntajeJugador1 = this.obtenerPuntaje(respuestasJugador1);
 		int puntajeJugador2 = this.obtenerPuntaje(respuestasJugador2);
 		exclusividad.determinarPuntosGanados(jugador1, jugador2, puntajeJugador1, puntajeJugador2);
