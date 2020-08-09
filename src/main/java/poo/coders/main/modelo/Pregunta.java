@@ -20,13 +20,7 @@ public class Pregunta {
 
 
 	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
-		Puntaje puntajePregunta = tipoComportamiento.crearPuntaje();
-		List<Respuesta> respuestas = tipoComportamiento.verificarOpciones(opcionesElegidasPorElJugador);
-
-		for (Respuesta unaRespuesta : respuestas) {
-			unaRespuesta.aplicarComportamiento(tipoComportamiento, puntajePregunta);
-		}
-		return puntajePregunta.getPuntajeAcumulado();
+		return tipoComportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
 	}
 
 	public void activarExclusividadEnPregunta() {

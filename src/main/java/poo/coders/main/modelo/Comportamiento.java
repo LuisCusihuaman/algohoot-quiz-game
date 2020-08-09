@@ -13,7 +13,7 @@ public abstract class Comportamiento {
 		puntaje.accionIncorrecta();
 	}
 
-	public List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador){
+	private List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador){
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		for (Opcion opcion : opcionesElegidasPorElJugador ) {
 			try {
@@ -22,10 +22,20 @@ public abstract class Comportamiento {
 				e.printStackTrace();
 			}
 		}
+
 		return respuestas;
 	}
 
-	public abstract Puntaje crearPuntaje();
+	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador){
+		List<Respuesta> respuestas = this.verificarOpciones(opcionesElegidasPorElJugador);
+		Puntaje puntaje = this.crearPuntaje();
+		for (Respuesta respuesta: respuestas){
+			respuesta.aplicarComportamiento(this, puntaje);
+		}
+		return puntaje.getPuntajeAcumulado();
+	}
+
+	protected abstract Puntaje crearPuntaje();
 
 
 
