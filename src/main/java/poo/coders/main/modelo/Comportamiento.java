@@ -16,11 +16,7 @@ public abstract class Comportamiento {
 	private List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador){
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		for (Opcion opcion : opcionesElegidasPorElJugador ) {
-			try {
 				respuestas.add(opcion.convertirEnRespuesta());
-			} catch (Exception e){
-				e.printStackTrace();
-			}
 		}
 
 		return respuestas;

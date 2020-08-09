@@ -22,10 +22,10 @@ public class Opcion {
 		return clave.equals(opcion.getClave());
 	}
 
-	public Respuesta convertirEnRespuesta() throws Exception {
+	public Respuesta convertirEnRespuesta() {
 
 		// TODO: Crear una Exception especifica para esto.
-		throw new Exception("Esta opcion no se puede convertir en Respuesta");
+		throw new RuntimeException("Esta opcion no se puede convertir en Respuesta");
 	}
 
 }
