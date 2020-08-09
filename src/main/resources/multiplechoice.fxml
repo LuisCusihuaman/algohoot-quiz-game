@@ -10,8 +10,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="841.0" style="-fx-background-color: yellow;" text="NombreJugador" />
-      <Label layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
+      <Label alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="407.0" style="-fx-background-color: yellow;" text="NombreJugador" />
+      <Label alignment="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
          <font>
             <Font size="23.0" />
          </font>
@@ -21,9 +21,9 @@
             <Font size="43.0" />
          </font>
       </Label>
-      <Button layoutX="740.0" layoutY="126.0" mnemonicParsing="false" text="X2" />
-      <Button layoutX="806.0" layoutY="126.0" mnemonicParsing="false" text="X3" />
-      <GridPane layoutX="17.0" layoutY="263.0" prefHeight="323.0" prefWidth="695.0">
+      <Button alignment="CENTER" layoutX="728.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X2" />
+      <Button alignment="CENTER" layoutX="794.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X3" />
+      <GridPane layoutX="17.0" layoutY="263.0" prefHeight="320.0" prefWidth="841.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,13 +34,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta1" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta5" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta6" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta2" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="348.0" text="respuesta3" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="133.0" prefWidth="465.0" text="respuesta1" />
+            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="421.0" text="respuesta4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="422.0" text="respuesta5" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="446.0" text="respuesta6" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="114.0" prefWidth="420.0" text="respuesta2" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="457.0" text="respuesta3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
+      <Label alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="414.0" style="-fx-background-color: yellow;" text="TipoPregunta" />
    </children>
 </Pane>
