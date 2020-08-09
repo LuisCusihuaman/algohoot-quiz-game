@@ -11,10 +11,10 @@ public class ComportamientoVoFITest {
 		Jugador tomas = new Jugador("Tomas");
 		Jugador kevin = new Jugador("Kevin");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
-		ArrayList<Respuesta> respuestasTomas = new ArrayList<>();
-		ArrayList<Respuesta> respuestasKevin = new ArrayList<>();
-		respuestasTomas.add(new RespuestaCorrecta(""));
-		respuestasKevin.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestasTomas = new ArrayList<>();
+		ArrayList<Opcion> respuestasKevin = new ArrayList<>();
+		respuestasTomas.add(new OpcionCorrecta("Correcta", ""));
+		respuestasKevin.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		tomas.procesarPregunta(pregunta, respuestasTomas);
 		kevin.procesarPregunta(pregunta, respuestasKevin);

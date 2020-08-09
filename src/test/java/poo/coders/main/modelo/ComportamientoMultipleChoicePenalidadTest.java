@@ -12,11 +12,10 @@ public class ComportamientoMultipleChoicePenalidadTest {
 
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoicePenalidad());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -28,12 +27,11 @@ public class ComportamientoMultipleChoicePenalidadTest {
 
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoicePenalidad());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -45,12 +43,12 @@ public class ComportamientoMultipleChoicePenalidadTest {
 
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoicePenalidad());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
+		ArrayList<Opcion> respuestas = new ArrayList<>();
 
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 

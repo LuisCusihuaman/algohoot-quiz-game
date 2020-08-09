@@ -10,10 +10,10 @@ public class MultipleChoiceClasicoITest {
 	public void test01JugadorContestaTodoCorrectamenteYRecibe1Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -24,10 +24,10 @@ public class MultipleChoiceClasicoITest {
 	public void test02JugadorContesta2CorrectamenteY1IncorrectamenteYRecibe0Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -38,12 +38,12 @@ public class MultipleChoiceClasicoITest {
 	public void test03JugadorContesta4CorrectamenteY1IncorrectamenteYRecibe0Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -54,11 +54,11 @@ public class MultipleChoiceClasicoITest {
 	public void test04JugadorContestaTodoIncorrectamenteYRecibe0Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaIncorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 
@@ -69,10 +69,10 @@ public class MultipleChoiceClasicoITest {
 	public void test05JugadorContesta2CorrectamenteY1IncorrectamenteEnPrimerLugarYRecibe0Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
 		Jugador jugador = new Jugador("Pepe");
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		respuestas.add(new RespuestaIncorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
-		respuestas.add(new RespuestaCorrecta(""));
+		ArrayList<Opcion> respuestas = new ArrayList<>();
+		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador.procesarPregunta(pregunta, respuestas);
 

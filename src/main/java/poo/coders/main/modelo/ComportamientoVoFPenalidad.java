@@ -11,18 +11,5 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return new PuntajePenalidad();
 	}
 
-	@Override
-	public List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador){
-		ArrayList<Respuesta> respuestas = new ArrayList<>();
-		for (Opcion opcion : opcionesElegidasPorElJugador ) {
-			try {
-				respuestas.add(opcion.convertirEnRespuesta());
-			} catch (Exception e){
-				e.printStackTrace();
-			}
-		}
-		return respuestas;
-	}
-
 
 }
