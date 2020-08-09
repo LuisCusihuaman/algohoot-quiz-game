@@ -51,8 +51,6 @@ public class ExclusividadTest {
 		ArrayList<Respuesta> respuestasJugador2 = new ArrayList<>();
 		respuestasJugador1.add(new RespuestaIncorrecta(""));
 		respuestasJugador2.add(new RespuestaIncorrecta(""));
-
-		jugador1.activarExclusividad(exclusividad);
 		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
