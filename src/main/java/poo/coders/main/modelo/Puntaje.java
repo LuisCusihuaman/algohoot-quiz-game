@@ -1,9 +1,12 @@
 package poo.coders.main.modelo;
 
-public interface Puntaje {
-	void accionCorrecta();
+public abstract class Puntaje {
+	int puntajeAcumulado = 0;
+	int factor = 1;
 
-	void accionIncorrecta();
+	public abstract void accionCorrecta();
 
-	int getPuntajeAcumulado();
+	public abstract void accionIncorrecta();
+
+	public abstract int getPuntajeAcumulado();
 }

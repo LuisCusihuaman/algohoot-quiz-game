@@ -1,8 +1,6 @@
 package poo.coders.main.modelo;
 
-public class PuntajeParcial implements Puntaje {
-	int puntajeAcumulado = 0;
-	int factor = 1;
+public class PuntajeParcial extends Puntaje {
 
 	@Override
 	public void accionCorrecta() {

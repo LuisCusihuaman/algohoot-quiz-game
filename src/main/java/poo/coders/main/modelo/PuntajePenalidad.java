@@ -1,21 +1,19 @@
 package poo.coders.main.modelo;
 
-public class PuntajePenalidad implements Puntaje {
-	int puntaje = 0;
-	int factor = 1;
+public class PuntajePenalidad extends Puntaje {
 
 	@Override
 	public void accionCorrecta() {
-		puntaje += factor;
+		puntajeAcumulado += factor;
 	}
 
 	@Override
 	public void accionIncorrecta() {
-		puntaje -= factor;
+		puntajeAcumulado -= factor;
 	}
 
 	@Override
 	public int getPuntajeAcumulado() {
-		return puntaje;
+		return puntajeAcumulado;
 	}
 }
