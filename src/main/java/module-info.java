@@ -1,7 +1,7 @@
 module poo.coders {
 	requires javafx.controls;
 	requires javafx.fxml;
-	//requires com.google.gson;
+	requires com.google.gson;
 
 	exports poo.coders.main;
 	exports poo.coders.main.modelo;
