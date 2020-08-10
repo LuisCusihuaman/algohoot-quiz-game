@@ -11,21 +11,21 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="407.0" style="-fx-background-color: yellow;" text="NombreJugador" />
-      <Label alignment="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
+      <Label fx:id="nombreJugador" alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="407.0" style="-fx-background-color: yellow;" text="NombreJugador" />
+      <Label fx:id="pregunta" alignment="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="728.0" layoutY="50.0" prefHeight="57.0" prefWidth="127.0" style="-fx-background-color: red;" text="00:00" textAlignment="CENTER">
+      <Label fx:id="tiempo" alignment="CENTER" layoutX="728.0" layoutY="50.0" prefHeight="57.0" prefWidth="127.0" style="-fx-background-color: red;" text="00:00" textAlignment="CENTER">
          <font>
             <Font size="43.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="728.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X2" />
-      <Button alignment="CENTER" layoutX="794.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X3" />
-      <Label alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="414.0" style="-fx-background-color: yellow;" text="TipoPregunta" />
-      <GridPane layoutX="10.0" layoutY="264.0" prefHeight="324.0" prefWidth="863.0">
+      <Button fx:id="multiplicadorx2" alignment="CENTER" layoutX="728.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X2" />
+      <Button fx:id="multiplicadorx2" alignment="CENTER" layoutX="794.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X3" />
+      <Label fx:id="tipoPregunta" alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="414.0" style="-fx-background-color: yellow;" text="TipoPregunta" />
+      <GridPane fx:id="respuesta3" layoutX="10.0" layoutY="264.0" prefHeight="324.0" prefWidth="863.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="150.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="425.0" minWidth="0.0" prefWidth="287.0" />
@@ -38,12 +38,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" prefHeight="165.0" prefWidth="426.0" text="Respuesta1" GridPane.columnIndex="1" />
-            <Label alignment="CENTER" prefHeight="175.0" prefWidth="422.0" text="Respuesta2" GridPane.columnIndex="2" />
+            <Label fx:id="respuesta1" alignment="CENTER" prefHeight="165.0" prefWidth="426.0" text="Respuesta1" GridPane.columnIndex="1" />
+            <Label fx:id="respuesta2" alignment="CENTER" prefHeight="175.0" prefWidth="422.0" text="Respuesta2" GridPane.columnIndex="2" />
             <Label text="respuesta3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="121.0" prefWidth="312.0" text="respuesta4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="145.0" prefWidth="402.0" text="respuesta5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label alignment="CENTER" prefHeight="132.0" prefWidth="431.0" text="respuesta6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="respuesta4" alignment="CENTER" prefHeight="121.0" prefWidth="312.0" text="respuesta4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="respuesta5" alignment="CENTER" prefHeight="145.0" prefWidth="402.0" text="respuesta5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="respuesta6" alignment="CENTER" prefHeight="132.0" prefWidth="431.0" text="respuesta6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <ComboBox prefWidth="150.0" />
             <ComboBox prefWidth="150.0" GridPane.rowIndex="1" />
             <ComboBox prefWidth="150.0" GridPane.rowIndex="2" />

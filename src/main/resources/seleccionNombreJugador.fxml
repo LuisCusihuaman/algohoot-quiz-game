@@ -12,8 +12,8 @@
       <TextField fx:id="jugardor2id" layoutX="504.0" layoutY="278.0" prefHeight="37.0" prefWidth="216.0" />
       <Label layoutX="288.0" layoutY="220.0" text="Jugador 1" />
       <Label layoutX="288.0" layoutY="289.0" text="Jugador 2" />
-      <Button fx:id="setjugador" layoutX="368.0" layoutY="409.0" mnemonicParsing="false" onAction="#setearNombre" text="Iniciar juego"  />
-      <Label alignment="CENTER" layoutX="227.0" layoutY="54.0" prefHeight="83.0" prefWidth="380.0" text="Algohoot">
+      <Button fx:id="iniciarJuego" layoutX="368.0" layoutY="409.0" mnemonicParsing="false" text="Iniciar juego" />
+      <Label fx:id="tituloJuego" alignment="CENTER" layoutX="227.0" layoutY="54.0" prefHeight="83.0" prefWidth="380.0" text="Algohoot">
          <font>
             <Font size="65.0" />
          </font>
