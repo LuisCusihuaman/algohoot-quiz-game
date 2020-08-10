@@ -1,30 +1,43 @@
 package poo.coders.main.modelo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pregunta {
-	private Comportamiento tipoComportamiento;
-	private String textoPregunta;
+	private String enunciado;
 	private List<Opcion> opciones;
+	private Comportamiento comportamiento;
 	Exclusividad exclusividad;
 
-	public Pregunta(String textoPregunta, Comportamiento comportamiento) {
-		this.tipoComportamiento = comportamiento;
-		this.textoPregunta = textoPregunta;
+
+	public Pregunta(String enunciado, Comportamiento comportamiento) {
+		this.comportamiento = comportamiento;
+		this.enunciado = enunciado;
 		this.exclusividad = new Exclusividad();
 	}
 
-	public String getTextoPregunta() {
-		return textoPregunta;
+	public Pregunta(String enunciado, Comportamiento comportamiento, List<Opcion> opciones) {
+		this(enunciado, comportamiento);
+		this.opciones = opciones;
+	}
+
+	public List<Opcion> getOpciones() {
+		return opciones;
+	}
+
+	public void setOpciones(List<Opcion> opciones) {
+		this.opciones = opciones;
+	}
+
+	public String getEnunciado() {
+		return enunciado;
 	}
 
 	public String getTipoPregunta() {
-		return this.tipoComportamiento.getTipoPregunta();
+		return this.comportamiento.getTipoPregunta();
 	}
 
 	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
-		return tipoComportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
+		return comportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
 	}
 
 	public void activarExclusividadEnPregunta() {
