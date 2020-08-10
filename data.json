@@ -6,7 +6,7 @@
         { "clave": "correcta", "texto": "True" },
         { "clave": "incorrecta", "texto": "False" }
       ],
-      "puntaje_type": "clasico"
+      "puntaje_type": "Clasico"
     },
     {
       "type": "multiple",
@@ -18,7 +18,7 @@
         { "clave": "correcta", "texto": "One" },
         { "clave": "incorrecta", "texto": "La mano de Dios" }
       ],
-      "puntaje_type": "parcial"
+      "puntaje_type": "Parcial"
     },
     {
       "type": "order",
@@ -30,7 +30,7 @@
         { "clave": "4", "texto": "kichner" },
         { "clave": "5", "texto": "macri" }
       ],
-      "puntaje_type": "clasico"
+      "puntaje_type": "Clasico"
     },
     {
       "type": "group ",
@@ -42,6 +42,6 @@
         { "clave": "fuego", "texto": "Charizard" },
         { "clave": "agua", "texto": "Staryu" }
       ],
-      "puntaje_type": "clasico"
+      "puntaje_type": "Clasico"
     }
   ]
