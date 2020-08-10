@@ -8,8 +8,9 @@ public class OpcionConjunto extends Opcion {
 		this.claveElegida = claveElegida;
 	}
 
+	@Override
 	public Respuesta convertirEnRespuesta() {
-		 return this.claveElegida.equals(super.getClave()) ? new RespuestaCorrecta("Correcta") : new RespuestaIncorrecta("Incorrecta");
+		return this.claveElegida.equals(super.getClave()) ? new RespuestaCorrecta("Correcta") : new RespuestaIncorrecta("Incorrecta");
 	}
 
 }
