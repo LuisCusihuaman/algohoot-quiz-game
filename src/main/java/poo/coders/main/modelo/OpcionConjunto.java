@@ -3,6 +3,10 @@ package poo.coders.main.modelo;
 public class OpcionConjunto extends Opcion {
 	private String claveElegida;
 
+	public OpcionConjunto(String clave, String textoOpcion) {
+		super(clave, textoOpcion);
+	}
+
 	public OpcionConjunto(Opcion opcionOriginal, String claveElegida) {
 		super(opcionOriginal.getClave(), opcionOriginal.getTextoOpcion());
 		this.claveElegida = claveElegida;
