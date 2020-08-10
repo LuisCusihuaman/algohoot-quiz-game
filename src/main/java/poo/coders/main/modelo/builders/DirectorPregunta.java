@@ -20,25 +20,7 @@ public class DirectorPregunta {
 		this(preguntaSerializada.getPuntajeType(), preguntaSerializada.getEnunciado(), preguntaSerializada.getOptions());
 	}
 
-	public void construirPreguntaVOF(Builder builder) {
-		builder.setOpciones(opciones);
-		builder.asignarComportamiento(tipoPuntaje);
-		builder.setEnunciado(enunciado);
-	}
-
-	public void construirPreguntaMultipleChoice(Builder builder) {
-		builder.setOpciones(opciones);
-		builder.asignarComportamiento(tipoPuntaje);
-		builder.setEnunciado(enunciado);
-	}
-
-	public void construirPreguntaOrderChoice(Builder builder) {
-		builder.setOpciones(opciones);
-		builder.asignarComportamiento(tipoPuntaje);
-		builder.setEnunciado(enunciado);
-	}
-
-	public void construirPreguntaGroupChoice(Builder builder) {
+	public void asignar(Builder builder) {
 		builder.setOpciones(opciones);
 		builder.asignarComportamiento(tipoPuntaje);
 		builder.setEnunciado(enunciado);

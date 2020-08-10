@@ -23,22 +23,22 @@ public class Parser {
 			switch (tipoPregunta) {
 				case "vof":
 					VoFBuilder voFBuilder = new VoFBuilder();
-					director.construirPreguntaVOF(voFBuilder);
+					director.asignar(voFBuilder);
 					preguntas.add(voFBuilder.construirPregunta());
 					break;
 				case "multiple":
 					MultipleChoiceBuilder multipleChoiceBuilder = new MultipleChoiceBuilder();
-					director.construirPreguntaMultipleChoice(multipleChoiceBuilder);
+					director.asignar(multipleChoiceBuilder);
 					preguntas.add(multipleChoiceBuilder.construirPregunta());
 					break;
 				case "order":
 					OrderedChoiceBuilder orderedChoiceBuilder = new OrderedChoiceBuilder();
-					director.construirPreguntaOrderChoice(orderedChoiceBuilder);
+					director.asignar(orderedChoiceBuilder);
 					preguntas.add(orderedChoiceBuilder.construirPregunta());
 					break;
 				default:
 					GroupChoiceBuilder groupChoiceBuilder = new GroupChoiceBuilder();
-					director.construirPreguntaGroupChoice(groupChoiceBuilder);
+					director.asignar(groupChoiceBuilder);
 					preguntas.add(groupChoiceBuilder.construirPregunta());
 					break;
 			}
