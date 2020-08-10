@@ -1,21 +1,58 @@
 package poo.coders.main.modelo;
 
 import com.google.gson.Gson;
+import poo.coders.main.modelo.builders.*;
 import poo.coders.main.modelo.data.PreguntaSerializada;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class Parser {
-	public static void parsear() {
+	private ArrayList<Pregunta> convertirPreguntas(List<PreguntaSerializada> preguntaSerializadas) {
+		ArrayList<Pregunta> preguntas = new ArrayList<>();
+		preguntaSerializadas.forEach(preguntaSerializada -> {
+			String tipoPregunta = preguntaSerializada.getType();
+			DirectorPregunta director = new DirectorPregunta(preguntaSerializada);
+
+			switch (tipoPregunta) {
+				case "vof":
+					VoFBuilder voFBuilder = new VoFBuilder();
+					director.construirPreguntaVOF(voFBuilder);
+					preguntas.add(voFBuilder.construirPregunta());
+					break;
+				case "multiple":
+					MultipleChoiceBuilder multipleChoiceBuilder = new MultipleChoiceBuilder();
+					director.construirPreguntaMultipleChoice(multipleChoiceBuilder);
+					preguntas.add(multipleChoiceBuilder.construirPregunta());
+					break;
+				case "order":
+					OrderedChoiceBuilder orderedChoiceBuilder = new OrderedChoiceBuilder();
+					director.construirPreguntaOrderChoice(orderedChoiceBuilder);
+					preguntas.add(orderedChoiceBuilder.construirPregunta());
+					break;
+				default:
+					GroupChoiceBuilder groupChoiceBuilder = new GroupChoiceBuilder();
+					director.construirPreguntaGroupChoice(groupChoiceBuilder);
+					preguntas.add(groupChoiceBuilder.construirPregunta());
+					break;
+			}
+		});
+		return preguntas;
+	}
+
+	public ArrayList<Pregunta> parsear() {
 		Gson gson = new Gson();
 		BufferedReader br = null;
+		List<PreguntaSerializada> preguntaSerializadas = null;
 		try {
 			br = new BufferedReader(new FileReader("data.json"));
-			PreguntaSerializada[] preguntaSerializadas = gson.fromJson(br, PreguntaSerializada[].class);
-			System.out.println("lol");
+			preguntaSerializadas = Arrays.asList(gson.fromJson(br, PreguntaSerializada[].class));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} finally {
@@ -27,5 +64,7 @@ public class Parser {
 				}
 			}
 		}
+		assert preguntaSerializadas != null;
+		return this.convertirPreguntas(preguntaSerializadas);
 	}
 }
