@@ -16,6 +16,8 @@ public class ControladorGroupChoice {
 	@FXML
 	private Button multiplicadorx2;
 	@FXML
+	private Button multiplicadorx3;
+	@FXML
 	private Label tipoPregunta;
 	@FXML
 	private GridPane respuesta3;

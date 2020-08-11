@@ -23,7 +23,7 @@
          </font>
       </Label>
       <Button fx:id="multiplicadorx2" alignment="CENTER" layoutX="728.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X2" />
-      <Button fx:id="multiplicadorx2" alignment="CENTER" layoutX="794.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X3" />
+      <Button fx:id="multiplicadorx3" alignment="CENTER" layoutX="794.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="61.0" text="X3" />
       <Label fx:id="tipoPregunta" alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="414.0" style="-fx-background-color: yellow;" text="TipoPregunta" />
       <GridPane fx:id="respuesta3" layoutX="10.0" layoutY="264.0" prefHeight="324.0" prefWidth="863.0">
         <columnConstraints>
