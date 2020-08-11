@@ -20,17 +20,18 @@ public class ControladorGroupChoice {
 	@FXML
 	private Label tipoPregunta;
 	@FXML
-	private GridPane respuesta3;
-	@FXML
 	private Label respuesta1;
 	@FXML
 	private Label respuesta2;
+	@FXML
+	private Label respuesta3;
 	@FXML
 	private Label respuesta4;
 	@FXML
 	private Label respuesta5;
 	@FXML
 	private Label respuesta6;
+
 
 }
 
