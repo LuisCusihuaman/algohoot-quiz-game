@@ -1,7 +1,11 @@
 package poo.coders.main.modelo;
 
-public class ComportamientoMultipleChoiceParcial extends Comportamiento {
+import java.util.List;
 
+public class ComportamientoMultipleChoiceParcial extends Comportamiento {
+	ComportamientoMultipleChoiceParcial(List<Opcion> opciones){
+		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
+	}
 	@Override
 	protected Puntaje crearPuntaje() {
 		return new PuntajeParcial();

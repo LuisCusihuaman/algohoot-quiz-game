@@ -1,7 +1,11 @@
 package poo.coders.main.modelo;
 
-public class ComportamientoVoF extends Comportamiento {
+import java.util.List;
 
+public class ComportamientoVoF extends Comportamiento {
+	ComportamientoVoF(List<Opcion> opciones){
+		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
+	}
 	@Override
 	protected Puntaje crearPuntaje() {
 		return new PuntajeClasico();
