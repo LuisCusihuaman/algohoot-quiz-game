@@ -45,6 +45,10 @@ public class Jugador{
 		return puntajeJugador;
 	}
 
+	public String getNombre(){
+		return nombre;
+	}
+
 	void ganarPuntaje(int puntaje ) {
 		puntajeJugador += puntaje;
 	}
