@@ -37,18 +37,25 @@ public class Pregunta {
 	}
 
 	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
-		return comportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
+		return this.comportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
+	}
+	public int activarMultiplicadorX2(){
+		return this.comportamiento.activarMultiplicadorX2();
+	}
+
+	public int activarMultiplicadorX3(){
+		return this.comportamiento.activarMultiplicadorX3();
 	}
 
 	public void activarExclusividadEnPregunta() {
-		this.exclusividad.activarExclusividad();
+		this.comportamiento.activarExclusividad(this.exclusividad);
 	}
 
-	public void aplicarConJugadores(Jugador jugador1, Jugador jugador2, List<Opcion> respuestasJugador1, List<Opcion> respuestasJugador2) {
-		int puntajeJugador1 = this.obtenerPuntaje(respuestasJugador1);
-		int puntajeJugador2 = this.obtenerPuntaje(respuestasJugador2);
-		exclusividad.determinarPuntosGanados(jugador1, jugador2, puntajeJugador1, puntajeJugador2);
-		exclusividad.reiniciarExclusividad();
+	public void darPuntosAJugadores(Jugador jugador1, Jugador jugador2, List<Opcion> respuestasJugador1, List<Opcion> respuestasJugador2) {
+		int puntajeJugador1 = jugador1.puntosConseguidosEnPregunta(this, respuestasJugador1);
+		int puntajeJugador2 = jugador2.puntosConseguidosEnPregunta(this, respuestasJugador2);
+		exclusividad.darPuntosAJugadores(jugador1, jugador2, puntajeJugador1, puntajeJugador2);
+
 	}
 
 }

@@ -13,7 +13,7 @@ public class JugadorITest {
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 
-		jugador.usarMultiplicadorX2();
+		jugador.usarMultiplicadorX2EnPregunta(pregunta);
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(2, jugador.getPuntos());
@@ -26,7 +26,7 @@ public class JugadorITest {
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 
-		jugador.usarMultiplicadorX3();
+		jugador.usarMultiplicadorX3EnPregunta(pregunta);
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(-3, jugador.getPuntos());
@@ -41,7 +41,7 @@ public class JugadorITest {
 		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 		respuestasJugador.add(new OpcionCorrecta("Correcta", ""));
 
-		jugador.usarMultiplicadorX3();
+		jugador.usarMultiplicadorX3EnPregunta(pregunta);
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(9, jugador.getPuntos());
@@ -56,7 +56,7 @@ public class JugadorITest {
 		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 		respuestasJugador.add(new OpcionIncorrecta("Incorrecta", ""));
 
-		jugador.usarMultiplicadorX2();
+		jugador.usarMultiplicadorX2EnPregunta(pregunta);
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(-6, jugador.getPuntos());

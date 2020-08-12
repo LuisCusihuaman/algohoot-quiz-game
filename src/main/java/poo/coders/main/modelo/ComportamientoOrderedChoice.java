@@ -3,7 +3,9 @@ package poo.coders.main.modelo;
 import java.util.List;
 
 public class ComportamientoOrderedChoice extends Comportamiento {
-	ComportamientoOrderedChoice(List<Opcion> opciones){
+	public ComportamientoOrderedChoice(){
+	}
+	public ComportamientoOrderedChoice(List<Opcion> opciones){
 		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
 	}
 
@@ -15,6 +17,16 @@ public class ComportamientoOrderedChoice extends Comportamiento {
 	@Override
 	protected String getTipoPregunta() {
 		return "Ordered Choice";
+	}
+
+	public int activarMultiplicadorX2(){
+		throw new RuntimeException();
+	}
+	public int activarMultiplicadorX3(){
+		throw new RuntimeException();
+	}
+	public void activarExclusividad(Exclusividad exclusividad){
+		exclusividad.activarExclusividad();
 	}
 
 }

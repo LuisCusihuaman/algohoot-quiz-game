@@ -17,29 +17,34 @@ public class Jugador{
 		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
 	}
 
-	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas, Exclusividad exclusividad) {
-		puntajeJugador = puntajeJugador + (exclusividad.aplicar(multiplicador * pregunta.obtenerPuntaje(respuestas)));
+	public int puntosConseguidosEnPregunta(Pregunta pregunta, List<Opcion> respuestas){
+		return multiplicador * pregunta.obtenerPuntaje(respuestas);
 	}
 
-	public void activarExclusividad(Exclusividad exclusividad){
-		exclusividad.activarExclusividad();
+	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas, Exclusividad exclusividad) {
+		puntajeJugador = puntajeJugador + (exclusividad.aplicar(multiplicador * pregunta.obtenerPuntaje(respuestas)));
 	}
 
 	public void activarExclusividadEnPregunta(Pregunta pregunta) {
 		pregunta.activarExclusividadEnPregunta();
 	}
 
-	public void usarMultiplicadorX2() {
-		multiplicador = 2;
+	public void usarMultiplicadorX2EnPregunta(Pregunta pregunta) {
+		try {
+			multiplicador = pregunta.activarMultiplicadorX2();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void usarMultiplicadorX3() {
-		multiplicador = 3;
+	public void usarMultiplicadorX3EnPregunta(Pregunta pregunta) {
+		try {
+			multiplicador = pregunta.activarMultiplicadorX3();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void aplicarExclusividad(Pregunta pregunta, List<Opcion> respuestas){
-		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas) * 2);
-	}
 
 	public int getPuntos() {
 		return puntajeJugador;
@@ -52,4 +57,5 @@ public class Jugador{
 	void ganarPuntaje(int puntaje ) {
 		puntajeJugador += puntaje;
 	}
+
 }

@@ -18,7 +18,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionIncorrecta("Incorrecta", "Falso"));
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(2, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -36,7 +36,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionCorrecta("Correcta", "Verdadero"));
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -52,7 +52,7 @@ public class ExclusividadTest {
 
 		respuestasJugador1.add(new OpcionIncorrecta("Incorrecta", "Falso"));
 		respuestasJugador2.add(new OpcionIncorrecta("Incorrecta", "Falso"));
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -68,7 +68,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionCorrecta("Correcta", "Verdadero"));
 
 		jugador2.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(2, jugador2.getPuntos());
@@ -86,7 +86,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador2.activarExclusividadEnPregunta(preguntaMC);
-		preguntaMC.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaMC.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(2, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -104,7 +104,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionCorrecta("Correcta", ""));
 
 		jugador2.activarExclusividadEnPregunta(preguntaMC);
-		preguntaMC.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaMC.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -122,7 +122,7 @@ public class ExclusividadTest {
 		respuestasJugador2.add(new OpcionIncorrecta("Incorrecta", ""));
 
 		jugador2.activarExclusividadEnPregunta(preguntaMC);
-		preguntaMC.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaMC.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -141,7 +141,7 @@ public class ExclusividadTest {
 
 
 		jugador2.activarExclusividadEnPregunta(preguntaMC);
-		preguntaMC.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaMC.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(2, jugador2.getPuntos());
@@ -160,7 +160,7 @@ public class ExclusividadTest {
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
 		jugador2.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(4, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -179,7 +179,7 @@ public class ExclusividadTest {
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
 		jugador2.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -198,7 +198,7 @@ public class ExclusividadTest {
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
 		jugador2.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
@@ -216,7 +216,7 @@ public class ExclusividadTest {
 
 		jugador1.activarExclusividadEnPregunta(preguntaVoF);
 		jugador2.activarExclusividadEnPregunta(preguntaVoF);
-		preguntaVoF.aplicarConJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
+		preguntaVoF.darPuntosAJugadores(jugador1, jugador2, respuestasJugador1, respuestasJugador2);
 
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(4, jugador2.getPuntos());

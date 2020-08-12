@@ -15,6 +15,7 @@ public abstract class Comportamiento {
 		puntaje.accionIncorrecta();
 	}
 
+
 	private List<Respuesta> verificarOpciones(List<Opcion> opcionesElegidasPorElJugador){
 		ArrayList<Respuesta> respuestas = new ArrayList<>();
 		for (Opcion opcion : opcionesElegidasPorElJugador ) {
@@ -36,6 +37,10 @@ public abstract class Comportamiento {
 	protected abstract String getTipoPregunta();
 
 	protected abstract Puntaje crearPuntaje();
+
+	public abstract int activarMultiplicadorX2();
+	public abstract int activarMultiplicadorX3();
+	public abstract void activarExclusividad(Exclusividad exclusividad);
 
 
 

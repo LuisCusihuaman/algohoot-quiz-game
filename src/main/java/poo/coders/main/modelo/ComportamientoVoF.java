@@ -3,7 +3,10 @@ package poo.coders.main.modelo;
 import java.util.List;
 
 public class ComportamientoVoF extends Comportamiento {
-	ComportamientoVoF(List<Opcion> opciones){
+	public ComportamientoVoF(){
+
+	}
+	public ComportamientoVoF(List<Opcion> opciones){
 		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
 	}
 	@Override
@@ -14,5 +17,15 @@ public class ComportamientoVoF extends Comportamiento {
 	@Override
 	protected String getTipoPregunta() {
 		return "Verdadero o Falso";
+	}
+
+	public int activarMultiplicadorX2(){
+		throw new RuntimeException();
+	}
+	public int activarMultiplicadorX3(){
+		throw new RuntimeException();
+	}
+	public void activarExclusividad(Exclusividad exclusividad){
+		exclusividad.activarExclusividad();
 	}
 }
