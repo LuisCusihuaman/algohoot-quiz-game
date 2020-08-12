@@ -3,12 +3,11 @@ package poo.coders.main.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Jugador implements Observable{
+public class Jugador{
 
 	private String nombre;
 	private int puntajeJugador = 0;
 	private int multiplicador = 1;
-	private List<Observador> observadores = new ArrayList<>();
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
@@ -49,16 +48,4 @@ public class Jugador implements Observable{
 	void ganarPuntaje(int puntaje ) {
 		puntajeJugador += puntaje;
 	}
-
-
-	@Override
-	public void agregarObservador(Observador observador){
-		observadores.add(observador);
-	}
-
-	@Override
-	public void notificarObservadores() {
-		return;
-	}
-
 }
