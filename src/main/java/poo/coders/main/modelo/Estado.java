@@ -1,0 +1,8 @@
+package poo.coders.main.modelo;
+
+public enum Estado {
+	INICIO, // INSTANCIA LOS OBJETOS NECESARIOS PARA QUE LA PREGUNTA. ANDE
+	EN_JUEGO, // SE JUEGA
+	FINAL_JUGADA,
+	SALIDA,
+}
