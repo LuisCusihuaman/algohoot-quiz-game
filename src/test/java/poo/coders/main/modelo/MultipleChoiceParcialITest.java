@@ -16,7 +16,7 @@ public class MultipleChoiceParcialITest {
 		respuestas.add(new OpcionCorrecta("Correcta", ""));
 		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
-		jugador.procesarPregunta(pregunta, respuestas);
+		pregunta.darPuntosAJugadores(jugador, new Jugador(""), respuestas, new ArrayList<>());
 
 		Assertions.assertEquals(3, jugador.getPuntos());
 	}
@@ -31,7 +31,7 @@ public class MultipleChoiceParcialITest {
 		respuestas.add(new OpcionCorrecta("Correcta", ""));
 		respuestas.add(new OpcionIncorrecta("Incorecta", ""));
 
-		jugador.procesarPregunta(pregunta, respuestas);
+		pregunta.darPuntosAJugadores(jugador, new Jugador(""), respuestas, new ArrayList<>());
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
@@ -47,7 +47,7 @@ public class MultipleChoiceParcialITest {
 		respuestas.add(new OpcionIncorrecta("Incorecta", ""));
 		respuestas.add(new OpcionCorrecta("Correcta", ""));
 
-		jugador.procesarPregunta(pregunta, respuestas);
+		pregunta.darPuntosAJugadores(jugador, new Jugador(""), respuestas, new ArrayList<>());
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
 
