@@ -25,4 +25,18 @@ public class Juego {
 		this.estado = Estado.EN_JUEGO;
 
 	}
+
+	public String getPregunta(){
+		return preguntas.get(0).getEnunciado();
+	}
+
+	public String getNombre(){
+		return jugadores.get(0).getNombre();
+	}
+
+	public String getTipoPregunta(){
+		return preguntas.get(0).getTipoPregunta();
+	}
+
+
 }
