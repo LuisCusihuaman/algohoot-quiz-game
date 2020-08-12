@@ -18,7 +18,7 @@ public class Juego {
 	}
 
 
-	public void Inicializar(String nombreJugador1, String nombreJugador2){
+	public void inicializar(String nombreJugador1, String nombreJugador2){
 		this.jugadores.add(new Jugador(nombreJugador1));
 		this.jugadores.add(new Jugador(nombreJugador2));
 		this.turno.asignarJugadores(this.jugadores);
