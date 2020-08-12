@@ -2,8 +2,9 @@ package poo.coders.main.controlador;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import poo.coders.main.modelo.Juego;
 
-public class ControladorVerdaderoFalso {
+public class ControladorVerdaderoFalso implements ControladorInterfaz{
 
 	@FXML
 	private Label pregunta;
@@ -21,6 +22,15 @@ public class ControladorVerdaderoFalso {
 	private Label verdadero;
 	@FXML
 	private Label falso;
+	private Juego juego;
 
+	@Override
+	public void setearJuego(Juego juego) {
+		this.juego = juego;
+		pregunta.setText(juego.getPregunta());
+		jugador.setText(juego.getNombre());
+		tipoPregunta.setText(juego.getTipoPregunta());
+
+	}
 }
 
