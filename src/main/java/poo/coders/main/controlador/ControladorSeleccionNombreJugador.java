@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import poo.coders.main.modelo.Juego;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
 
 public class ControladorSeleccionNombreJugador implements Observable, ControladorInterfaz {
@@ -40,10 +41,14 @@ public class ControladorSeleccionNombreJugador implements Observable, Controlado
 		String nombreJugador1 = jugador1id.getText();
 		String nombreJugador2 = jugador2id.getText();
 		juego.inicializar(nombreJugador1, nombreJugador2);
-		Parent view2 = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("verdaderoFalso.fxml")));
-		Scene scene2 = new Scene(view2);
+		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource("verdaderoFalso.fxml"));
+		FXMLLoader loader = new FXMLLoader(url);
+		Parent root = loader.load();
+		ControladorInterfaz controladorVF = loader.getController();
+		controladorVF.setearJuego(juego);
+		Scene scene = new Scene(root);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(scene2);
+		window.setScene(scene);
 		window.show();
 	}
 
