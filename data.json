@@ -1,5 +1,17 @@
 [
     {
+      "type": "multiple",
+      "enunciado": "Cuales de estas son las canciones de Metallica?",
+      "options": [
+        { "clave": "incorrecta", "texto": "Soy Cordobes" },
+        { "clave": "incorrecta", "texto": "Ocho cuarenta" },
+        { "clave": "correcta", "texto": "Nothing else matters" },
+        { "clave": "correcta", "texto": "One" },
+        { "clave": "incorrecta", "texto": "La mano de Dios" }
+      ],
+      "puntaje_type": "Clasico"
+    },
+    {
       "type": "vof",
       "enunciado": "Mickey mouse es un raton",
       "options": [

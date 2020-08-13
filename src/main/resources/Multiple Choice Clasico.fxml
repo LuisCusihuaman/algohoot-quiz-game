@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.ControladorVerdaderoFalso">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.ControladorMultipleChoice">
    <children>
       <Label fx:id="nombreJugador" alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="407.0" style="-fx-background-color: yellow;" text="NombreJugador" />
       <Label fx:id="pregunta" alignment="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
@@ -43,5 +39,6 @@
          </children>
       </GridPane>
       <Label fx:id="tipoPregunta" alignment="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="414.0" style="-fx-background-color: yellow;" text="TipoPregunta" />
+      <Button fx:id="btnTerminarTurno" layoutX="744.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#seleccionarRespuestas" text="Terminar turno" />
    </children>
 </Pane>
