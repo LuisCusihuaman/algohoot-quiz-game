@@ -25,7 +25,7 @@ public class ComportamientoVoFITest {
 	}
 
 	@Test
-	public void test02SeIngresanMasDeDosOpcionesEnComportamientoYLanzaExcepcion() {
+	public void test02SeIngresanMasDeDosOpcionesEnComportamientoVoFYLanzaExcepcion() {
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
 		opcionesOriginales.add(new Opcion("1", ""));
 		opcionesOriginales.add(new Opcion("2",""));
@@ -37,7 +37,7 @@ public class ComportamientoVoFITest {
 	}
 
 	@Test
-	public void test03SeIngresanMenosDeDosOpcionesYLanzaExcepcion() {
+	public void test03SeIngresanMenosDeDosOpcionesEnComportamientoVoFYLanzaExcepcion() {
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
 		opcionesOriginales.add(new Opcion("1", ""));
 

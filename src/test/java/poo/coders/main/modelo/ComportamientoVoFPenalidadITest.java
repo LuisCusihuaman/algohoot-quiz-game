@@ -76,7 +76,7 @@ class ComportamientoVoFPenalidadITest {
 	}
 
 	@Test
-	public void test04SeIngresanDosOpcionesEnComportamientoVoFPenalidadNoLanzaExcepcion() {
+	public void test05SeIngresanDosOpcionesEnComportamientoVoFPenalidadNoLanzaExcepcion() {
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
 		opcionesOriginales.add(new Opcion("1",""));
 		opcionesOriginales.add(new Opcion("2",""));
