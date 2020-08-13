@@ -7,7 +7,7 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 
 	}
 	public ComportamientoVoFPenalidad(List<Opcion> opciones){
-		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
+		if(opciones.size() != 2) throw new RuntimeException();
 	}
 	@Override
 	protected Puntaje crearPuntaje() {
