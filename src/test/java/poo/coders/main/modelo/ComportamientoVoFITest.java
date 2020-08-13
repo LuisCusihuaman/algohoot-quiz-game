@@ -51,7 +51,7 @@ public class ComportamientoVoFITest {
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
 		opcionesOriginales.add(new Opcion("1", ""));
 		opcionesOriginales.add(new Opcion("2", ""));
-		
+
 		Assertions.assertDoesNotThrow(() -> {
 			ComportamientoVoF comportamiento = new ComportamientoVoF(opcionesOriginales);
 		});
