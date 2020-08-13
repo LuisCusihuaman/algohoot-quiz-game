@@ -63,4 +63,5 @@ class ComportamientoVoFPenalidadITest {
 			ComportamientoVoFPenalidad comportamiento = new ComportamientoVoFPenalidad(opcionesOriginales);
 		});
 	}
+
 }
