@@ -29,7 +29,7 @@ class ComportamientoVoFPenalidadITest {
 		}
 	*/
 	@Test
-	public void test02JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
+	public void test01JugadorRespondeConUnaIncorrectaTienePuntajeMenos1() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
@@ -41,7 +41,7 @@ class ComportamientoVoFPenalidadITest {
 	}
 
 	@Test
-	public void test03JugadorRespondeCon1CorrectaTienePuntaje1() {
+	public void test02JugadorRespondeCon1CorrectaTienePuntaje1() {
 		Jugador jugador = new Jugador("");
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
@@ -50,5 +50,17 @@ class ComportamientoVoFPenalidadITest {
 		jugador.procesarPregunta(pregunta, respuestasJugador);
 
 		Assertions.assertEquals(1, jugador.getPuntos());
+	}
+
+	@Test
+	public void test03SeIngresanMasDeDosOpcionesEnComportamientoVoFPenalidadLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1", ""));
+		opcionesOriginales.add(new Opcion("2", ""));
+		opcionesOriginales.add(new Opcion("3", ""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoVoFPenalidad comportamiento = new ComportamientoVoFPenalidad(opcionesOriginales);
+		});
 	}
 }
