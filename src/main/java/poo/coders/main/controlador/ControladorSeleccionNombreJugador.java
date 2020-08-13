@@ -37,15 +37,13 @@ public class ControladorSeleccionNombreJugador implements Observable, Controlado
 	@FXML
 	void setearNombre(ActionEvent event) throws IOException {
 
+		juego.empezarJuego(jugador1id.getText(), jugador2id.getText());
 
-		String nombreJugador1 = jugador1id.getText();
-		String nombreJugador2 = jugador2id.getText();
-		juego.inicializar(nombreJugador1, nombreJugador2);
-		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource("verdaderoFalso.fxml"));
+		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource(juego.getTipoPregunta()+".fxml"));
 		FXMLLoader loader = new FXMLLoader(url);
 		Parent root = loader.load();
-		ControladorInterfaz controladorVF = loader.getController();
-		controladorVF.setearJuego(juego);
+		ControladorInterfaz controlador = loader.getController();
+		controlador.setearInformacionPregunta(juego);
 		Scene scene = new Scene(root);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
@@ -60,6 +58,16 @@ public class ControladorSeleccionNombreJugador implements Observable, Controlado
 
 	@Override
 	public void removeListener(InvalidationListener invalidationListener) {
+
+	}
+
+	@Override
+	public void setearInformacionPregunta(Juego juego) {
+
+	}
+
+	@Override
+	public void cargarVentana(Juego juego) {
 
 	}
 }
