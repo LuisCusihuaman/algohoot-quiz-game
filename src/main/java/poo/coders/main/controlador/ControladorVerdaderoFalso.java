@@ -73,18 +73,18 @@ public class ControladorVerdaderoFalso implements ControladorInterfaz{
 	public void setearJuego(Juego juego) {
 		this.juego = juego;
 	}
-	@FXML
-	public void siguienteTurno(ArrayList<Opcion> respuestasJugador, ActionEvent event){
+
+	public void siguienteTurno(ArrayList<Opcion> respuestasJugador){
 		juego.siguienteTurno(respuestasJugador);
 		this.setearInformacionPregunta(juego);
 		this.cargarVentana(juego);
 	}
 
-	@FXML
-	public void seleccionarRespuestas(ActionEvent event){
+
+	public void seleccionarRespuestas(){
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new OpcionCorrecta("Correcta", "Verdadero"));
-		siguienteTurno(respuestasJugador, event);
+		siguienteTurno(respuestasJugador);
 	}
 
 }
