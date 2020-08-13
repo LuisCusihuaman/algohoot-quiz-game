@@ -1,4 +1,5 @@
 package poo.coders.main.controlador;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +15,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ControladorMultipleChoice implements ControladorInterfaz{
+public class ControladorMultipleChoice implements ControladorEvento {
 
 	@FXML
 	private Label nombreJugador;
@@ -43,48 +44,51 @@ public class ControladorMultipleChoice implements ControladorInterfaz{
 	@FXML
 	private Label tipoPregunta;
 	private Juego juego;
+	private Stage ventana;
 
 
 	@Override
-	public void setearInformacionPregunta(Juego juego) {
-		this.juego = juego;
+	public void setearInformacionPregunta() {
 		pregunta.setText(juego.getPreguntaActual().getEnunciado());
 		nombreJugador.setText(juego.getJugadorActual().getNombre());
 		tipoPregunta.setText(juego.getTipoPregunta());
 	}
 
-	@FXML @Override
-	public void cargarVentana(Juego juego) {
-		this.juego = juego;
-		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource(juego.getTipoPregunta()+".fxml"));
+	@FXML
+	@Override
+	public void cargarVentana() {
+		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource(juego.getTipoPregunta() + ".fxml"));
 		FXMLLoader loader = new FXMLLoader(url);
 		try {
 			Parent root = loader.load();
-			ControladorInterfaz controlador = loader.getController();
-			controlador.setearInformacionPregunta(juego);
-			Stage window = new Stage();
+			ControladorEvento controlador = loader.getController();
+			controlador.setearJuego(juego, ventana);
+			controlador.setearInformacionPregunta();
 			Scene scene = new Scene(root);
-			window.setScene(scene);
-			window.show();
-		} catch (Exception e){ System.out.println("Ocurre aca");
-			e.printStackTrace();}
+			ventana.setScene(scene);
+			ventana.show();
+		} catch (Exception e) {
+			System.out.println("Ocurre aca");
+			e.printStackTrace();
+		}
 
 
 	}
 
 	@Override
-	public void setearJuego(Juego juego) {
+	public void setearJuego(Juego juego, Stage ventanaPrincipal) {
 		this.juego = juego;
+		this.ventana = ventanaPrincipal;
 	}
 
-	public void siguienteTurno(ArrayList<Opcion> respuestasJugador){
+	public void siguienteTurno(ArrayList<Opcion> respuestasJugador) {
 		juego.siguienteTurno(respuestasJugador);
-		this.setearInformacionPregunta(juego);
-		this.cargarVentana(juego);
+		this.setearInformacionPregunta();
+		this.cargarVentana();
 	}
 
 
-	public void seleccionarRespuestas(){
+	public void seleccionarRespuestas() {
 		ArrayList<Opcion> respuestasJugador = new ArrayList<>();
 		respuestasJugador.add(new OpcionCorrecta("Correcta", "Verdadero"));
 		siguienteTurno(respuestasJugador);

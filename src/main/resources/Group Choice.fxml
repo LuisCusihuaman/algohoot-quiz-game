@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.ControladorVerdaderoFalso">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.coders.main.controlador.ControladorGroupChoice">
    <children>
       <Label fx:id="nombreJugador" alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="27.0" prefWidth="407.0" style="-fx-background-color: yellow;" text="NombreJugador" />
       <Label fx:id="pregunta" alignment="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="203.0" prefWidth="695.0" style="-fx-background-color: lightblue;" text="aca van las preguntas">
@@ -52,5 +52,6 @@
             <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
          </children>
       </GridPane>
+       <Button fx:id="btnTerminarTurno" layoutX="750.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#seleccionarRespuestas" text="Terminar turno" />
    </children>
 </Pane>
