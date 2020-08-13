@@ -80,7 +80,7 @@ public class MultipleChoiceClasicoITest {
 	}
 
 	@Test
-	public void test06SeIngresanMasDe6OpcionesEnComportamientoMultipleChoiceClasicoYLanzaExcepcion() {
+	public void test06SeIngresanMasDe5OpcionesEnComportamientoMultipleChoiceClasicoYLanzaExcepcion() {
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
 		opcionesOriginales.add(new Opcion("1",""));
 		opcionesOriginales.add(new Opcion("2",""));

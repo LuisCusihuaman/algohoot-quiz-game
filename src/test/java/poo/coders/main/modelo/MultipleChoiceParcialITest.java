@@ -105,4 +105,40 @@ public class MultipleChoiceParcialITest {
 		Assertions.assertEquals(3, jugador1.getPuntos());
 		Assertions.assertEquals(6, jugador2.getPuntos());
 	}
+
+	@Test
+	public void test05SeIngresanMasDe5OpcionesEnComportamientoMultipleChoiceParcialYLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1",""));
+		opcionesOriginales.add(new Opcion("2",""));
+		opcionesOriginales.add(new Opcion("3",""));
+		opcionesOriginales.add(new Opcion("4",""));
+		opcionesOriginales.add(new Opcion("5",""));
+		opcionesOriginales.add(new Opcion("6",""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoMultipleChoiceParcial comportamiento = new ComportamientoMultipleChoiceParcial(opcionesOriginales);
+		});
+	}
+
+	@Test
+	public void test06SeIngresanMenosDe2OpcionesEnComportamientoMultipleChoiceParcialYLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1", ""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoMultipleChoiceParcial comportamiento = new ComportamientoMultipleChoiceParcial(opcionesOriginales);
+		});
+	}
+
+	@Test
+	public void test07SeOpciones2OpcionesEnComportamientoMultipleChoiceParcialYNoLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1",""));
+		opcionesOriginales.add(new Opcion("2", ""));
+
+		Assertions.assertDoesNotThrow(() -> {
+			ComportamientoMultipleChoiceParcial comportamiento = new ComportamientoMultipleChoiceParcial(opcionesOriginales);
+		});
+	}
 }
