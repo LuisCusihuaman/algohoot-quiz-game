@@ -78,4 +78,19 @@ public class MultipleChoiceClasicoITest {
 
 		Assertions.assertEquals(0, jugador.getPuntos());
 	}
+
+	@Test
+	public void test06SeIngresanMasDe6OpcionesEnComportamientoMultipleChoiceClasicoYLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1",""));
+		opcionesOriginales.add(new Opcion("2",""));
+		opcionesOriginales.add(new Opcion("3",""));
+		opcionesOriginales.add(new Opcion("4",""));
+		opcionesOriginales.add(new Opcion("5",""));
+		opcionesOriginales.add(new Opcion("6",""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoMultipleChoiceClasico comportamiento = new ComportamientoMultipleChoiceClasico(opcionesOriginales);
+		});
+	}
 }
