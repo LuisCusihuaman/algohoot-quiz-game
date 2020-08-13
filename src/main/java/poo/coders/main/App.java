@@ -4,10 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import poo.coders.main.controlador.ControladorInterfaz;
-import poo.coders.main.controlador.ControladorSeleccionNombreJugador;
+import poo.coders.main.controlador.ControladorEvento;
 import poo.coders.main.modelo.Juego;
 
 import java.net.URL;
@@ -20,17 +18,17 @@ public class App extends Application {
 	}
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage ventanaPrincipal) throws Exception {
 
 		Juego juego = new Juego();
 		URL url = Objects.requireNonNull(getClass().getClassLoader().getResource("seleccionNombreJugador.fxml"));
 		FXMLLoader loader = new FXMLLoader(url);
 		Parent root = loader.load();
-		ControladorInterfaz controladorNombreJugador = loader.getController();
-		controladorNombreJugador.setearJuego(juego);
+		ControladorEvento controladorNombreJugador = loader.getController();
+		controladorNombreJugador.setearJuego(juego, ventanaPrincipal);
 		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		ventanaPrincipal.setScene(scene);
+		ventanaPrincipal.show();
 	}
 
 }
