@@ -103,4 +103,15 @@ public class MultipleChoiceClasicoITest {
 			ComportamientoMultipleChoiceClasico comportamiento = new ComportamientoMultipleChoiceClasico(opcionesOriginales);
 		});
 	}
+
+	@Test
+	public void test08SeIngresan2OpcionesEnComportamientoMultipleChoiceClasicoYNoLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1",""));
+		opcionesOriginales.add(new Opcion("2",""));
+
+		Assertions.assertDoesNotThrow(() -> {
+			ComportamientoMultipleChoiceClasico comportamiento = new ComportamientoMultipleChoiceClasico(opcionesOriginales);
+		});
+	}
 }
