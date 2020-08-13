@@ -3,6 +3,7 @@ package poo.coders.main.modelo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 class ComportamientoVoFPenalidadITest {
@@ -64,4 +65,24 @@ class ComportamientoVoFPenalidadITest {
 		});
 	}
 
+	@Test
+	public void test04SeIngresanMenosDeDosOpcionesEnComportamientoVoFPenalidadLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1", ""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoVoFPenalidad comportamiento = new ComportamientoVoFPenalidad(opcionesOriginales);
+		});
+	}
+
+	@Test
+	public void test04SeIngresanDosOpcionesEnComportamientoVoFPenalidadNoLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1",""));
+		opcionesOriginales.add(new Opcion("2",""));
+
+		Assertions.assertDoesNotThrow(() -> {
+			ComportamientoVoFPenalidad comportamiento = new ComportamientoVoFPenalidad(opcionesOriginales);
+		});
+	}
 }
