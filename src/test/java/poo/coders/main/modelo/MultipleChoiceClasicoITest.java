@@ -93,4 +93,14 @@ public class MultipleChoiceClasicoITest {
 			ComportamientoMultipleChoiceClasico comportamiento = new ComportamientoMultipleChoiceClasico(opcionesOriginales);
 		});
 	}
+
+	@Test
+	public void test07SeIngresanMenosDe2OpcionesEnComportamientoMultipleChoiceClasicoYLanzaExcepcion() {
+		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
+		opcionesOriginales.add(new Opcion("1", ""));
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			ComportamientoMultipleChoiceClasico comportamiento = new ComportamientoMultipleChoiceClasico(opcionesOriginales);
+		});
+	}
 }
