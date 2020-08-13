@@ -1,59 +1,47 @@
 [
-    {
-      "type": "multiple",
-      "enunciado": "Cuales de estas son las canciones de Metallica?",
-      "options": [
-        { "clave": "incorrecta", "texto": "Soy Cordobes" },
-        { "clave": "incorrecta", "texto": "Ocho cuarenta" },
-        { "clave": "correcta", "texto": "Nothing else matters" },
-        { "clave": "correcta", "texto": "One" },
-        { "clave": "incorrecta", "texto": "La mano de Dios" }
-      ],
-      "puntaje_type": "Clasico"
-    },
-    {
-      "type": "vof",
-      "enunciado": "Mickey mouse es un raton",
-      "options": [
-        { "clave": "correcta", "texto": "True" },
-        { "clave": "incorrecta", "texto": "False" }
-      ],
-      "puntaje_type": "Clasico"
-    },
-    {
-      "type": "multiple",
-      "enunciado": "Cuales de estas son las canciones de Metallica?",
-      "options": [
-        { "clave": "incorrecta", "texto": "Soy Cordobes" },
-        { "clave": "incorrecta", "texto": "Ocho cuarenta" },
-        { "clave": "correcta", "texto": "Nothing else matters" },
-        { "clave": "correcta", "texto": "One" },
-        { "clave": "incorrecta", "texto": "La mano de Dios" }
-      ],
-      "puntaje_type": "Parcial"
-    },
-    {
-      "type": "order",
-      "enunciado": "Ordene los viejos estos",
-      "options": [
-        { "clave": "1", "texto": "jesus" },
-        { "clave": "2", "texto": "peron" },
-        { "clave": "3", "texto": "evita" },
-        { "clave": "4", "texto": "kichner" },
-        { "clave": "5", "texto": "macri" }
-      ],
-      "puntaje_type": "Clasico"
-    },
-    {
-      "type": "group ",
-      "enunciado": "¿De qué tipo son los siguientes Pokemones?",
-      "options": [
-        { "clave": "fuego", "texto": "Charmander" },
-        { "clave": "agua", "texto": "Squirtle" },
-        { "clave": "agua", "texto": "Lapras" },
-        { "clave": "fuego", "texto": "Charizard" },
-        { "clave": "agua", "texto": "Staryu" }
-      ],
-      "puntaje_type": "Clasico"
-    }
-  ]
+  {
+    "type": "vof",
+    "enunciado": "Mickey mouse es un raton",
+    "options": [
+      { "clave": "correcta", "texto": "True" },
+      { "clave": "incorrecta", "texto": "False" }
+    ],
+    "puntaje_type": "Clasico"
+  },
+  {
+    "type": "multiple",
+    "enunciado": "Cuales de estas son las canciones de Metallica?",
+    "options": [
+      { "clave": "incorrecta", "texto": "Soy Cordobes" },
+      { "clave": "incorrecta", "texto": "Ocho cuarenta" },
+      { "clave": "correcta", "texto": "Nothing else matters" },
+      { "clave": "correcta", "texto": "One" },
+      { "clave": "incorrecta", "texto": "La mano de Dios" }
+    ],
+    "puntaje_type": "Clasico"
+  },
+  {
+    "type": "order",
+    "enunciado": "Ordene los viejos estos",
+    "options": [
+      { "clave": "1", "texto": "jesus" },
+      { "clave": "2", "texto": "peron" },
+      { "clave": "3", "texto": "evita" },
+      { "clave": "4", "texto": "kichner" },
+      { "clave": "5", "texto": "macri" }
+    ],
+    "puntaje_type": "Clasico"
+  },
+  {
+    "type": "group ",
+    "enunciado": "¿De qué tipo son los siguientes Pokemones?",
+    "options": [
+      { "clave": "fuego", "texto": "Charmander" },
+      { "clave": "agua", "texto": "Squirtle" },
+      { "clave": "agua", "texto": "Lapras" },
+      { "clave": "fuego", "texto": "Charizard" },
+      { "clave": "agua", "texto": "Staryu" }
+    ],
+    "puntaje_type": "Clasico"
+  }
+]
