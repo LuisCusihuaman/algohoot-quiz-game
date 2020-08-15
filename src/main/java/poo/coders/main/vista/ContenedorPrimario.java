@@ -26,7 +26,6 @@ public class ContenedorPrimario extends VBox {
 		this.setSpacing(20);
 		this.setPadding(new Insets(25));
 
-
 		EntradaUsuario entrada1 = new EntradaUsuario("jugador 1","Nombre1") ;
 		EntradaUsuario entrada2 = new EntradaUsuario("jugador 2","Nombre2");
 		jugadores.add(entrada1);
@@ -35,6 +34,7 @@ public class ContenedorPrimario extends VBox {
 		VBox verticalBox = new VBox(2);
 
 		verticalBox.setSpacing(25);
+		verticalBox.setAlignment(Pos.CENTER);
 		verticalBox.getChildren().addAll(entrada1.getHbox(), entrada2.getHbox());
 		Label titulo = new Label("Algo-HOOT");
 		titulo.setFont(Font.font("Tahoma", FontWeight.BOLD, 65));

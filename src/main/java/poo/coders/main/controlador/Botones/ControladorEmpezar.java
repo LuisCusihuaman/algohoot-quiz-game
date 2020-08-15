@@ -23,6 +23,10 @@ public class ControladorEmpezar  implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
-
+		stage.setScene(proximaEscena);
 	}
+
+
+
+
 }
