@@ -1,6 +1,10 @@
 package poo.coders.main.modelo.builders;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceClasico;
+import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceParcial;
+import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoicePenalidad;
 import poo.coders.main.modelo.data.OpcionSerializada;
 
 import java.util.ArrayList;

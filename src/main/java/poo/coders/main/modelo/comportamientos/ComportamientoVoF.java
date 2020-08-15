@@ -1,4 +1,9 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.comportamientos;
+
+import poo.coders.main.modelo.Exclusividad;
+import poo.coders.main.modelo.Opcion;
+import poo.coders.main.modelo.Puntaje;
+import poo.coders.main.modelo.PuntajeClasico;
 
 import java.util.List;
 
@@ -15,7 +20,7 @@ public class ComportamientoVoF extends Comportamiento {
 	}
 
 	@Override
-	protected String getTipoPregunta() {
+	public String getTipoPregunta() {
 		return "Verdadero o Falso";
 	}
 

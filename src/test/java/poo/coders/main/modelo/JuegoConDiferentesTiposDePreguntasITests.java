@@ -2,6 +2,10 @@ package poo.coders.main.modelo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceClasico;
+import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceParcial;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoF;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoFPenalidad;
 
 import java.util.ArrayList;
 

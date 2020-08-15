@@ -1,5 +1,7 @@
 package poo.coders.main.modelo;
 
+import poo.coders.main.modelo.comportamientos.Comportamiento;
+
 import java.util.List;
 
 public class Pregunta {

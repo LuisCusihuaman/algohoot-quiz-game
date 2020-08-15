@@ -1,6 +1,9 @@
 package poo.coders.main.modelo.builders;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoF;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoFPenalidad;
 import poo.coders.main.modelo.data.OpcionSerializada;
 
 import java.util.ArrayList;

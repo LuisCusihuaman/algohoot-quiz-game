@@ -7,6 +7,7 @@ module poo.coders {
 	exports poo.coders.main.modelo;
 	exports poo.coders.main.controlador;
 	exports poo.coders.main.modelo.data;
+	exports poo.coders.main.modelo.comportamientos;
 	exports poo.coders.main.modelo.builders;
 	//exports poo.coders.main.vista;
 	//si esta vacio te tira un error mvn
@@ -15,6 +16,7 @@ module poo.coders {
 	opens poo.coders.main.modelo;
 	opens poo.coders.main.controlador;
 	opens poo.coders.main.modelo.data;
+	opens poo.coders.main.modelo.comportamientos;
 	opens poo.coders.main.modelo.builders;
 
 	//opens poo.coders.main.vista;

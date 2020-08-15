@@ -1,7 +1,7 @@
 package poo.coders.main.modelo.builders;
 
-import poo.coders.main.modelo.Comportamiento;
-import poo.coders.main.modelo.ComportamientoOrderedChoice;
+import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.comportamientos.ComportamientoOrderedChoice;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Pregunta;
 import poo.coders.main.modelo.data.OpcionSerializada;

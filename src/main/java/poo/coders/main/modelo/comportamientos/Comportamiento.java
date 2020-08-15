@@ -1,4 +1,9 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.comportamientos;
+
+import poo.coders.main.modelo.Exclusividad;
+import poo.coders.main.modelo.Opcion;
+import poo.coders.main.modelo.Puntaje;
+import poo.coders.main.modelo.Respuesta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +39,7 @@ public abstract class Comportamiento {
 		return puntaje.getPuntajeAcumulado();
 	}
 
-	protected abstract String getTipoPregunta();
+	public abstract String getTipoPregunta();
 
 	protected abstract Puntaje crearPuntaje();
 

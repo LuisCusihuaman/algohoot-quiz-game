@@ -1,4 +1,9 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.comportamientos;
+
+import poo.coders.main.modelo.Exclusividad;
+import poo.coders.main.modelo.Opcion;
+import poo.coders.main.modelo.Puntaje;
+import poo.coders.main.modelo.PuntajeParcial;
 
 import java.util.List;
 
@@ -14,7 +19,7 @@ public class ComportamientoMultipleChoiceParcial extends Comportamiento {
 	}
 
 	@Override
-	protected String getTipoPregunta() {
+	public String getTipoPregunta() {
 		return "Multiple Choice Parcial";
 	}
 
