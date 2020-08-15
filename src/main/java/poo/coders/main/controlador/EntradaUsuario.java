@@ -1,12 +1,14 @@
 package poo.coders.main.controlador;
 
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 public class EntradaUsuario {
 
-	HBox hb;
+	HBox hbox;
 	TextField texto ;
 
 	public EntradaUsuario(String jugador , String textoHover){
@@ -16,10 +18,12 @@ public class EntradaUsuario {
 		HBox hbox = new HBox(2);
 		hbox.setSpacing(20);
 		hbox.getChildren().addAll(unTextoVisible,texto);
-		hb= hbox;
+		hbox.setAlignment(Pos.CENTER);
+		this.hbox =hbox;
+		this.texto = texto;
 	}
 
-	public HBox getHbox() {return hb; }
+	public HBox getHbox() {return hbox; }
 
 	public TextField getTexto() { return texto; }
 }
