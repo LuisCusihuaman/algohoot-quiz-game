@@ -14,6 +14,7 @@ public class ComportamientoVoFITest {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoF());
 		ArrayList<Opcion> respuestasTomas = new ArrayList<>();
 		ArrayList<Opcion> respuestasKevin = new ArrayList<>();
+
 		respuestasTomas.add(new OpcionCorrecta("Correcta", ""));
 		respuestasKevin.add(new OpcionIncorrecta("Incorrecta", ""));
 

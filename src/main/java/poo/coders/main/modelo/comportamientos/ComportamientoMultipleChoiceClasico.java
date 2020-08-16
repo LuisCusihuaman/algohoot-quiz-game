@@ -1,9 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
-import poo.coders.main.modelo.Exclusividad;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Puntaje;
-import poo.coders.main.modelo.PuntajeClasico;
+import poo.coders.main.modelo.*;
 
 import java.util.List;
 
@@ -23,13 +20,15 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento {
 		return "Multiple Choice Clasico";
 	}
 
-	public int activarMultiplicadorX2(){
+	public MultiplicadorX2 crearMultiplicadorX2(){
+		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
 	}
-	public int activarMultiplicadorX3(){
+	public MultiplicadorX3 crearMultiplicadorX3(){
+		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
 	}
-	public void activarExclusividad(Exclusividad exclusividad){
-		exclusividad.activarExclusividad();
+	public Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2){
+		return new Exclusividad(jugador1, jugador2);
 	}
 }

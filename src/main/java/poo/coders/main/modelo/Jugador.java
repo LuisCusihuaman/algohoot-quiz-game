@@ -7,31 +7,38 @@ public class Jugador{
 
 	private String nombre;
 	private int puntajeJugador = 0;
-	private int multiplicador = 1;
+	private ArrayList<Opcion> respuestasElegidas;
+	private Multiplicador multiplicador;
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
+		respuestasElegidas = new ArrayList<>();
+		multiplicador = new SinMultiplicador(this);
+
+	}
+	public void elegirOpcion(Opcion opcion){
+		respuestasElegidas.add(opcion);
+	}
+	public void elegirOpciones(ArrayList<Opcion> respuestasElegidas){
+		this.respuestasElegidas = respuestasElegidas;
 	}
 
 	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
-		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestas));
+		puntajeJugador = puntajeJugador + (multiplicador.aplicarMultiplicador(pregunta.obtenerPuntaje(respuestas)));
 	}
 
-	public int puntosConseguidosEnPregunta(Pregunta pregunta, List<Opcion> respuestas){
-		return multiplicador * pregunta.obtenerPuntaje(respuestas);
-	}
 
-	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas, Exclusividad exclusividad) {
-		puntajeJugador = puntajeJugador + (exclusividad.aplicar(multiplicador * pregunta.obtenerPuntaje(respuestas)));
-	}
+	public void activarExclusividad(Exclusividad exclusividad) {
+		exclusividad.activarExclusividad();
+		//TODO: exclusividad.agregarJugadores(this, this.siguienteJugador);
 
-	public void activarExclusividadEnPregunta(Pregunta pregunta) {
-		pregunta.activarExclusividadEnPregunta();
 	}
 
 	public void usarMultiplicadorX2EnPregunta(Pregunta pregunta) {
 		try {
-			multiplicador = pregunta.activarMultiplicadorX2();
+			MultiplicadorX2 multiplicador = pregunta.crearMultiplicadorX2();
+			multiplicador.agregarJugador(this);
+			this.multiplicador = multiplicador;
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		}
@@ -39,7 +46,9 @@ public class Jugador{
 
 	public void usarMultiplicadorX3EnPregunta(Pregunta pregunta) {
 		try {
-			multiplicador = pregunta.activarMultiplicadorX3();
+			MultiplicadorX3 multiplicador = pregunta.crearMultiplicadorX3();
+			multiplicador.agregarJugador(this);
+			this.multiplicador = multiplicador;
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		}
@@ -54,8 +63,14 @@ public class Jugador{
 		return nombre;
 	}
 
-	void ganarPuntaje(int puntaje ) {
-		puntajeJugador += puntaje;
+	public int puntajeEnPregunta(Pregunta pregunta){
+		return multiplicador.aplicarMultiplicador(pregunta.obtenerPuntaje(this.respuestasElegidas));
+	}
+	public void ganarPuntaje(int puntajeAGanar) {
+		this.puntajeJugador += puntajeAGanar;
+	}
+	public void siguientePregunta(){
+		respuestasElegidas.clear();
 	}
 
 }
