@@ -1,9 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
-import poo.coders.main.modelo.Exclusividad;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Puntaje;
-import poo.coders.main.modelo.PuntajePenalidad;
+import poo.coders.main.modelo.*;
 
 import java.util.List;
 
@@ -24,13 +21,15 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return "Verdadero o Falso Penalidad";
 	}
 
-	public int activarMultiplicadorX2(){
-		return 2;
+	public MultiplicadorX2 crearMultiplicadorX2(){
+		return new MultiplicadorX2();
 	}
-	public int activarMultiplicadorX3(){
-		return 3;
+	public MultiplicadorX3 crearMultiplicadorX3(){
+		return new MultiplicadorX3();
 	}
-	public void activarExclusividad(Exclusividad exclusividad){
+	public Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2){
+		//TODO: NoPuedoCrearExclusividadEnPreguntaConPenalidadException
 		throw new RuntimeException();
 	}
+
 }

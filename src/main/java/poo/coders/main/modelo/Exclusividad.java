@@ -1,7 +1,46 @@
 package poo.coders.main.modelo;
 
-public class Exclusividad {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+public class Exclusividad extends Modificador {
+	private ArrayList<Jugador> jugadores;
 	private int multiplicadorExclusividad;
+
+	public Exclusividad(Jugador jugador1, Jugador jugador2){
+		this.jugadores = new ArrayList<>();
+		jugadores.add(jugador1);
+		jugadores.add(jugador2);
+		multiplicadorExclusividad = 1;
+	}
+
+	public void agregarJugador(Jugador jugador){
+		jugadores.add(jugador);
+	}
+
+	public void activarExclusividad(){
+		//TODO: if(this.multiplicadorExclusividad == 4) throw new ExclusividadActivadaDemasiadasVecesException();
+		this.multiplicadorExclusividad *= 2;
+	}
+
+	public void aplicarModificador(Pregunta pregunta){
+		int puntajeJugador1 = jugadores.get(0).puntajeEnPregunta(pregunta);
+		int puntajeJugador2 = jugadores.get(1).puntajeEnPregunta(pregunta);
+		if(puntajeJugador1 == puntajeJugador2){
+			jugadores.get(0).ganarPuntaje(puntajeJugador1);
+			jugadores.get(1).ganarPuntaje(puntajeJugador2);
+			return;
+		}
+		if(puntajeJugador1 > puntajeJugador2){
+			jugadores.get(0).ganarPuntaje(puntajeJugador1*multiplicadorExclusividad);
+		}else{
+			jugadores.get(1).ganarPuntaje(puntajeJugador1*multiplicadorExclusividad);
+		}
+	}
+}
+	/*
+	private int multiplicadorExclusividad;
+
 
 	Exclusividad(){
 		this.multiplicadorExclusividad = 1;
@@ -31,4 +70,5 @@ public class Exclusividad {
 		}
 
 	}
-}
+
+	 */

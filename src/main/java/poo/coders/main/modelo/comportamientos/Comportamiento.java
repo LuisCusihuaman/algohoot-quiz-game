@@ -1,9 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
-import poo.coders.main.modelo.Exclusividad;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Puntaje;
-import poo.coders.main.modelo.Respuesta;
+import poo.coders.main.modelo.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +40,9 @@ public abstract class Comportamiento {
 
 	protected abstract Puntaje crearPuntaje();
 
-	public abstract int activarMultiplicadorX2();
-	public abstract int activarMultiplicadorX3();
-	public abstract void activarExclusividad(Exclusividad exclusividad);
+	public abstract MultiplicadorX2 crearMultiplicadorX2();
+	public abstract MultiplicadorX3 crearMultiplicadorX3();
+	public abstract Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2);
 
 
 
