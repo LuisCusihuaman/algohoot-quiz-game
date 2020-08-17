@@ -9,22 +9,5 @@ public enum Estado {
 	SALIDA,
     ;//SE TERMINO LA LISTA DE PREGUNTAS SE MUESTRA EL GANADOR Y SE SALE
 
-    public static class MultiplicadorBasicoX2 extends ModificadorGod implements Multiplicador {
-        private Jugador jugador;
 
-        public MultiplicadorBasicoX2(){
-
-        }
-
-        @Override
-        public int aplicarMultiplicador(int puntajeBase){
-            return puntajeBase * 2;
-        }
-
-
-        @Override
-        public void agregarJugador(Jugador jugador) {
-            this.jugador = jugador;
-        }
-    }
 }

@@ -41,7 +41,7 @@ public class Pregunta {
 		return this.comportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
 	}
 
-	public void obtenerPuntaje(List<Opcion> opcionesDeJugador, Multiplicador multiplicador) {
+	public int obtenerPuntaje(List<Opcion> opcionesDeJugador, Multiplicador multiplicador) {
 		return multiplicador.modificarPuntos(this.comportamiento.obtenerPuntaje(opcionesDeJugador));
 	}
 
