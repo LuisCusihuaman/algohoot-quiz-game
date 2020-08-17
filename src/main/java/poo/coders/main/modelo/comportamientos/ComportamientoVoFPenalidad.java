@@ -1,7 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.ExclusividadGod;
 import poo.coders.main.modelo.modificadores.MultiplicadorX2;
 import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
@@ -30,9 +29,4 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 	public MultiplicadorX3 crearMultiplicadorX3(){
 		return new MultiplicadorX3();
 	}
-	public ExclusividadGod crearExclusividad(Jugador jugador1, Jugador jugador2){
-		//TODO: NoPuedoCrearExclusividadEnPreguntaConPenalidadException
-		throw new RuntimeException();
-	}
-
 }

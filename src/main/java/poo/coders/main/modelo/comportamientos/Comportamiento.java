@@ -1,7 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.ExclusividadGod;
 import poo.coders.main.modelo.modificadores.MultiplicadorX2;
 import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
@@ -42,11 +41,4 @@ public abstract class Comportamiento {
 	public abstract String getTipoPregunta();
 
 	protected abstract Puntaje crearPuntaje();
-
-	public abstract MultiplicadorX2 crearMultiplicadorX2();
-	public abstract MultiplicadorX3 crearMultiplicadorX3();
-	public abstract ExclusividadGod crearExclusividad(Jugador jugador1, Jugador jugador2);
-
-
-
 }

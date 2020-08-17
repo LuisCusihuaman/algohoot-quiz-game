@@ -13,6 +13,7 @@ public class ExclusividadX2 implements Exclusividad, Modificador {
 	public ExclusividadX2() {
 		this.valorExclusividad = 2;
 	}
+
 	@Override
 	public void darPUntosAJugador(Jugador jugador, int puntosGanados) {
 		jugador.ganarPuntaje(valorExclusividad * puntosGanados);

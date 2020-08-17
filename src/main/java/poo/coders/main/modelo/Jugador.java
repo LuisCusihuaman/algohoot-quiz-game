@@ -1,10 +1,5 @@
 package poo.coders.main.modelo;
 
-import poo.coders.main.modelo.modificadores.ExclusividadGod;
-import poo.coders.main.modelo.modificadores.Multiplicador;
-import poo.coders.main.modelo.modificadores.MultiplicadorX2;
-import poo.coders.main.modelo.modificadores.MultiplicadorX3;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,50 +8,19 @@ public class Jugador{
 	private String nombre;
 	private int puntajeJugador = 0;
 	private ArrayList<Opcion> respuestasElegidas;
-	private Multiplicador multiplicador;
-
+	private int multiplicador;
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 		respuestasElegidas = new ArrayList<>();
-		multiplicador = new SinMultiplicador(this);
+		multiplicador = 2;
 
 	}
+
 	public void elegirOpcion(Opcion opcion){
 		respuestasElegidas.add(opcion);
 	}
 	public void elegirOpciones(ArrayList<Opcion> respuestasElegidas){
 		this.respuestasElegidas = respuestasElegidas;
-	}
-
-	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
-		puntajeJugador = puntajeJugador + (multiplicador.aplicarMultiplicador(pregunta.obtenerPuntaje(respuestas)));
-	}
-
-
-	public void activarExclusividad(ExclusividadGod exclusividadGod) {
-		exclusividadGod.activarExclusividad();
-		//TODO: exclusividad.agregarJugadores(this, this.siguienteJugador);
-
-	}
-
-	public void usarMultiplicadorX2EnPregunta(Pregunta pregunta) {
-		try {
-			MultiplicadorX2 multiplicador = pregunta.crearMultiplicadorX2();
-			multiplicador.agregarJugador(this);
-			this.multiplicador = multiplicador;
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void usarMultiplicadorX3EnPregunta(Pregunta pregunta) {
-		try {
-			MultiplicadorX3 multiplicador = pregunta.crearMultiplicadorX3();
-			multiplicador.agregarJugador(this);
-			this.multiplicador = multiplicador;
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		}
 	}
 
 
@@ -68,14 +32,16 @@ public class Jugador{
 		return nombre;
 	}
 
-	public int puntajeEnPregunta(Pregunta pregunta){
-		return multiplicador.aplicarMultiplicador(pregunta.obtenerPuntaje(this.respuestasElegidas));
-	}
-	public void ganarPuntaje(int puntajeAGanar) {
-		this.puntajeJugador += puntajeAGanar;
-	}
-	public void siguientePregunta(){
-		respuestasElegidas.clear();
+	public void ganarPuntaje(int puntaje) {
+		this.puntajeJugador += puntaje;
 	}
 
+	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
+		puntajeJugador = puntajeJugador + (multiplicador * pregunta.obtenerPuntaje(respuestasElegidas));
+	}
+
+
+	public int puntajeEnPregunta(Pregunta pregunta){
+		return multiplicador * pregunta.obtenerPuntaje(this.respuestasElegidas);
+	}
 }

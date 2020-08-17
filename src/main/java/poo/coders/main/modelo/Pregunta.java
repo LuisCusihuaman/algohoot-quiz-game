@@ -41,13 +41,6 @@ public class Pregunta {
 	public int obtenerPuntaje(List<Opcion> opcionesElegidasPorElJugador) {
 		return this.comportamiento.obtenerPuntaje(opcionesElegidasPorElJugador);
 	}
-	public MultiplicadorX2 crearMultiplicadorX2(){
-		return this.comportamiento.crearMultiplicadorX2();
-	}
-
-	public MultiplicadorX3 crearMultiplicadorX3(){
-		return this.comportamiento.crearMultiplicadorX3();
-	}
 
 
 }

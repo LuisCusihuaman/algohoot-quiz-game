@@ -10,6 +10,7 @@ public class SinExclusividad implements Exclusividad, Modificador {
 	public SinExclusividad() {
 		this.valorExclusividad = 1;
 	}
+
 	@Override
 	public void darPUntosAJugador(Jugador jugador, int puntosGanados) {
 		jugador.ganarPuntaje(valorExclusividad * puntosGanados);

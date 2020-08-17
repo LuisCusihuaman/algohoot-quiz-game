@@ -8,6 +8,7 @@ import poo.coders.main.modelo.comportamientos.ComportamientoVoFPenalidad;
 import java.util.ArrayList;
 
 public class JugadorITest {
+	/*
 	@Test
 	public void test01JugadorUsaMutiplicadorX2YContestaConRespuestaCorrectaGana2Puntos() {
 		Pregunta pregunta = new Pregunta("", new ComportamientoVoFPenalidad());
@@ -63,4 +64,5 @@ public class JugadorITest {
 
 		Assertions.assertEquals(-6, jugador.getPuntos());
 	}
+	 */
 }
