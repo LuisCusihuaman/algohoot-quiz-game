@@ -1,5 +1,10 @@
 package poo.coders.main.modelo;
 
+import poo.coders.main.modelo.modificadores.ExclusividadGod;
+import poo.coders.main.modelo.modificadores.Multiplicador;
+import poo.coders.main.modelo.modificadores.MultiplicadorX2;
+import poo.coders.main.modelo.modificadores.MultiplicadorX3;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +33,8 @@ public class Jugador{
 	}
 
 
-	public void activarExclusividad(Exclusividad exclusividad) {
-		exclusividad.activarExclusividad();
+	public void activarExclusividad(ExclusividadGod exclusividadGod) {
+		exclusividadGod.activarExclusividad();
 		//TODO: exclusividad.agregarJugadores(this, this.siguienteJugador);
 
 	}

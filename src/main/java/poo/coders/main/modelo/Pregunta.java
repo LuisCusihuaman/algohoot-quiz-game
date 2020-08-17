@@ -1,6 +1,8 @@
 package poo.coders.main.modelo;
 
 import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.modificadores.MultiplicadorX2;
+import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.List;
 
@@ -45,14 +47,6 @@ public class Pregunta {
 
 	public MultiplicadorX3 crearMultiplicadorX3(){
 		return this.comportamiento.crearMultiplicadorX3();
-	}
-
-	public Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2) {
-		return this.comportamiento.crearExclusividad(jugador1, jugador2);
-	}
-
-	public void siguientePregunta(Exclusividad exclusividad){
-
 	}
 
 

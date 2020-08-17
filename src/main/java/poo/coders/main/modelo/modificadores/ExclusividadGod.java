@@ -1,13 +1,16 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.modificadores;
 
-import java.lang.reflect.Array;
+import poo.coders.main.modelo.Jugador;
+import poo.coders.main.modelo.ModificadorGod;
+import poo.coders.main.modelo.Pregunta;
+
 import java.util.ArrayList;
 
-public class Exclusividad extends Modificador {
+public class ExclusividadGod extends ModificadorGod {
 	private ArrayList<Jugador> jugadores;
 	private int multiplicadorExclusividad;
 
-	public Exclusividad(Jugador jugador1, Jugador jugador2){
+	public ExclusividadGod(Jugador jugador1, Jugador jugador2){
 		this.jugadores = new ArrayList<>();
 		jugadores.add(jugador1);
 		jugadores.add(jugador2);

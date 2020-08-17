@@ -1,4 +1,4 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.modificadores;
 
 public interface Multiplicador {
 	int aplicarMultiplicador(int puntajeBase);

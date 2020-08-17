@@ -2,13 +2,31 @@ package poo.coders.main.modelo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceParcial;
-import poo.coders.main.modelo.comportamientos.ComportamientoVoF;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoFPenalidad;
+import poo.coders.main.modelo.modificadores.Exclusividad;
+import poo.coders.main.modelo.modificadores.SinExclusividad;
 
 import java.util.ArrayList;
 
 public class ExclusividadTest {
+
 	@Test
+	public void test01JugadorActivaExclusividadUnaVezYGana2PuntosEnVOFPenalidad() {
+		Jugador jugador1 = new Jugador("Kevin");
+		Jugador jugador2 = new Jugador("Mitnick");
+		Pregunta preguntaVoF = new Pregunta("Testing", new ComportamientoVoFPenalidad());
+		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
+		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
+		Exclusividad exclusividad = new SinExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
+		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "Es hacker"));
+		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
+
+		Assertions.assertEquals(2, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
+	}
+/*	@Test
 	public void test01JugadorUsaExclusivdadEnPreguntaVoFEligeLaOpcionCorrectaYSuRivalLaIncorrectaGanaDosPuntos(){
 		Jugador jugador1 = new Jugador("1");
 		Jugador jugador2 = new Jugador("2");
@@ -223,4 +241,6 @@ public class ExclusividadTest {
 		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(4, jugador2.getPuntos());
 	}
+
+ */
 }
