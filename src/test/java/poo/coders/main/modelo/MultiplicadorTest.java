@@ -75,4 +75,5 @@ public class MultiplicadorTest {
 
 		Assertions.assertEquals(3, preguntaVoF.obtenerPuntaje(opciones, multiplicador));
 	}
+
 }
