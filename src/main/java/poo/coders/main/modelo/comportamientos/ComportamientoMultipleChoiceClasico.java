@@ -20,13 +20,4 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento {
 		return "Multiple Choice Clasico";
 	}
 
-	public Estado.MultiplicadorBasicoX2 crearMultiplicadorX2(){
-		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
-		throw new RuntimeException();
-	}
-	public Jugador.MultiplicadorBasicoX3 crearMultiplicadorX3(){
-		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
-		throw new RuntimeException();
-	}
-
 }

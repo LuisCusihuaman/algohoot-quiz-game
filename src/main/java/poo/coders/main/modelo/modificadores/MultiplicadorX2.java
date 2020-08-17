@@ -11,4 +11,9 @@ public class MultiplicadorX2 implements Multiplicador {
 		return 0;
 	}
 
+	@Override
+	public int modificarPuntos(int puntos) {
+		return valorMultiplicador * puntos;
+	}
+
 }
