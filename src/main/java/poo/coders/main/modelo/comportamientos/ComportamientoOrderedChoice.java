@@ -1,8 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.MultiplicadorX2;
-import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.List;
 
@@ -23,11 +21,11 @@ public class ComportamientoOrderedChoice extends Comportamiento {
 		return "Ordered Choice";
 	}
 
-	public MultiplicadorX2 crearMultiplicadorX2(){
+	public Estado.MultiplicadorBasicoX2 crearMultiplicadorX2(){
 		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
 	}
-	public MultiplicadorX3 crearMultiplicadorX3(){
+	public Jugador.MultiplicadorBasicoX3 crearMultiplicadorX3(){
 		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
 	}

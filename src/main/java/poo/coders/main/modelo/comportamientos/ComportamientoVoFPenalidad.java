@@ -1,8 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.MultiplicadorX2;
-import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.List;
 
@@ -23,10 +21,10 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return "Verdadero o Falso Penalidad";
 	}
 
-	public MultiplicadorX2 crearMultiplicadorX2(){
-		return new MultiplicadorX2();
+	public Estado.MultiplicadorBasicoX2 crearMultiplicadorX2(){
+		return new Estado.MultiplicadorBasicoX2();
 	}
-	public MultiplicadorX3 crearMultiplicadorX3(){
-		return new MultiplicadorX3();
+	public Jugador.MultiplicadorBasicoX3 crearMultiplicadorX3(){
+		return new Jugador.MultiplicadorBasicoX3();
 	}
 }

@@ -1,8 +1,6 @@
 package poo.coders.main.modelo;
 
 import poo.coders.main.modelo.comportamientos.Comportamiento;
-import poo.coders.main.modelo.modificadores.MultiplicadorX2;
-import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.List;
 
