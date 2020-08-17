@@ -1,7 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.ExclusividadGod;
 import poo.coders.main.modelo.modificadores.MultiplicadorX2;
 import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
@@ -30,8 +29,5 @@ public class ComportamientoMultipleChoiceParcial extends Comportamiento {
 	public MultiplicadorX3 crearMultiplicadorX3(){
 		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
-	}
-	public ExclusividadGod crearExclusividad(Jugador jugador1, Jugador jugador2){
-		return new ExclusividadGod(jugador1, jugador2);
 	}
 }

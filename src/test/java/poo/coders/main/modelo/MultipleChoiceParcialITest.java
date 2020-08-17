@@ -7,6 +7,7 @@ import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceParcia
 import java.util.ArrayList;
 
 public class MultipleChoiceParcialITest {
+	/*
 	@Test
 	public void test01JugadorContestaCon3PreguntasCorrectasGana3Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceParcial());
@@ -142,4 +143,6 @@ public class MultipleChoiceParcialITest {
 			ComportamientoMultipleChoiceParcial comportamiento = new ComportamientoMultipleChoiceParcial(opcionesOriginales);
 		});
 	}
+
+	 */
 }
