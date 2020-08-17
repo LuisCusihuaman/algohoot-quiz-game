@@ -1,6 +1,7 @@
 package poo.coders.main.modelo;
 
 import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.comportamientos.ComportamientoConMultiplicador;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
 import java.util.List;
@@ -43,6 +44,10 @@ public class Pregunta {
 
 	public int obtenerPuntaje(List<Opcion> opcionesDeJugador, Multiplicador multiplicador) {
 		return multiplicador.modificarPuntos(this.comportamiento.obtenerPuntaje(opcionesDeJugador));
+	}
+
+	public void agregarMultiplicadorAJugador(Jugador jugador, Multiplicador multiplicador) {
+		((ComportamientoConMultiplicador)comportamiento).agregarMultiplicadorAJugador(jugador, multiplicador);
 	}
 
 }

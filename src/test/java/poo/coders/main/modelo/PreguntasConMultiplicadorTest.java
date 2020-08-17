@@ -19,7 +19,7 @@ public class PreguntasConMultiplicadorTest {
 		ArrayList<Opcion> opcionesJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesJugador2 = new ArrayList<>();
 		Multiplicador multiplicador = new MultiplicadorX2();
-		preguntaVoF.agregarModificadorAJugador(jugador1, multiplicador);
+		preguntaVoF.agregarMultiplicadorAJugador(jugador1, multiplicador);
 		Exclusividad exclusividad = new SinExclusividad();
 		opcionesJugador1.add(new OpcionCorrecta("1","El pulpo loco"));
 		opcionesJugador2.add(new OpcionIncorrecta("2", "Es buena onda"));

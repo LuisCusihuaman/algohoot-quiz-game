@@ -1,6 +1,7 @@
 package poo.coders.main.modelo;
 
 import poo.coders.main.modelo.modificadores.Multiplicador;
+import poo.coders.main.modelo.modificadores.MultiplicadorBasico;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +12,13 @@ public class Jugador{
 	private int puntajeJugador = 0;
 	private ArrayList<Opcion> respuestasElegidas;
 	private int multiplicador;
+	private Multiplicador multiplicadorClase;
+
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 		respuestasElegidas = new ArrayList<>();
 		multiplicador = 2;
-
+		this.multiplicadorClase = new MultiplicadorBasico();
 	}
 
 	public void elegirOpcion(Opcion opcion){
@@ -25,6 +28,9 @@ public class Jugador{
 		this.respuestasElegidas = respuestasElegidas;
 	}
 
+	public void setMultiplicador(Multiplicador multiplicadorClase) {
+		this.multiplicadorClase = multiplicadorClase;
+	}
 
 	public int getPuntos() {
 		return puntajeJugador;
@@ -35,7 +41,7 @@ public class Jugador{
 	}
 
 	public void ganarPuntaje(int puntaje) {
-		this.puntajeJugador += puntaje;
+		this.puntajeJugador += this.multiplicadorClase.modificarPuntos(puntaje);
 	}
 
 	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
