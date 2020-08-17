@@ -1,10 +1,8 @@
 package poo.coders.main.modelo.modificadores;
 
 import poo.coders.main.modelo.Jugador;
-import poo.coders.main.modelo.Modificador;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Pregunta;
-import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.ArrayList;
 

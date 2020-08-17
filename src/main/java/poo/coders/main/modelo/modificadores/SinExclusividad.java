@@ -27,4 +27,5 @@ public class SinExclusividad implements Exclusividad{
 		this.darPuntosAGanador(jugador1, puntosJugador1);
 		this.darPuntosAGanador(jugador2, puntosJugador2);
 	}
+
 }
