@@ -20,10 +20,78 @@ public class ExclusividadTest {
 		Exclusividad exclusividad = new SinExclusividad();
 		exclusividad = exclusividad.activarExclusividad();
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
-		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "Es hacker"));
+		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
 		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
 
 		Assertions.assertEquals(2, jugador1.getPuntos());
+		Assertions.assertEquals(-1, jugador2.getPuntos());
+	}
+
+	@Test
+	public void test02JugadorActivaExclusividadUnaVezYAmbosRespondenConOpcionesCorrectasEnVoFPenalidadYNoGananPuntos() {
+		Jugador jugador1 = new Jugador("Kevin");
+		Jugador jugador2 = new Jugador("Mitnick");
+		Pregunta preguntaVoF = new Pregunta("Testing", new ComportamientoVoFPenalidad());
+		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
+		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
+		Exclusividad exclusividad = new SinExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
+		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "No es hacker"));
+		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
+		Assertions.assertEquals(0, jugador2.getPuntos());
+	}
+
+	@Test
+	public void test03JugadorNoActivaExclusividadYAmbosRespondenConOpcionesCorrectasEnVoFPenalidadGananPuntosComoSiNoTuvieranExclusividad() {
+		Jugador jugador1 = new Jugador("Kevin");
+		Jugador jugador2 = new Jugador("Mitnick");
+		Pregunta preguntaVoF = new Pregunta("Testing", new ComportamientoVoFPenalidad());
+		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
+		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
+		Exclusividad exclusividad = new SinExclusividad();
+		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
+		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "No es hacker"));
+		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
+
+		Assertions.assertEquals(1, jugador1.getPuntos());
+		Assertions.assertEquals(1, jugador2.getPuntos());
+	}
+	@Test
+	public void test04JugadorActivaExclusividadDosVecesYGana4PuntosEnVOFPenalidad() {
+		Jugador jugador1 = new Jugador("Kevin");
+		Jugador jugador2 = new Jugador("Mitnick");
+		Pregunta preguntaVoF = new Pregunta("Testing", new ComportamientoVoFPenalidad());
+		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
+		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
+		Exclusividad exclusividad = new SinExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
+		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
+		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
+
+		Assertions.assertEquals(4, jugador1.getPuntos());
+		Assertions.assertEquals(-1, jugador2.getPuntos());
+	}
+
+	@Test
+	public void test05JugadorActivaExclusividadDosVecesYAmbosRespondenConOpcionesCorrectasEnVOFPenalidadNoGananPuntos() {
+		Jugador jugador1 = new Jugador("Kevin");
+		Jugador jugador2 = new Jugador("Mitnick");
+		Pregunta preguntaVoF = new Pregunta("Testing", new ComportamientoVoFPenalidad());
+		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
+		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
+		Exclusividad exclusividad = new SinExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = exclusividad.activarExclusividad();
+		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
+		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "No es hacker"));
+		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
+
+		Assertions.assertEquals(0, jugador1.getPuntos());
 		Assertions.assertEquals(0, jugador2.getPuntos());
 	}
 /*	@Test
