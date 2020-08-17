@@ -1,24 +1,18 @@
 package poo.coders.main.modelo.modificadores;
 
-
-import poo.coders.main.modelo.Jugador;
-import poo.coders.main.modelo.ModificadorGod;
-
-public class MultiplicadorX3 extends ModificadorGod implements Multiplicador{
-	private Jugador jugador;
-
-	public MultiplicadorX3(){
-
+public class MultiplicadorX3 implements Multiplicador{
+	@Override
+	public int aplicarMultiplicador(int puntajeBase) {
+		return 0;
 	}
 
 	@Override
-	public int aplicarMultiplicador(int puntajeBase){
-		return puntajeBase * 2;
+	public Multiplicador activarMultiplicadorX2() {
+		return null;
 	}
 
-
 	@Override
-	public void agregarJugador(Jugador jugador) {
-		this.jugador = jugador;
+	public Multiplicador activarMultiplicadorX3() {
+		return null;
 	}
 }

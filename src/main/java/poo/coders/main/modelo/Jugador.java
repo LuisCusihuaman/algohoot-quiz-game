@@ -1,5 +1,7 @@
 package poo.coders.main.modelo;
 
+import poo.coders.main.modelo.modificadores.Multiplicador;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,4 +46,5 @@ public class Jugador{
 	public int puntajeEnPregunta(Pregunta pregunta){
 		return multiplicador * pregunta.obtenerPuntaje(this.respuestasElegidas);
 	}
+
 }
