@@ -21,10 +21,4 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return "Verdadero o Falso Penalidad";
 	}
 
-	public Estado.MultiplicadorBasicoX2 crearMultiplicadorX2(){
-		return new Estado.MultiplicadorBasicoX2();
-	}
-	public Jugador.MultiplicadorBasicoX3 crearMultiplicadorX3(){
-		return new Jugador.MultiplicadorBasicoX3();
-	}
 }

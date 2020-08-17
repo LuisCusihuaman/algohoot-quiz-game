@@ -11,4 +11,9 @@ public class MultiplicadorX3 implements Multiplicador{
 	public int aplicarMultiplicador(int puntajeBase) {
 		return 0;
 	}
+
+	@Override
+	public int modificarPuntos(int puntos) {
+		return valorMultiplicador * puntos;
+	}
 }
