@@ -1,6 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
-import poo.coders.main.modelo.Exclusividad;
+import poo.coders.main.modelo.modificadores.ExclusividadGod;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Puntaje;
 import poo.coders.main.modelo.PuntajePenalidad;
@@ -29,7 +29,7 @@ public class ComportamientoMultipleChoicePenalidad extends Comportamiento {
 	public int activarMultiplicadorX3(){
 		return 3;
 	}
-	public void activarExclusividad(Exclusividad exclusividad){
+	public void activarExclusividad(ExclusividadGod exclusividadGod){
 		throw new RuntimeException();
 	}
 

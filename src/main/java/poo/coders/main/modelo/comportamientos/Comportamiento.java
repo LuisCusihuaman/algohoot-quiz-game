@@ -1,6 +1,9 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.ExclusividadGod;
+import poo.coders.main.modelo.modificadores.MultiplicadorX2;
+import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +45,7 @@ public abstract class Comportamiento {
 
 	public abstract MultiplicadorX2 crearMultiplicadorX2();
 	public abstract MultiplicadorX3 crearMultiplicadorX3();
-	public abstract Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2);
+	public abstract ExclusividadGod crearExclusividad(Jugador jugador1, Jugador jugador2);
 
 
 

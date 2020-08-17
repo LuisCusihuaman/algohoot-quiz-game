@@ -1,6 +1,9 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.ExclusividadGod;
+import poo.coders.main.modelo.modificadores.MultiplicadorX2;
+import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 
 import java.util.List;
 
@@ -29,7 +32,7 @@ public class ComportamientoVoF extends Comportamiento {
 		//TODO: NoSePuedeCrearMultiplicadorEnPreguntaSinPenalidadException
 		throw new RuntimeException();
 	}
-	public Exclusividad crearExclusividad(Jugador jugador1, Jugador jugador2){
-		return new Exclusividad(jugador1, jugador2);
+	public ExclusividadGod crearExclusividad(Jugador jugador1, Jugador jugador2){
+		return new ExclusividadGod(jugador1, jugador2);
 	}
 }

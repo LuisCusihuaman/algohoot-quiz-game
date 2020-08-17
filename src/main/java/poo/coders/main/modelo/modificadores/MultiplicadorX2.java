@@ -1,6 +1,9 @@
-package poo.coders.main.modelo;
+package poo.coders.main.modelo.modificadores;
 
-public class MultiplicadorX2 extends Modificador implements Multiplicador{
+import poo.coders.main.modelo.Jugador;
+import poo.coders.main.modelo.ModificadorGod;
+
+public class MultiplicadorX2 extends ModificadorGod implements Multiplicador{
 	private Jugador jugador;
 
 	public MultiplicadorX2(){
