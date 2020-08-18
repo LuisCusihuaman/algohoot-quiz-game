@@ -12,6 +12,7 @@ public class Pregunta {
 	private String enunciado;
 	private List<Opcion> opciones;
 	private Comportamiento comportamiento;
+	private Pregunta siguientePregunta;
 
 
 	public Pregunta(String enunciado, Comportamiento comportamiento) {
@@ -22,6 +23,13 @@ public class Pregunta {
 	public Pregunta(String enunciado, Comportamiento comportamiento, List<Opcion> opciones) {
 		this(enunciado, comportamiento);
 		this.opciones = opciones;
+	}
+
+	public void setSiguientePregunta(Pregunta siguientePregunta) {
+		this.siguientePregunta = siguientePregunta;
+	}
+	public Pregunta getSiguientePregunta() {
+		return siguientePregunta;
 	}
 
 	public List<Opcion> getOpciones() {
