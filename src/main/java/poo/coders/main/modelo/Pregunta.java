@@ -1,7 +1,9 @@
 package poo.coders.main.modelo;
 
 import poo.coders.main.modelo.comportamientos.Comportamiento;
+import poo.coders.main.modelo.comportamientos.ComportamientoConExclusividad;
 import poo.coders.main.modelo.comportamientos.ComportamientoConMultiplicador;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
 import java.util.List;
@@ -50,4 +52,7 @@ public class Pregunta {
 		((ComportamientoConMultiplicador)comportamiento).agregarMultiplicadorAJugador(jugador, multiplicador);
 	}
 
+	public Exclusividad activarExclusividad(Exclusividad exclusividad) {
+		return ((ComportamientoConExclusividad)comportamiento).activarExclusividad(exclusividad);
+	}
 }

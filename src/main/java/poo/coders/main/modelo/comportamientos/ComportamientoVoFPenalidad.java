@@ -1,10 +1,11 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.List;
 
-public class ComportamientoVoFPenalidad extends Comportamiento {
+public class ComportamientoVoFPenalidad extends Comportamiento implements ComportamientoConExclusividad{
 	public ComportamientoVoFPenalidad(){
 
 	}
@@ -21,4 +22,8 @@ public class ComportamientoVoFPenalidad extends Comportamiento {
 		return "Verdadero o Falso Penalidad";
 	}
 
+	@Override
+	public Exclusividad activarExclusividad(Exclusividad exclusividad) {
+		return exclusividad.activarExclusividad();
+	}
 }

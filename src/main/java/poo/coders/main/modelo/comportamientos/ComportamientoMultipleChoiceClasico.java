@@ -1,10 +1,11 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Multiplicador;
 
 import java.util.List;
 
-public class ComportamientoMultipleChoiceClasico extends Comportamiento {
+public class ComportamientoMultipleChoiceClasico extends Comportamiento implements ComportamientoConMultiplicador {
 	public ComportamientoMultipleChoiceClasico(){
 	}
 	public ComportamientoMultipleChoiceClasico(List<Opcion> opciones){
@@ -20,4 +21,8 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento {
 		return "Multiple Choice Clasico";
 	}
 
+	@Override
+	public void agregarMultiplicadorAJugador(Jugador jugador, Multiplicador multiplicador) {
+		jugador.setMultiplicador(multiplicador);
+	}
 }

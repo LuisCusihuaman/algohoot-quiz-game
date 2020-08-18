@@ -1,6 +1,7 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,4 +40,5 @@ public abstract class Comportamiento {
 	public abstract String getTipoPregunta();
 
 	protected abstract Puntaje crearPuntaje();
+
 }

@@ -20,7 +20,7 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
 		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
@@ -37,7 +37,7 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "No es hacker"));
 		exclusividad.definirPuntosJugadoresEnPregunta(preguntaVoF, jugador1, jugador2, opcionesElegidasPorJugador1, opcionesElegidasPorJugador2);
@@ -69,8 +69,8 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
 
@@ -88,8 +88,8 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "No es hacker"));
 
@@ -107,7 +107,7 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
 
@@ -125,7 +125,7 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionCorrecta("2", "Es hacker"));
 
@@ -142,8 +142,8 @@ public class ExclusividadTest {
 		ArrayList<Opcion> opcionesElegidasPorJugador1 = new ArrayList<>();
 		ArrayList<Opcion> opcionesElegidasPorJugador2 = new ArrayList<>();
 		Exclusividad exclusividad = new SinExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
-		exclusividad = exclusividad.activarExclusividad();
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
+		exclusividad = preguntaVoF.activarExclusividad(exclusividad);
 		opcionesElegidasPorJugador1.add(new OpcionCorrecta("1", "Es QA"));
 		opcionesElegidasPorJugador2.add(new OpcionIncorrecta("2", "No es hacker"));
 
