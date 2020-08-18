@@ -8,7 +8,7 @@ public class Juego {
 	//private Turno turno;
 	//private Estado estado;
 
-	private ArrayList<Jugador> jugadores;
+	private Jugador jugadorActual;
 	private ArrayList<Pregunta> preguntas;
 	ArrayList<ArrayList<Opcion>> respuestasDeJugadores;
 	int indexJugadorActual;
@@ -17,9 +17,7 @@ public class Juego {
 	public Juego() {
 		//this.turno = new Turno();
 		//this.estado = Estado.INICIO;
-		this.jugadores = new ArrayList<>();
-		this.jugadores.add(new Jugador("placeholder"));
-		this.jugadores.add(new Jugador("placeholder"));
+
 		this.preguntas = new Parser().parsear();
 		this.respuestasDeJugadores = new ArrayList<>();
 		this.respuestasDeJugadores.add(new ArrayList<>());
@@ -31,15 +29,32 @@ public class Juego {
 
 
 	public void empezarJuego(String nombreJugador1, String nombreJugador2) {
-		this.jugadores.set(0, new Jugador(nombreJugador1));
-		this.jugadores.set(1, new Jugador(nombreJugador2));
+		Jugador jugador1 = new Jugador(nombreJugador1);
+		Jugador jugador2 = new Jugador(nombreJugador2);
+		jugador1.setJugadorSiguiente(jugador2);
+		jugador2.setJugadorSiguiente(jugador1);
+		this.jugadorActual = jugador1;
+
 	}
 
+	private void elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas){
+		jugadorActual.elegirRespuestasAPreguntaActual(respuestasElegidas);
+	}
 
-	public void siguienteTurno(ArrayList<Opcion> respuestasJugadorActual) {
+	public void siguienteTurno(ArrayList<Opcion> respuestasElegidas) {
+		//TODO: Refactorizar modelo para adaptar
+		// a cambios en Jugador y Pregunta (Ahora son enlazados)
+
+		this.elegirRespuestasAPreguntaActual(respuestasElegidas);
+		jugadorActual.siguientePregunta();
+		this.jugadorActual = jugadorActual.procesarPreguntaActual();
+
+/*
 		respuestasDeJugadores.set(indexJugadorActual, respuestasJugadorActual);
 		indexJugadorActual++;
 		indexJugadorActual %= jugadores.size();
+
+ */
 	/*	if (indexJugadorActual == 0) {
 			preguntas.get(indexPreguntaActual).darPuntosAJugadores(jugadores.get(0), jugadores.get(1), respuestasDeJugadores.get(0), respuestasDeJugadores.get(1));
 			if (preguntas.size() - 1 != indexPreguntaActual) {
@@ -51,7 +66,7 @@ public class Juego {
 	}
 
 	public Jugador getJugadorActual() {
-		return jugadores.get(indexJugadorActual);
+		return jugadorActual;
 	}
 
 	public Pregunta getPreguntaActual() {
