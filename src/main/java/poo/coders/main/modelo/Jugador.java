@@ -14,7 +14,7 @@ public class Jugador{
 	private Multiplicador multiplicadorClase;
 	private ArrayList<Opcion> respuestasElegidas;
 	private Jugador jugadorSiguiente;
-	private Pregunta preguntaActual;
+
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
@@ -25,6 +25,9 @@ public class Jugador{
 
 	public void setJugadorSiguiente(Jugador jugadorSiguiente){
 		this.jugadorSiguiente = jugadorSiguiente;
+	}
+	public Jugador getJugadorSiguiente(){
+		return this.jugadorSiguiente;
 	}
 
 	public void elegirOpcion(Opcion opcion){
@@ -58,17 +61,9 @@ public class Jugador{
 		return multiplicador * pregunta.obtenerPuntaje(this.respuestasElegidas);
 	}
 
-	public Jugador procesarPreguntaActual(){
-		this.procesarPregunta(preguntaActual, respuestasElegidas);
-		this.siguientePregunta();
-		return this.jugadorSiguiente;
-	}
 	public void elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas){
 		this.respuestasElegidas = respuestasElegidas;
 	}
 
-	public void siguientePregunta(){
-		this.preguntaActual = preguntaActual.getSiguientePregunta();
-	}
 
 }
