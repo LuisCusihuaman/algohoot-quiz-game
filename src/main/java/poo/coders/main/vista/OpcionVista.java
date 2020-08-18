@@ -4,6 +4,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
+import java.util.Set;
+
 public class OpcionVista extends AnchorPane {
 	private Label opcionTexto;
 	ComboBox opcionSelecion;
@@ -26,5 +28,13 @@ public class OpcionVista extends AnchorPane {
 
 		this.getChildren().add(opcionTexto);
 		this.getChildren().add(opcionSelecion);
+	}
+
+	public void agregarOpcionSeleccionBox(String opcionSeleccion) {
+		opcionSelecion.getItems().add(opcionSeleccion);
+	}
+
+	public void agregarOpcionesSeleccionBox(Set<String> opcionesSeleccion) {
+		opcionSelecion.getItems().addAll(opcionesSeleccion);
 	}
 }
