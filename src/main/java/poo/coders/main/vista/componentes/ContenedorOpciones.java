@@ -8,7 +8,7 @@ public class ContenedorOpciones extends VBox {
 	public ContenedorOpciones() {
 		this.setId("ContenedorOpciones");
 		this.setStyle("-fx-background-color: C4C4C4");
-		this.setMinHeight(432);
+		this.setMinHeight(422);
 	}
 
 	public void agregarOpcion(OpcionVista opcionVista) {

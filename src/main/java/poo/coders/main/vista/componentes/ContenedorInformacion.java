@@ -2,6 +2,7 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.TextAlignment;
 
 public class ContenedorInformacion extends AnchorPane {
 	Label tipoPregunta;
@@ -24,9 +25,12 @@ public class ContenedorInformacion extends AnchorPane {
 		this.nombreJugador.setText(nombreJugador);
 
 		this.preguntaEnunciado = new Label();
-		this.preguntaEnunciado.setLayoutX(93);
+		this.preguntaEnunciado.setLayoutX(20);
 		this.preguntaEnunciado.setLayoutY(48);
 		this.preguntaEnunciado.setText(preguntaEnunciado);
+		this.preguntaEnunciado.setWrapText(true);
+		this.preguntaEnunciado.setTextAlignment(TextAlignment.JUSTIFY);
+		this.preguntaEnunciado.setMaxWidth(320);
 
 		this.getChildren().addAll(this.tipoPregunta, this.nombreJugador, this.preguntaEnunciado);
 

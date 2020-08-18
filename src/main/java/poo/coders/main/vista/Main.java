@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import poo.coders.main.vista.componentes.*;
+import poo.coders.main.vista.componentes.botones.BotonExclusividad;
+import poo.coders.main.vista.componentes.botones.BotonX2;
+import poo.coders.main.vista.componentes.botones.BotonX3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +34,12 @@ public class Main extends Application {
 		primaryStage.setTitle("algohoot");
 		ContenedorJuego contenedorJuego = new ContenedorJuego();
 
-		ContenedorInformacion contenedorInformacion = new ContenedorInformacion("TIPO PREGUNTA", "NOMBRE JUGADOR", "PREGUNTA ENUNCIADO");
+		ContenedorInformacion contenedorInformacion = new ContenedorInformacion("TIPO PREGUNTA", "NOMBRE JUGADOR", "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected");
 
 		ContenedorModificadores contenedorModificadores = new ContenedorModificadores();
+		contenedorModificadores.agregarBoton(new BotonX2());
+		contenedorModificadores.agregarBoton(new BotonX3());
+		contenedorModificadores.agregarBoton(new BotonExclusividad());
 
 		ContenedorOpciones contenedorOpciones = new ContenedorOpciones();
 		List<OpcionVista> opcionesVista = new ArrayList<>();
@@ -42,6 +48,7 @@ public class Main extends Application {
 		opcionesVista.add(new OpcionVista("OPCION 3"));
 		opcionesVista.add(new OpcionVista("OPCION 4"));
 		opcionesVista.add(new OpcionVista("OPCION 5"));
+		opcionesVista.add(new OpcionVista("OPCION 6"));
 		opcionesVista.forEach(contenedorOpciones::agregarOpcion);
 
 		ContenedorSiguiente contenedorSiguiente = new ContenedorSiguiente();
