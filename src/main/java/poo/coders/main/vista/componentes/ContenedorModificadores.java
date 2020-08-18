@@ -6,9 +6,6 @@ import javafx.scene.layout.AnchorPane;
 
 public class ContenedorModificadores extends AnchorPane {
 	Label timer;
-	Button btnX2;
-	Button btnX3;
-	Button btnExclusividad;
 
 	public ContenedorModificadores() {
 		this.setId("ContenedorModificadores");
@@ -21,22 +18,10 @@ public class ContenedorModificadores extends AnchorPane {
 		this.timer.setPrefHeight(28);
 		this.timer.setPrefWidth(69);
 		this.timer.setText("TIMER");//falta setear su tamaño a 17
+		this.getChildren().add(this.timer);
+	}
 
-		this.btnX2 = new Button();
-		this.btnX2.setLayoutX(120);
-		this.btnX2.setLayoutY(20);
-		this.btnX2.setText("X2");
-
-		this.btnX3 = new Button();
-		this.btnX3.setLayoutX(180);
-		this.btnX3.setLayoutY(20);
-		this.btnX3.setText("X3");
-
-		this.btnExclusividad = new Button();
-		this.btnExclusividad.setLayoutX(237);
-		this.btnExclusividad.setLayoutY(20);
-		this.btnExclusividad.setText("EXCLUSIVIDAD");
-
-		this.getChildren().addAll(this.timer, this.btnX2, this.btnX3, this.btnExclusividad);
+	public void agregarBoton(Button button) {
+		this.getChildren().add(button);
 	}
 }
