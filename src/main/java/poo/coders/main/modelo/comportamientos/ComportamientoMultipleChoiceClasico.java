@@ -1,11 +1,12 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
 import java.util.List;
 
-public class ComportamientoMultipleChoiceClasico extends Comportamiento implements ComportamientoConMultiplicador {
+public class ComportamientoMultipleChoiceClasico extends Comportamiento implements ComportamientoConExclusividad {
 	public ComportamientoMultipleChoiceClasico(){
 	}
 	public ComportamientoMultipleChoiceClasico(List<Opcion> opciones){
@@ -22,7 +23,7 @@ public class ComportamientoMultipleChoiceClasico extends Comportamiento implemen
 	}
 
 	@Override
-	public void agregarMultiplicadorAJugador(Jugador jugador, Multiplicador multiplicador) {
-		jugador.setMultiplicador(multiplicador);
+	public Exclusividad activarExclusividad(Exclusividad exclusividad) {
+		return exclusividad.activarExclusividad();
 	}
 }

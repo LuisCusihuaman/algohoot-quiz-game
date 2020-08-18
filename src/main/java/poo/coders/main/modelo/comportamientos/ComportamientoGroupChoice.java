@@ -1,10 +1,11 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.List;
 
-public class ComportamientoGroupChoice extends Comportamiento {
+public class ComportamientoGroupChoice extends Comportamiento implements ComportamientoConExclusividad {
 	public ComportamientoGroupChoice(){
 	}
 
@@ -21,4 +22,8 @@ public class ComportamientoGroupChoice extends Comportamiento {
 		return "Group Choice";
 	}
 
+	@Override
+	public Exclusividad activarExclusividad(Exclusividad exclusividad) {
+		return exclusividad.activarExclusividad();
+	}
 }
