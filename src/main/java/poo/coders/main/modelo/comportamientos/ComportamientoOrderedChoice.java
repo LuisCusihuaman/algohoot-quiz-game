@@ -1,10 +1,11 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.List;
 
-public class ComportamientoOrderedChoice extends Comportamiento {
+public class ComportamientoOrderedChoice extends Comportamiento implements ComportamientoConExclusividad {
 	public ComportamientoOrderedChoice(){
 	}
 	public ComportamientoOrderedChoice(List<Opcion> opciones){
@@ -21,4 +22,8 @@ public class ComportamientoOrderedChoice extends Comportamiento {
 		return "Ordered Choice";
 	}
 
+	@Override
+	public Exclusividad activarExclusividad(Exclusividad exclusividad) {
+		return exclusividad.activarExclusividad();
+	}
 }
