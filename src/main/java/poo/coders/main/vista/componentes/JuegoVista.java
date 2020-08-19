@@ -1,5 +1,7 @@
 package poo.coders.main.vista.componentes;
 
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Observer;
 import poo.coders.main.modelo.Opcion;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 
 public class JuegoVista implements Observer {
 	JuegoMock juegoMock;
+	Stage primaryStage;
 	ContenedorJuego contenedorJuego;
 	ContenedorInformacion contenedorInformacion;
 	ContenedorModificadores contenedorModificadores;
@@ -80,7 +83,6 @@ public class JuegoVista implements Observer {
 	public JuegoVista(JuegoMock juegoMock) {
 		this.juegoMock = juegoMock;
 		//OBTENES DATOS DEL MODELO
-		this.juegoMock.empezarJuego("Pepin", "Pedrin");
 		Pregunta pregunta = juegoMock.getPreguntaActual();
 		String nombreJugador = juegoMock.getJugadorActual().getNombre();
 		String tipoDePregunta = pregunta.getTipoPregunta();
@@ -106,6 +108,8 @@ public class JuegoVista implements Observer {
 		setearJuego(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
 		this.contenedorJuego.getChildren().removeAll();
 		this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
+		Scene scene = new Scene(this.contenedorJuego);
+		this.primaryStage.setScene(scene);
 	}
 
 	public ContenedorJuego mostrar() {
