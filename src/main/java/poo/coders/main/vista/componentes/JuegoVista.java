@@ -82,6 +82,11 @@ public class JuegoVista implements Observer {
 
 	public JuegoVista(JuegoMock juegoMock) {
 		this.juegoMock = juegoMock;
+	}
+
+
+	@Override
+	public void update() {
 		//OBTENES DATOS DEL MODELO
 		Pregunta pregunta = juegoMock.getPreguntaActual();
 		String nombreJugador = juegoMock.getJugadorActual().getNombre();
@@ -91,21 +96,6 @@ public class JuegoVista implements Observer {
 		//CONFIGURAS LA VISTA
 		setearJuego(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
 		//CREAS EL CONTENDOR-VISTA-JUEGO
-		this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
-	}
-
-
-	@Override
-	public void update() {
-		/*pregunta.setText(this.juego.getPreguntaActual().getEnunciado());
-		nombreJugador.setText(this.juego.getJugadorActual().getNombre());
-		tipoPregunta.setText(this.juego.getTipoPregunta());*/
-		Pregunta pregunta = juegoMock.getPreguntaActual();
-		String nombreJugador = juegoMock.getJugadorActual().getNombre();
-		String tipoDePregunta = pregunta.getTipoPregunta();
-		List<Opcion> opciones = pregunta.getOpciones();
-		Set<String> claves = opciones.stream().map(Opcion::getClave).collect(Collectors.toSet());
-		setearJuego(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
 		this.contenedorJuego.getChildren().removeAll();
 		this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
 		Scene scene = new Scene(this.contenedorJuego);
@@ -114,5 +104,9 @@ public class JuegoVista implements Observer {
 
 	public ContenedorJuego mostrar() {
 		return this.contenedorJuego;
+	}
+
+	public void setVentana(Stage ventana) {
+		this.primaryStage = ventana;
 	}
 }

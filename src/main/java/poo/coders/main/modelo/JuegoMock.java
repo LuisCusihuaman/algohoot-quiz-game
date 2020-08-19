@@ -38,6 +38,7 @@ public class JuegoMock implements Observable {
 	public void empezarJuego(String nombreJugador1, String nombreJugador2) {
 		this.jugadores.set(0, new Jugador(nombreJugador1));
 		this.jugadores.set(1, new Jugador(nombreJugador2));
+		this.notifyObservers();
 	}
 
 	public void siguienteTurno(ArrayList<Opcion> respuestasJugadorActual) {
