@@ -76,7 +76,7 @@ public class JuegoVista implements Observer {
 		this.contenedorInformacion = new ContenedorInformacion(tipoDePregunta, nombreJugador, pregunta.getEnunciado());
 		this.contenedorModificadores = getContenedorModificadores(tipoDePregunta);
 		this.contenedorOpciones = getContenedorOpciones(tipoDePregunta, opciones, claves);
-		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock);
+		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock,this);
 	}
 
 
@@ -104,6 +104,13 @@ public class JuegoVista implements Observer {
 
 	public ContenedorJuego mostrar() {
 		return this.contenedorJuego;
+	}
+
+	public List<Opcion> obtenerRespuestaJugador() {
+		//ifs es grupchoice agarrar la lista y volver a crear otra pero construyendo con opcionconjunto
+		List<Opcion> opciones = this.contenedorOpciones.obtenerRespuestas();
+
+		return opciones;
 	}
 
 	public void setVentana(Stage ventana) {
