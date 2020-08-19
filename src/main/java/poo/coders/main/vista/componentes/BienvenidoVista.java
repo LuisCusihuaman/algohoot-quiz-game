@@ -14,7 +14,6 @@ import poo.coders.main.modelo.JuegoMock;
 public class BienvenidoVista {
 	JuegoVista juegoVista;
 	ContenedorJuego contenedorJuego;
-	Stage ventana;
 
 	public BienvenidoVista(JuegoVista juegoVista, JuegoMock juegoMock, Stage ventana) {
 		this.juegoVista = juegoVista;

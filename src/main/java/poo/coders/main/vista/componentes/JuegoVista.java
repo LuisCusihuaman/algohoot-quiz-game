@@ -76,7 +76,7 @@ public class JuegoVista implements Observer {
 		this.contenedorInformacion = new ContenedorInformacion(tipoDePregunta, nombreJugador, pregunta.getEnunciado());
 		this.contenedorModificadores = getContenedorModificadores(tipoDePregunta);
 		this.contenedorOpciones = getContenedorOpciones(tipoDePregunta, opciones, claves);
-		this.contenedorSiguiente = new ContenedorSiguiente();
+		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock);
 	}
 
 
