@@ -85,7 +85,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>poo.coders.main.App</mainClass>
+                    <mainClass>poo.coders.main.vista.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
