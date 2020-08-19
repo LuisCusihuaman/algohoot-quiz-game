@@ -90,14 +90,14 @@ public class Juego {
 	public void activarExclusividad(){
 		this.exclusividadActual = preguntaActual.activarExclusividad(exclusividadActual);
 	}
-/*
+
 	public Pregunta getPreguntaActual() {
-		return preguntas.get(indexPreguntaActual);
+		return this.preguntaActual;
 	}
 
 	public String getTipoPregunta() {
-		return preguntas.get(indexPreguntaActual).getTipoPregunta();
+		return this.preguntaActual.getTipoPregunta();
 	}
- */
+
 
 }
