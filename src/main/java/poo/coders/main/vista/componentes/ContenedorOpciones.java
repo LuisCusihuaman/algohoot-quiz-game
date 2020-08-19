@@ -1,7 +1,13 @@
 package poo.coders.main.vista.componentes;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
+import poo.coders.main.modelo.Opcion;
 import poo.coders.main.vista.OpcionVista;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContenedorOpciones extends VBox {
 
@@ -13,5 +19,15 @@ public class ContenedorOpciones extends VBox {
 
 	public void agregarOpcion(OpcionVista opcionVista) {
 		this.getChildren().add(opcionVista);
+	}
+
+	public List<Opcion> obtenerRespuestas() {
+		List<Opcion> opcionModelo = new ArrayList<>();
+		ObservableList<Node> opcionesVista = this.getChildren();
+		for (Node opcion : opcionesVista) {
+			OpcionVista opc = (OpcionVista) opcion;
+			opcionModelo.add(opc.obtenerOpcionActual());
+		}
+		return opcionModelo;
 	}
 }

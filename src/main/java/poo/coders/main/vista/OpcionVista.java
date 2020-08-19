@@ -3,6 +3,7 @@ package poo.coders.main.vista;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import poo.coders.main.modelo.Opcion;
 
 import java.util.Set;
 
@@ -36,5 +37,11 @@ public class OpcionVista extends AnchorPane {
 
 	public void agregarOpcionesSeleccionBox(Set<String> opcionesSeleccion) {
 		opcionSelecion.getItems().addAll(opcionesSeleccion);
+	}
+
+	public Opcion obtenerOpcionActual() {
+		String opcionSelecion = (String) this.opcionSelecion.getValue();
+		String opcionTexto = this.opcionTexto.getText();
+		return new Opcion(opcionTexto, opcionSelecion);
 	}
 }
