@@ -18,6 +18,7 @@ public class BienvenidoVista {
 
 	public BienvenidoVista(JuegoVista juegoVista, JuegoMock juegoMock, Stage ventana) {
 		this.juegoVista = juegoVista;
+		this.juegoVista.setVentana(ventana);
 		this.contenedorJuego = new ContenedorJuego();
 		AnchorPane anchorPane = new AnchorPane();
 		anchorPane.setId("TITULO");
@@ -74,7 +75,7 @@ public class BienvenidoVista {
 		button.setLayoutX(135);
 		button.setLayoutY(26);
 		button.setText("COMENZAR");
-		button.setOnAction(new EmpezarHandlerBoton(ventana,juegoVista,juegoMock));
+		button.setOnAction(new EmpezarHandlerBoton(juegoMock,textField1,textField2));
 		anchorPane3.getChildren().add(button);
 		vBox.getChildren().addAll(anchorPane1, anchorPane2);
 		anchorPane.getChildren().add(label);

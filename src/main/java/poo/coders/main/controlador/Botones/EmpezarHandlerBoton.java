@@ -2,27 +2,22 @@ package poo.coders.main.controlador.Botones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 import poo.coders.main.modelo.JuegoMock;
-import poo.coders.main.vista.componentes.JuegoVista;
 
 public class EmpezarHandlerBoton implements EventHandler<ActionEvent> {
-	private Stage ventana;
-	JuegoVista juegoVista;
+	private final TextField t2;
+	private final TextField t1;
 	JuegoMock juegoMock;
 
-	public EmpezarHandlerBoton(Stage ventana, JuegoVista juegoVista, JuegoMock juegoMock) {
-		this.ventana = ventana;
-		this.juegoVista = juegoVista;
+	public EmpezarHandlerBoton(JuegoMock juegoMock, TextField t1, TextField t2) {
 		this.juegoMock = juegoMock;
+		this.t1 = t1;
+		this.t2 = t2;
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-		juegoMock.empezarJuego("pedrin", "pedron");
-		Scene scene = new Scene(this.juegoVista.mostrar());
-		ventana.setScene(scene);
-		ventana.show();
+		juegoMock.empezarJuego(t1.getText(), t2.getText());
 	}
 }
