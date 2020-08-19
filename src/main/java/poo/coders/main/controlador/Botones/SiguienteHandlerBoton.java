@@ -2,19 +2,30 @@ package poo.coders.main.controlador.Botones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.TextField;
 import poo.coders.main.modelo.JuegoMock;
+import poo.coders.main.modelo.Opcion;
+import poo.coders.main.vista.componentes.JuegoVista;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SiguienteHandlerBoton implements EventHandler<ActionEvent> {
 	JuegoMock juegoMock;
+	JuegoVista juegoVista;
 
-	public SiguienteHandlerBoton(JuegoMock juegoMock) {
+	public SiguienteHandlerBoton(JuegoMock juegoMock, JuegoVista juegoVista) {
 		this.juegoMock = juegoMock;
-
+		this.juegoVista = juegoVista;
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-		this.juegoMock.siguienteTurno(null);
+		List<Opcion> opcJugActual = this.juegoVista.obtenerRespuestaJugador();
+		ArrayList<Opcion> opcionesAnalizadas = new ArrayList<>();
+
+		for (Opcion opcionActual : opcJugActual) {
+			opcionesAnalizadas.add(this.juegoMock.evaluarOpcion(opcionActual));
+		}
+		this.juegoMock.siguienteTurno(opcionesAnalizadas);
 	}
 }
