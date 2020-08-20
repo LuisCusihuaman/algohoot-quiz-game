@@ -2,7 +2,6 @@ package poo.coders.main.modelo.modificadores;
 
 import poo.coders.main.modelo.*;
 
-import java.util.ArrayList;
 
 public class SinExclusividad implements Exclusividad{
 	@Override

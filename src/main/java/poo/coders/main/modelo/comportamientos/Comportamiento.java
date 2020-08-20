@@ -1,7 +1,6 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
-import poo.coders.main.modelo.modificadores.Exclusividad;
 
 import java.util.ArrayList;
 import java.util.List;

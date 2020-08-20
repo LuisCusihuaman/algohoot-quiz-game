@@ -16,13 +16,10 @@ public class VoFBuilder implements Builder {
 
 	@Override
 	public void asignarComportamiento(String tipoPuntaje) {
-		switch (tipoPuntaje) {
-			case "Clasico":
-				comportamiento = new ComportamientoVoF();
-				break;
-			case "Penalidad":
-				comportamiento = new ComportamientoVoFPenalidad();
-				break;
+		if (tipoPuntaje.equals("Clasico")) {
+			comportamiento = new ComportamientoVoF();
+		} else if (tipoPuntaje.equals("Penalidad")) {
+			comportamiento = new ComportamientoVoFPenalidad();
 		}
 	}
 

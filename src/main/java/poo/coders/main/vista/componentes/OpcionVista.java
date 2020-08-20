@@ -47,9 +47,9 @@ public class OpcionVista extends AnchorPane {
 	}
 
 	public OpcionConjunto obtenerOpcionActual() {
-		String opcionSelecion = (String) this.opcionSelecion.getValue();
-		String opcionTexto = this.opcionTexto.getText();
-		return new OpcionConjunto(new Opcion(this.claveOriginal, opcionTexto), opcionSelecion);
+		String opcionSelecionUsuario = (String) this.opcionSelecion.getValue();
+		String opcionTextoUI = this.opcionTexto.getText();
+		return new OpcionConjunto(new Opcion(this.claveOriginal, opcionTextoUI), opcionSelecionUsuario);
 	}
 	public void setearPrimeraOpcion(){
 		this.opcionSelecion.getSelectionModel().selectFirst();

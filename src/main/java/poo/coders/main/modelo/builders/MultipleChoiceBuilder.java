@@ -6,6 +6,7 @@ import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceClasic
 import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceParcial;
 import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoicePenalidad;
 import poo.coders.main.modelo.data.OpcionSerializada;
+import poo.coders.main.modelo.excepciones.DiferenteTipoPreguntaException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,8 @@ public class MultipleChoiceBuilder implements Builder {
 			case "Penalidad":
 				comportamiento = new ComportamientoMultipleChoicePenalidad();
 				break;
+			default:
+				throw new DiferenteTipoPreguntaException();
 		}
 	}
 

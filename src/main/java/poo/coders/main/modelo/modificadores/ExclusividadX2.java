@@ -4,7 +4,7 @@ import poo.coders.main.modelo.Jugador;
 import poo.coders.main.modelo.Pregunta;
 
 public class ExclusividadX2 implements Exclusividad{
-	public int valorExclusividad;
+	private int valorExclusividad;
 
 	public ExclusividadX2() {
 		this.valorExclusividad = 2;
@@ -33,7 +33,7 @@ public class ExclusividadX2 implements Exclusividad{
 		if(puntosJugador1 > puntosJugador2) {
 			this.darPuntosAGanador(jugadorActual, puntosJugador1);
 			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador2);
-		} else if (puntosJugador1 < puntosJugador2) {
+		} else {
 			this.darPuntosAGanador(jugadorActual, puntosJugador2);
 			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador1);
 		}

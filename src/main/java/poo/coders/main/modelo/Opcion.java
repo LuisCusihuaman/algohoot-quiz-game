@@ -29,7 +29,6 @@ public class Opcion {
 
 	public Respuesta convertirEnRespuesta() {
 
-		// TODO: Crear una Exception especifica para esto.
 		throw new ImposibleConvertirEnRespuestaException();
 	}
 

@@ -1,13 +1,10 @@
 package poo.coders.main.modelo.modificadores;
 
 import poo.coders.main.modelo.Jugador;
-import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Pregunta;
 
-import java.util.ArrayList;
-
 public class ExclusividadX4 implements Exclusividad {
-	public int valorExclusividad;
+	private int valorExclusividad;
 
 	public ExclusividadX4() {
 		this.valorExclusividad = 4;
@@ -36,7 +33,7 @@ public class ExclusividadX4 implements Exclusividad {
 		if(puntosJugador1 > puntosJugador2) {
 			this.darPuntosAGanador(jugadorActual, puntosJugador1);
 			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador2);
-		} else if (puntosJugador1 < puntosJugador2) {
+		} else {
 			this.darPuntosAGanador(jugadorActual, puntosJugador2);
 			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador1);
 		}

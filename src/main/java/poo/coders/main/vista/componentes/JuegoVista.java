@@ -25,19 +25,19 @@ public class JuegoVista implements Observer {
 	ContenedorSiguiente contenedorSiguiente;
 
 	private ContenedorModificadores getContenedorModificadores(String tipoDePregunta) {
-		ContenedorModificadores contenedorModificadores = new ContenedorModificadores();
+		ContenedorModificadores contenedorModificadoresConBotones = new ContenedorModificadores();
 
 		if (tipoDePregunta.contains("Penalidad")) {
-			contenedorModificadores.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juego)));
-			contenedorModificadores.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juego)));
+			contenedorModificadoresConBotones.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juego)));
+			contenedorModificadoresConBotones.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juego)));
 		} else {
-			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juego, this)));
+			contenedorModificadoresConBotones.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juego, this)));
 		}
-		return contenedorModificadores;
+		return contenedorModificadoresConBotones;
 	}
 
 	private ContenedorOpciones getContenedorOpciones(String tipoDePregunta, List<Opcion> opciones, Set<String> claves) {
-		ContenedorOpciones contenedorOpciones = new ContenedorOpciones();
+		ContenedorOpciones contenedorOpcionesConPreguntas = new ContenedorOpciones();
 
 		List<OpcionVista> opcionesVista = new ArrayList<>();
 
@@ -71,8 +71,8 @@ public class JuegoVista implements Observer {
 				opcionesVista.add(opcionOCActual);
 			}
 		}
-		opcionesVista.forEach(contenedorOpciones::agregarOpcion);
-		return contenedorOpciones;
+		opcionesVista.forEach(contenedorOpcionesConPreguntas::agregarOpcion);
+		return contenedorOpcionesConPreguntas;
 	}
 
 	private boolean esClasico(String tipoDePregunta) {

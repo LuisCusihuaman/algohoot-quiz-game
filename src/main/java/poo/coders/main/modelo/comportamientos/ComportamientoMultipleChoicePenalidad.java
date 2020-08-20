@@ -2,15 +2,12 @@ package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
 import poo.coders.main.modelo.excepciones.CantidadDeOpcionesInvalidasException;
-import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
 import java.util.List;
 
 public class ComportamientoMultipleChoicePenalidad extends Comportamiento implements ComportamientoConMultiplicador {
-	private int valor;
 	public ComportamientoMultipleChoicePenalidad(){
-		this.valor = 1;
 	}
 
 	public ComportamientoMultipleChoicePenalidad(List<Opcion> opciones){

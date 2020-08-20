@@ -25,8 +25,6 @@ public class GroupChoiceBuilder implements Builder {
 		this.textoPregunta = enunciado;
 	}
 
-	// TODO: Separar en grupos, ver claveElegida en constructor?
-	@Override
 	public void setOpciones(List<OpcionSerializada> opciones) {
 		this.opciones = new ArrayList<>();
 		opciones.forEach(opcionSerializada -> this.opciones.add(new OpcionConjunto(opcionSerializada.getClave(), opcionSerializada.getTexto())));
