@@ -7,6 +7,11 @@ public class OpcionConjunto extends Opcion {
 		super(clave, textoOpcion);
 	}
 
+	public OpcionConjunto(String clave, String textoOpcion, String claveElegida) {
+		super(clave, textoOpcion);
+		this.claveElegida = claveElegida;
+	}
+
 	public OpcionConjunto(Opcion opcionOriginal, String claveElegida) {
 		super(opcionOriginal.getClave(), opcionOriginal.getTextoOpcion());
 		this.claveElegida = claveElegida;
@@ -16,5 +21,6 @@ public class OpcionConjunto extends Opcion {
 	public Respuesta convertirEnRespuesta() {
 		return this.claveElegida.equals(super.getClave()) ? new RespuestaCorrecta("Correcta") : new RespuestaIncorrecta("Incorrecta");
 	}
+
 
 }
