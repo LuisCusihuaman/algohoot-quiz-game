@@ -57,7 +57,7 @@ public class JuegoVista implements Observer {
 				OpcionVista opcionMCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				// el texto muy largo no se muestra completo
 				opcionMCActual.agregarOpcionesSeleccionBox(claves);
-				if (noEsParcial(tipoDePregunta)) opcionMCActual.setearPrimeraOpcion();
+				if (esClasico(tipoDePregunta)) opcionMCActual.setearPrimeraOpcion();
 				opcionesVista.add(opcionMCActual);
 			}
 		} else if (tipoDePregunta.contains("Group Choice")) {
@@ -79,8 +79,8 @@ public class JuegoVista implements Observer {
 		return contenedorOpciones;
 	}
 
-	private boolean noEsParcial(String tipoDePregunta) {
-		return !tipoDePregunta.contains("Parcial");
+	private boolean esClasico(String tipoDePregunta) {
+		return tipoDePregunta.contains("Clasico");
 	}
 
 	private void setearJuego(Pregunta pregunta, String tipoDePregunta, String nombreJugador, List<Opcion> opciones, Set<String> claves) {
