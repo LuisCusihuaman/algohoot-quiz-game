@@ -4,14 +4,16 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import poo.coders.main.modelo.Opcion;
+import poo.coders.main.modelo.OpcionConjunto;
 
 import java.util.Set;
 
 public class OpcionVista extends AnchorPane {
 	private Label opcionTexto;
 	ComboBox opcionSelecion;
+	String claveOriginal;
 
-	public OpcionVista(String texto) {
+	public OpcionVista(String claveOriginal,String texto) {
 		this.setPrefHeight(72);
 		this.setPrefWidth(360);
 
@@ -27,6 +29,7 @@ public class OpcionVista extends AnchorPane {
 		this.opcionSelecion.setLayoutY(22);
 		this.opcionSelecion.setPrefWidth(120);
 
+		this.claveOriginal = claveOriginal;
 		this.getChildren().add(opcionTexto);
 		this.getChildren().add(opcionSelecion);
 	}
@@ -39,9 +42,10 @@ public class OpcionVista extends AnchorPane {
 		opcionSelecion.getItems().addAll(opcionesSeleccion);
 	}
 
-	public Opcion obtenerOpcionActual() {
+	public OpcionConjunto obtenerOpcionActual() {
 		String opcionSelecion = (String) this.opcionSelecion.getValue();
 		String opcionTexto = this.opcionTexto.getText();
-		return new Opcion(opcionSelecion,opcionTexto);
+		OpcionConjunto opc = new OpcionConjunto(new Opcion(this.claveOriginal, opcionTexto), opcionSelecion);
+		return opc;
 	}
 }

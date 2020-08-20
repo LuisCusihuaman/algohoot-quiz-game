@@ -1,10 +1,9 @@
 [
   {
     "type": "vof",
-    "enunciado": "Mickey mouse es un raton",
+    "enunciado": "Mickey mouse es un perro",
     "options": [
-      { "clave": "correcta", "texto": "True" },
-      { "clave": "incorrecta", "texto": "False" }
+      { "clave": "Falso", "texto": "Respuesta" }
     ],
     "puntaje_type": "Clasico"
   },
