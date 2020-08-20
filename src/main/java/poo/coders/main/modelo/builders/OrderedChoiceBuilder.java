@@ -5,6 +5,7 @@ import poo.coders.main.modelo.comportamientos.ComportamientoOrderedChoice;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Pregunta;
 import poo.coders.main.modelo.data.OpcionSerializada;
+import poo.coders.main.modelo.excepciones.DiferenteTipoPreguntaException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class OrderedChoiceBuilder implements Builder {
 
 	@Override
 	public void asignarComportamiento(String tipoPuntaje) {
-		if (!tipoPuntaje.equals("Clasico")) throw new RuntimeException();
+		if (!tipoPuntaje.equals("Clasico")) throw new DiferenteTipoPreguntaException();
 		comportamiento = new ComportamientoOrderedChoice();
 	}
 

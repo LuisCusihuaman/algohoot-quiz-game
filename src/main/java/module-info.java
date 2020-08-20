@@ -4,13 +4,16 @@ module poo.coders {
 	requires com.google.gson;
 
 	exports poo.coders.main.modelo;
+	exports poo.coders.main.modelo.excepciones;
+	exports poo.coders.main.modelo.modificadores;
 	exports poo.coders.main.modelo.data;
 	exports poo.coders.main.modelo.comportamientos;
 	exports poo.coders.main.modelo.builders;
 	exports poo.coders.main.vista;
-	//si esta vacio te tira un error mvn
 
 	opens poo.coders.main.modelo;
+	opens poo.coders.main.modelo.excepciones;
+	opens poo.coders.main.modelo.modificadores;
 	opens poo.coders.main.modelo.data;
 	opens poo.coders.main.modelo.comportamientos;
 	opens poo.coders.main.modelo.builders;
