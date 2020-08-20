@@ -2,6 +2,7 @@ package poo.coders.main.modelo;
 
 import com.google.gson.Gson;
 import poo.coders.main.modelo.builders.*;
+import poo.coders.main.modelo.comportamientos.ComportamientoVoF;
 import poo.coders.main.modelo.data.PreguntaSerializada;
 
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ import java.util.List;
 
 
 public class Parser {
-	private ArrayList<Pregunta> convertirPreguntas(List<PreguntaSerializada> preguntaSerializadas) {
+	private Pregunta convertirPreguntas(List<PreguntaSerializada> preguntaSerializadas) {
 		ArrayList<Pregunta> preguntas = new ArrayList<>();
 		preguntaSerializadas.forEach(preguntaSerializada -> {
 			String tipoPregunta = preguntaSerializada.getType();
@@ -43,11 +44,26 @@ public class Parser {
 					break;
 			}
 		});
-		preguntas.add(new Pregunta("",new ComportamientoVoF()));
-		return preguntas;
+		preguntas.add(new Pregunta("", new ComportamientoVoF()));
+		return this.convertirEnPreguntaCiclica(preguntas);
 	}
 
-	public ArrayList<Pregunta> parsear() {
+	private Pregunta convertirEnPreguntaCiclica(ArrayList<Pregunta> preguntas) {
+		Pregunta actual = preguntas.get(0); //[p1]+ p*
+		Pregunta siguiente;
+		if (preguntas.size() > 1) {
+			siguiente = preguntas.get(1);
+			actual.setSiguientePregunta(siguiente);
+
+			for (int i = 2; i < preguntas.size(); i++) { //4 ("")
+				siguiente.setSiguientePregunta(preguntas.get(i));
+				siguiente = preguntas.get(i);
+			}
+		}
+		return actual;
+	}
+
+	public Pregunta parsear() {
 		Gson gson = new Gson();
 		BufferedReader br = null;
 		List<PreguntaSerializada> preguntaSerializadas = null;
