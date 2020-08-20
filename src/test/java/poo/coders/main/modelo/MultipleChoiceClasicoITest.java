@@ -8,76 +8,63 @@ import java.util.ArrayList;
 
 public class MultipleChoiceClasicoITest {
 	@Test
-	public void test01JugadorContestaTodoCorrectamenteYRecibe1Punto() {
+	public void test01JugadorContestaTodoCorrectamenteYDevuelve1Punto() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador jugador = new Jugador("Pepe");
 		ArrayList<Opcion> respuestas = new ArrayList<>();
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionConjunto("1", "", "1")); // Correcta
+		respuestas.add(new OpcionConjunto("2", "", "2")); // Correcta
+		respuestas.add(new OpcionConjunto("3", "", "3")); // Correcta
 
-		jugador.procesarPregunta(pregunta, respuestas);
-
-		Assertions.assertEquals(1, jugador.getPuntos());
+		Assertions.assertEquals(1, pregunta.obtenerPuntaje(respuestas));
 	}
 
 	@Test
-	public void test02JugadorContesta2CorrectamenteY1IncorrectamenteYRecibe0Punto() {
+	public void test02JugadorContesta2CorrectamenteY1IncorrectamenteYDevuelve0Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador jugador = new Jugador("Pepe");
 		ArrayList<Opcion> respuestas = new ArrayList<>();
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionConjunto("1", "", "1")); // Correcta
+		respuestas.add(new OpcionConjunto("2", "", "1")); // Incorrecta
+		respuestas.add(new OpcionConjunto("3", "", "3")); // Correcta
 
-		jugador.procesarPregunta(pregunta, respuestas);
-
-		Assertions.assertEquals(0, jugador.getPuntos());
+		Assertions.assertEquals(0, pregunta.obtenerPuntaje(respuestas));
 	}
 
 	@Test
-	public void test03JugadorContesta4CorrectamenteY1IncorrectamenteYRecibe0Punto() {
+	public void test03JugadorContesta4CorrectamenteY1IncorrectamenteYDevuelve0Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador jugador = new Jugador("Pepe");
 		ArrayList<Opcion> respuestas = new ArrayList<>();
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionConjunto("1", "", "1")); // Correcta
+		respuestas.add(new OpcionConjunto("2", "", "1")); // Incorrecta
+		respuestas.add(new OpcionConjunto("3", "", "3")); // Correcta
+		respuestas.add(new OpcionConjunto("4", "", "4")); // Correcta
+		respuestas.add(new OpcionConjunto("5", "", "5")); // Correcta
 
-		jugador.procesarPregunta(pregunta, respuestas);
-
-		Assertions.assertEquals(0, jugador.getPuntos());
+		Assertions.assertEquals(0, pregunta.obtenerPuntaje(respuestas));
 	}
 
 	@Test
-	public void test04JugadorContestaTodoIncorrectamenteYRecibe0Punto() {
+	public void test04JugadorContestaTodoIncorrectamenteYDevuelve0Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador jugador = new Jugador("Pepe");
 		ArrayList<Opcion> respuestas = new ArrayList<>();
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
+		respuestas.add(new OpcionConjunto("1", "", "2")); // Incorrecta
+		respuestas.add(new OpcionConjunto("2", "", "1")); // Incorrecta
+		respuestas.add(new OpcionConjunto("3", "", "1")); // Incorrecta
+		respuestas.add(new OpcionConjunto("4", "", "1")); // Incorrecta
+		respuestas.add(new OpcionConjunto("5", "", "1")); // Incorrecta
 
-		jugador.procesarPregunta(pregunta, respuestas);
-
-		Assertions.assertEquals(0, jugador.getPuntos());
+		Assertions.assertEquals(0, pregunta.obtenerPuntaje(respuestas));
 	}
 
 	@Test
-	public void test05JugadorContesta2CorrectamenteY1IncorrectamenteEnPrimerLugarYRecibe0Punto() {
+	public void test05JugadorContesta2CorrectamenteY1IncorrectamenteEnPrimerLugarYDevuelve0Puntos() {
 		Pregunta pregunta = new Pregunta("Pregunta", new ComportamientoMultipleChoiceClasico());
-		Jugador jugador = new Jugador("Pepe");
 		ArrayList<Opcion> respuestas = new ArrayList<>();
-		respuestas.add(new OpcionIncorrecta("Incorrecta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
-		respuestas.add(new OpcionCorrecta("Correcta", ""));
+		respuestas.add(new OpcionConjunto("1", "", "2")); // Incorrecta
+		respuestas.add(new OpcionConjunto("2", "", "2")); // Correcta
+		respuestas.add(new OpcionConjunto("3", "", "3")); // Correcta
 
-		jugador.procesarPregunta(pregunta, respuestas);
 
-		Assertions.assertEquals(0, jugador.getPuntos());
+		Assertions.assertEquals(0, pregunta.obtenerPuntaje(respuestas));
 	}
 
 	@Test

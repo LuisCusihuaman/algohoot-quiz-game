@@ -68,7 +68,7 @@ public class ComportamientoMultipleChoicePenalidadTest {
 		opcionesElegidasPorJugador.add(new OpcionConjunto("1", "Opcion Correcta","1"));
 		opcionesElegidasPorJugador.add(new OpcionConjunto("2","Opcion Correcta", "2"));
 		opcionesElegidasPorJugador.add(new OpcionConjunto("3", "Opcion Correcta","3"));
-		opcionesElegidasPorJugador.add(new OpcionConjunto("4","OpcionIncorrecta","3"));
+		opcionesElegidasPorJugador.add(new OpcionConjunto("4","Opcion Incorrecta","3"));
 
 		Assertions.assertEquals(2, pregunta.obtenerPuntaje(opcionesElegidasPorJugador));
 	}
