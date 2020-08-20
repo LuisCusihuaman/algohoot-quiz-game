@@ -1,7 +1,5 @@
 package poo.coders.main.modelo;
 
-import javafx.application.Platform;
-import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceClasico;
 import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.MultiplicadorX2;
 import poo.coders.main.modelo.modificadores.MultiplicadorX3;
@@ -9,31 +7,18 @@ import poo.coders.main.modelo.modificadores.SinExclusividad;
 
 import java.util.ArrayList;
 
-public class Juego implements Observable{
-	//private Turno turno;
-	//private Estado estado;
+public class Juego implements Observable {
+
 	private Jugador jugadorInicial;
 	private Jugador jugadorActual;
 	private Pregunta preguntaActual;
-	ArrayList<ArrayList<Opcion>> respuestasDeJugadores;
-	int indexJugadorActual;
-	int indexPreguntaActual;
 	Exclusividad exclusividadActual;
 	private ArrayList<Observer> observers;
 
 	public Juego() {
-		//this.turno = new Turno();
-		//this.estado = Estado.INICIO;
-
 		this.preguntaActual = new Parser().parsear();
-		this.respuestasDeJugadores = new ArrayList<>();
-		this.respuestasDeJugadores.add(new ArrayList<>());
-		this.respuestasDeJugadores.add(new ArrayList<>());
-		this.indexJugadorActual = 0;
-		this.indexPreguntaActual = 0;
 		observers = new ArrayList<>();
 	}
-
 
 	public void empezarJuego(String nombreJugador1, String nombreJugador2) {
 		Jugador jugador1 = new Jugador(nombreJugador1);
@@ -46,18 +31,15 @@ public class Juego implements Observable{
 		this.notifyObservers();
 	}
 
-	private Jugador elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas){
+	private Jugador elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas) {
 		jugadorActual.elegirRespuestasAPreguntaActual(respuestasElegidas);
 		return jugadorActual.getJugadorSiguiente();
 	}
 
 
 	public void siguienteTurno(ArrayList<Opcion> respuestasElegidas) {
-		//TODO: Refactorizar modelo para adaptar
-		// a cambios en Jugador y Pregunta (Ahora son enlazados)
-
 		this.jugadorActual = this.elegirRespuestasAPreguntaActual(respuestasElegidas);
-		if(jugadorActual == jugadorInicial){
+		if (jugadorActual == jugadorInicial) {
 			exclusividadActual.definirPuntosJugadoresEnPregunta(preguntaActual, jugadorActual);
 
 			this.preguntaActual = preguntaActual.getSiguientePregunta();
@@ -70,15 +52,17 @@ public class Juego implements Observable{
 	public Jugador getJugadorActual() {
 		return jugadorActual;
 	}
-	public void activarExclusividad(){
+
+	public void activarExclusividad() {
 		this.exclusividadActual = preguntaActual.activarExclusividad(exclusividadActual);
 	}
 
 	public void activarMultiplicadorX2() {
-		jugadorActual.setMultiplicador(new MultiplicadorX2());
+		preguntaActual.agregarMultiplicadorAJugador(jugadorActual, new MultiplicadorX2());
 	}
+
 	public void activarMultiplicadorX3() {
-		jugadorActual.setMultiplicador(new MultiplicadorX3());
+		preguntaActual.agregarMultiplicadorAJugador(jugadorActual, new MultiplicadorX3());
 	}
 
 	public Pregunta getPreguntaActual() {
@@ -98,8 +82,9 @@ public class Juego implements Observable{
 	public void notifyObservers() {
 		observers.forEach(Observer::update);
 	}
-	public Jugador getGanador(){
-		if(jugadorActual.getPuntos() > jugadorActual.getJugadorSiguiente().getPuntos()) return jugadorActual;
+
+	public Jugador getGanador() {
+		if (jugadorActual.getPuntos() > jugadorActual.getJugadorSiguiente().getPuntos()) return jugadorActual;
 		return jugadorActual.getJugadorSiguiente();
 	}
 }
