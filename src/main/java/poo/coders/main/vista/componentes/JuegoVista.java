@@ -35,7 +35,7 @@ public class JuegoVista implements Observer {
 			contenedorModificadores.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juegoMock)));
 			contenedorModificadores.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juegoMock)));
 		} else {
-			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juegoMock)));
+			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juegoMock, this)));
 		}
 		return contenedorModificadores;
 	}
@@ -57,7 +57,7 @@ public class JuegoVista implements Observer {
 				OpcionVista opcionMCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				// el texto muy largo no se muestra completo
 				opcionMCActual.agregarOpcionesSeleccionBox(claves);
-				opcionMCActual.setearPrimeraOpcion();
+				if (noEsParcial(tipoDePregunta)) opcionMCActual.setearPrimeraOpcion();
 				opcionesVista.add(opcionMCActual);
 			}
 		} else if (tipoDePregunta.contains("Group Choice")) {
@@ -77,6 +77,10 @@ public class JuegoVista implements Observer {
 		}
 		opcionesVista.forEach(contenedorOpciones::agregarOpcion);
 		return contenedorOpciones;
+	}
+
+	private boolean noEsParcial(String tipoDePregunta) {
+		return !tipoDePregunta.contains("Parcial");
 	}
 
 	private void setearJuego(Pregunta pregunta, String tipoDePregunta, String nombreJugador, List<Opcion> opciones, Set<String> claves) {
@@ -131,5 +135,9 @@ public class JuegoVista implements Observer {
 
 	public void setVentana(Stage ventana) {
 		this.primaryStage = ventana;
+	}
+
+	public void bloquearBoton(String botonID) {
+		this.contenedorModificadores.bloquearBoton(botonID);
 	}
 }
