@@ -5,10 +5,7 @@ import javafx.stage.Stage;
 import poo.coders.main.controlador.Botones.MultiplicadorExclusividadHandlerBoton;
 import poo.coders.main.controlador.Botones.MultiplicadorX2HandlerBoton;
 import poo.coders.main.controlador.Botones.MultiplicadorX3HandlerBoton;
-import poo.coders.main.modelo.JuegoMock;
-import poo.coders.main.modelo.Observer;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Pregunta;
+import poo.coders.main.modelo.*;
 import poo.coders.main.vista.OpcionVista;
 import poo.coders.main.vista.componentes.botones.BotonExclusividad;
 import poo.coders.main.vista.componentes.botones.BotonX2;
@@ -20,7 +17,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class JuegoVista implements Observer {
-	JuegoMock juegoMock;
+	Juego juego;
 	Stage primaryStage;
 	ContenedorJuego contenedorJuego;
 	ContenedorInformacion contenedorInformacion;
@@ -32,10 +29,10 @@ public class JuegoVista implements Observer {
 		ContenedorModificadores contenedorModificadores = new ContenedorModificadores();
 
 		if (tipoDePregunta.contains("Penalidad")) {
-			contenedorModificadores.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juegoMock)));
-			contenedorModificadores.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juegoMock)));
+			contenedorModificadores.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juego)));
+			contenedorModificadores.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juego)));
 		} else {
-			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juegoMock, this)));
+			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juego, this)));
 		}
 		return contenedorModificadores;
 	}
@@ -88,27 +85,27 @@ public class JuegoVista implements Observer {
 		this.contenedorInformacion = new ContenedorInformacion(tipoDePregunta, nombreJugador, pregunta.getEnunciado());
 		this.contenedorModificadores = getContenedorModificadores(tipoDePregunta);
 		this.contenedorOpciones = getContenedorOpciones(tipoDePregunta, opciones, claves);
-		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock, this);
+		this.contenedorSiguiente = new ContenedorSiguiente(this.juego, this);
 	}
 
 
-	public JuegoVista(JuegoMock juegoMock) {
-		this.juegoMock = juegoMock;
+	public JuegoVista(Juego juego) {
+		this.juego = juego;
 	}
 
 
 	@Override
 	public void update() {
 		//OBTENES DATOS DEL MODELO
-		Pregunta pregunta = juegoMock.getPreguntaActual();
+		Pregunta pregunta = juego.getPreguntaActual();
 		if (pregunta.getEnunciado().equals("")) {
 			//Jugador JugadorModeloGanador = this.juegoMock.ganador(); tendria que pasarle
 			// y no el juego mock, porque el jugadorganador tiene referencia al siguiente
 
-			Scene scene = new Scene(new VistaPuntajes(this.juegoMock).mostrar());
+			Scene scene = new Scene(new VistaPuntajes(this.juego).mostrar());
 			this.primaryStage.setScene(scene);
 		} else {
-			String nombreJugador = juegoMock.getJugadorActual().getNombre();
+			String nombreJugador = juego.getJugadorActual().getNombre();
 			String tipoDePregunta = pregunta.getTipoPregunta();
 			List<Opcion> opciones = pregunta.getOpciones();
 			Set<String> claves = opciones.stream().map(Opcion::getClave).collect(Collectors.toSet());

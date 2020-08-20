@@ -3,11 +3,13 @@ package poo.coders.main.modelo;
 import javafx.application.Platform;
 import poo.coders.main.modelo.comportamientos.ComportamientoMultipleChoiceClasico;
 import poo.coders.main.modelo.modificadores.Exclusividad;
+import poo.coders.main.modelo.modificadores.MultiplicadorX2;
+import poo.coders.main.modelo.modificadores.MultiplicadorX3;
 import poo.coders.main.modelo.modificadores.SinExclusividad;
 
 import java.util.ArrayList;
 
-public class Juego {
+public class Juego implements Observable{
 	//private Turno turno;
 	//private Estado estado;
 	private Jugador jugadorInicial;
@@ -17,6 +19,7 @@ public class Juego {
 	int indexJugadorActual;
 	int indexPreguntaActual;
 	Exclusividad exclusividadActual;
+	private ArrayList<Observer> observers;
 
 	public Juego() {
 		//this.turno = new Turno();
@@ -28,7 +31,7 @@ public class Juego {
 		this.respuestasDeJugadores.add(new ArrayList<>());
 		this.indexJugadorActual = 0;
 		this.indexPreguntaActual = 0;
-
+		observers = new ArrayList<>();
 	}
 
 
@@ -40,7 +43,7 @@ public class Juego {
 		this.jugadorInicial = jugador1;
 		this.jugadorActual = jugadorInicial;
 		exclusividadActual = new SinExclusividad();
-		//this.notifyObservers();
+		this.notifyObservers();
 	}
 
 	private Jugador elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas){
@@ -61,9 +64,7 @@ public class Juego {
 			exclusividadActual = new SinExclusividad();
 
 		}
-		//notifyObservers();
-		// |--> change() -> if(preguntaActual == Invalida (null, o enunciado == "", u otra alternativa) => mostrarFinDelJuego();
-
+		this.notifyObservers();
 	}
 
 	public Jugador getJugadorActual() {
@@ -71,6 +72,13 @@ public class Juego {
 	}
 	public void activarExclusividad(){
 		this.exclusividadActual = preguntaActual.activarExclusividad(exclusividadActual);
+	}
+
+	public void activarMultiplicadorX2() {
+		jugadorActual.setMultiplicador(new MultiplicadorX2());
+	}
+	public void activarMultiplicadorX3() {
+		jugadorActual.setMultiplicador(new MultiplicadorX3());
 	}
 
 	public Pregunta getPreguntaActual() {
@@ -81,5 +89,17 @@ public class Juego {
 		return this.preguntaActual.getTipoPregunta();
 	}
 
+	@Override
+	public void addObserver(Observer observer) {
+		observers.add(observer);
+	}
 
+	@Override
+	public void notifyObservers() {
+		observers.forEach(Observer::update);
+	}
+	public Jugador getGanador(){
+		if(jugadorActual.getPuntos() > jugadorActual.getJugadorSiguiente().getPuntos()) return jugadorActual;
+		return jugadorActual.getJugadorSiguiente();
+	}
 }

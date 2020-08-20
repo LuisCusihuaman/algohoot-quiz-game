@@ -9,13 +9,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import poo.coders.main.controlador.Botones.EmpezarHandlerBoton;
+import poo.coders.main.modelo.Juego;
 import poo.coders.main.modelo.JuegoMock;
 
 public class BienvenidoVista {
 	JuegoVista juegoVista;
 	ContenedorJuego contenedorJuego;
 
-	public BienvenidoVista(JuegoVista juegoVista, JuegoMock juegoMock, Stage ventana) {
+	public BienvenidoVista(JuegoVista juegoVista, Juego juego, Stage ventana) {
 		this.juegoVista = juegoVista;
 		this.juegoVista.setVentana(ventana);
 		this.contenedorJuego = new ContenedorJuego();
@@ -74,7 +75,7 @@ public class BienvenidoVista {
 		button.setLayoutX(135);
 		button.setLayoutY(26);
 		button.setText("COMENZAR");
-		button.setOnAction(new EmpezarHandlerBoton(juegoMock,textField1,textField2));
+		button.setOnAction(new EmpezarHandlerBoton(juego,textField1,textField2));
 		anchorPane3.getChildren().add(button);
 		vBox.getChildren().addAll(anchorPane1, anchorPane2);
 		anchorPane.getChildren().add(label);

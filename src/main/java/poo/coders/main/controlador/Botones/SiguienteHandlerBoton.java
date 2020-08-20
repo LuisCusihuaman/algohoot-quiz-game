@@ -2,6 +2,7 @@ package poo.coders.main.controlador.Botones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import poo.coders.main.modelo.Juego;
 import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.OpcionConjunto;
@@ -11,18 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SiguienteHandlerBoton implements EventHandler<ActionEvent> {
-	JuegoMock juegoMock;
+	Juego juego;
 	JuegoVista juegoVista;
 
-	public SiguienteHandlerBoton(JuegoMock juegoMock, JuegoVista juegoVista) {
-		this.juegoMock = juegoMock;
+	public SiguienteHandlerBoton(Juego juego, JuegoVista juegoVista) {
+		this.juego = juego;
 		this.juegoVista = juegoVista;
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		ArrayList<Opcion> opcJugActual = (ArrayList<Opcion>) this.juegoVista.obtenerRespuestaJugador();
-		this.juegoMock.siguienteTurno(opcJugActual);
+		this.juego.siguienteTurno(opcJugActual);
 
 	}
 }
