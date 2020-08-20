@@ -1,4 +1,4 @@
-package poo.coders.main.vista;
+package poo.coders.main.vista.componentes;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

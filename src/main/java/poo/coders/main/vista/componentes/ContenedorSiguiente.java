@@ -4,7 +4,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import poo.coders.main.controlador.Botones.SiguienteHandlerBoton;
 import poo.coders.main.modelo.Juego;
-import poo.coders.main.modelo.JuegoMock;
 
 public class ContenedorSiguiente extends AnchorPane {
 	Button btnSiguiente;

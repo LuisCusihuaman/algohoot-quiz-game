@@ -6,10 +6,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import poo.coders.main.modelo.Juego;
-import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Jugador;
-
-import java.util.ArrayList;
 
 public class VistaPuntajes {
 	Juego juego;

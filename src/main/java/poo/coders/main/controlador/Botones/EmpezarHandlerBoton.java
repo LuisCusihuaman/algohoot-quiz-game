@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import poo.coders.main.modelo.Juego;
-import poo.coders.main.modelo.JuegoMock;
 
 public class EmpezarHandlerBoton implements EventHandler<ActionEvent> {
 	private final TextField t2;
