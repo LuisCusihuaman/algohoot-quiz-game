@@ -50,6 +50,8 @@ public class VistaPuntajes {
 		label1.setLayoutY(27);
 		label1.setPrefHeight(18);
 		label1.setPrefWidth(85);
+		label1.setStyle("-fx-font-weight: bold");
+
 
 		Label p1 = new Label();
 		p1.setText(String.valueOf(jugadorGanadorPuntos));
@@ -69,6 +71,7 @@ public class VistaPuntajes {
 		label2.setLayoutY(27);
 		label2.setPrefHeight(18);
 		label2.setPrefWidth(85);
+		label2.setStyle("-fx-font-weight: bold");
 
 		Label p2 = new Label();
 		p2.setText(String.valueOf(jugadorPerdorPuntos));

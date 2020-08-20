@@ -11,7 +11,7 @@ public class ContenedorSiguiente extends AnchorPane {
 	public ContenedorSiguiente(Juego juego, JuegoVista juegoVista) {
 		this.setId("ContenedorSiguiente");
 		this.setPrefWidth(80);
-		this.setPrefHeight(360);
+		this.setPrefHeight(100);
 
 		this.btnSiguiente = new Button();
 		this.btnSiguiente.setLayoutX(138);

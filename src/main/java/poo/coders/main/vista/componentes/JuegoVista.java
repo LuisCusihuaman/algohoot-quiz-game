@@ -95,13 +95,11 @@ public class JuegoVista implements Observer {
 
 	@Override
 	public void update() {
-		//OBTENES DATOS DEL MODELO
 		Pregunta pregunta = juego.getPreguntaActual();
 		if (pregunta.getEnunciado().equals("")) {
-			//Jugador JugadorModeloGanador = this.juegoMock.ganador(); tendria que pasarle
-			// y no el juego mock, porque el jugadorganador tiene referencia al siguiente
 
 			Scene scene = new Scene(new VistaPuntajes(this.juego).mostrar());
+			scene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
 			this.primaryStage.setScene(scene);
 		} else {
 			String nombreJugador = juego.getJugadorActual().getNombre();
@@ -114,19 +112,13 @@ public class JuegoVista implements Observer {
 			this.contenedorJuego.getChildren().removeAll();
 			this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
 			Scene scene = new Scene(this.contenedorJuego);
+			scene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
 			this.primaryStage.setScene(scene);
 		}
 	}
 
-	public ContenedorJuego mostrar() {
-		return this.contenedorJuego;
-	}
-
 	public List<Opcion> obtenerRespuestaJugador() {
-		//ifs es grupchoice agarrar la lista y volver a crear otra pero construyendo con opcionconjunto
-		List<Opcion> opciones = this.contenedorOpciones.obtenerRespuestas();
-
-		return opciones;
+		return this.contenedorOpciones.obtenerRespuestas();
 	}
 
 	public void setVentana(Stage ventana) {

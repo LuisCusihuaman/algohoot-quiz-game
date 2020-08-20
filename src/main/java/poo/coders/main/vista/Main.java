@@ -24,6 +24,7 @@ public class Main extends Application {
 		BienvenidoVista bienvenidoVista = new BienvenidoVista(juegoVista, juego, primaryStage);
 		ContenedorJuego contenedorJuego = bienvenidoVista.mostrar();
 		Scene primaryScene = new Scene(contenedorJuego, 360, 640);
+		primaryScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
 		primaryStage.setScene(primaryScene);
 		primaryStage.setResizable(false);
 		primaryStage.show();
