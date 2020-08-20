@@ -67,4 +67,9 @@ public class JuegoMock implements Observable {
 	public String getTipoPregunta() {
 		return preguntas.get(indexPreguntaActual).getTipoPregunta();
 	}
+
+	public Opcion evaluarOpcion(Opcion opcionActual) {
+		Opcion opConvertida = this.getPreguntaActual().evaluarOpcion(opcionActual);
+		return opConvertida;
+	}
 }

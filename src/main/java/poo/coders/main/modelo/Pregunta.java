@@ -12,24 +12,18 @@ public class Pregunta {
 	private String enunciado;
 	private List<Opcion> opciones;
 	private Comportamiento comportamiento;
-	private Pregunta siguientePregunta;
+	Exclusividad exclusividad;
 
 
 	public Pregunta(String enunciado, Comportamiento comportamiento) {
 		this.comportamiento = comportamiento;
 		this.enunciado = enunciado;
+		this.exclusividad = new Exclusividad();
 	}
 
 	public Pregunta(String enunciado, Comportamiento comportamiento, List<Opcion> opciones) {
 		this(enunciado, comportamiento);
 		this.opciones = opciones;
-	}
-
-	public void setSiguientePregunta(Pregunta siguientePregunta) {
-		this.siguientePregunta = siguientePregunta;
-	}
-	public Pregunta getSiguientePregunta() {
-		return siguientePregunta;
 	}
 
 	public List<Opcion> getOpciones() {
