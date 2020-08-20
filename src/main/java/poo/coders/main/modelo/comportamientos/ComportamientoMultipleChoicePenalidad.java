@@ -1,9 +1,7 @@
 package poo.coders.main.modelo.comportamientos;
 
-import poo.coders.main.modelo.Jugador;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Puntaje;
-import poo.coders.main.modelo.PuntajePenalidad;
+import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.excepciones.CantidadDeOpcionesInvalidasException;
 import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
@@ -16,7 +14,7 @@ public class ComportamientoMultipleChoicePenalidad extends Comportamiento implem
 	}
 
 	public ComportamientoMultipleChoicePenalidad(List<Opcion> opciones){
-		if(opciones.size() < 2 || opciones.size() > 5 ) throw new RuntimeException();
+		if(opciones.size() < 2 || opciones.size() > 5 ) throw new CantidadDeOpcionesInvalidasException();
 	}
 
 	@Override

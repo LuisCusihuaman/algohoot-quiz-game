@@ -1,5 +1,7 @@
 package poo.coders.main.modelo;
 
+import poo.coders.main.modelo.excepciones.ImposibleConvertirEnRespuestaException;
+
 public class Opcion {
 	private String clave;
 	private String textoOpcion;
@@ -16,7 +18,10 @@ public class Opcion {
 	public String getClave() {
 		return this.clave;
 	}
-	public String getTextoOpcion(){ return this.textoOpcion; }
+
+	public String getTextoOpcion() {
+		return this.textoOpcion;
+	}
 
 	public boolean esIgualA(Opcion opcion) {
 		return clave.equals(opcion.getClave());
@@ -25,7 +30,7 @@ public class Opcion {
 	public Respuesta convertirEnRespuesta() {
 
 		// TODO: Crear una Exception especifica para esto.
-		throw new RuntimeException("Esta opcion no se puede convertir en Respuesta");
+		throw new ImposibleConvertirEnRespuestaException();
 	}
 
 }

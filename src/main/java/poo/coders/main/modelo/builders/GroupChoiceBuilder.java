@@ -4,6 +4,7 @@ import poo.coders.main.modelo.*;
 import poo.coders.main.modelo.comportamientos.Comportamiento;
 import poo.coders.main.modelo.comportamientos.ComportamientoGroupChoice;
 import poo.coders.main.modelo.data.OpcionSerializada;
+import poo.coders.main.modelo.excepciones.DiferenteTipoPreguntaException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class GroupChoiceBuilder implements Builder {
 
 	@Override
 	public void asignarComportamiento(String tipoPuntaje) {
-		if (!tipoPuntaje.equals("Clasico")) throw new RuntimeException();
+		if (!tipoPuntaje.equals("Clasico")) throw new DiferenteTipoPreguntaException();
 		comportamiento = new ComportamientoGroupChoice();
 	}
 

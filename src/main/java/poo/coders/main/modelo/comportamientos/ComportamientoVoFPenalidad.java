@@ -1,6 +1,7 @@
 package poo.coders.main.modelo.comportamientos;
 
 import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.excepciones.CantidadDeOpcionesInvalidasException;
 import poo.coders.main.modelo.modificadores.Exclusividad;
 import poo.coders.main.modelo.modificadores.Multiplicador;
 
@@ -11,7 +12,7 @@ public class ComportamientoVoFPenalidad extends Comportamiento implements Compor
 
 	}
 	public ComportamientoVoFPenalidad(List<Opcion> opciones){
-		if(opciones.size() != 2) throw new RuntimeException();
+		if(opciones.size() != 2) throw new CantidadDeOpcionesInvalidasException();
 	}
 	@Override
 	protected Puntaje crearPuntaje() {
