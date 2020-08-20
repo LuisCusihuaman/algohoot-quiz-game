@@ -43,6 +43,7 @@ public class Parser {
 					break;
 			}
 		});
+		preguntas.add(new Pregunta("",new ComportamientoVoF()));
 		return preguntas;
 	}
 

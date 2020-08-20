@@ -2,7 +2,10 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import poo.coders.main.modelo.*;
+import poo.coders.main.modelo.JuegoMock;
+import poo.coders.main.modelo.Observer;
+import poo.coders.main.modelo.Opcion;
+import poo.coders.main.modelo.Pregunta;
 import poo.coders.main.vista.OpcionVista;
 import poo.coders.main.vista.componentes.botones.BotonExclusividad;
 import poo.coders.main.vista.componentes.botones.BotonX2;
@@ -87,22 +90,25 @@ public class JuegoVista implements Observer {
 	public void update() {
 		//OBTENES DATOS DEL MODELO
 		Pregunta pregunta = juegoMock.getPreguntaActual();
-		//if(!pregunta.getEnunciado().equals("")){
-		//Jugador JugadorModeloGanador = this.juegoMock.ganador();
-		//	Scene scene = new Scene(new VistaFinal(JugadorModeloGanador).mostrar() -> VBOX)
-		// 	this.primaryStage.setScene(scene);
-		//}
-		String nombreJugador = juegoMock.getJugadorActual().getNombre();
-		String tipoDePregunta = pregunta.getTipoPregunta();
-		List<Opcion> opciones = pregunta.getOpciones();
-		Set<String> claves = opciones.stream().map(Opcion::getClave).collect(Collectors.toSet());
-		//CONFIGURAS LA VISTA
-		setearJuego(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
-		//CREAS EL CONTENDOR-VISTA-JUEGO
-		this.contenedorJuego.getChildren().removeAll();
-		this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
-		Scene scene = new Scene(this.contenedorJuego);
-		this.primaryStage.setScene(scene);
+		if (pregunta.getEnunciado().equals("")) {
+			//Jugador JugadorModeloGanador = this.juegoMock.ganador(); tendria que pasarle
+			// y no el juego mock, porque el jugadorganador tiene referencia al siguiente
+
+			Scene scene = new Scene(new VistaPuntajes(this.juegoMock).mostrar());
+			this.primaryStage.setScene(scene);
+		} else {
+			String nombreJugador = juegoMock.getJugadorActual().getNombre();
+			String tipoDePregunta = pregunta.getTipoPregunta();
+			List<Opcion> opciones = pregunta.getOpciones();
+			Set<String> claves = opciones.stream().map(Opcion::getClave).collect(Collectors.toSet());
+			//CONFIGURAS LA VISTA
+			setearJuego(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
+			//CREAS EL CONTENDOR-VISTA-JUEGO
+			this.contenedorJuego.getChildren().removeAll();
+			this.contenedorJuego.getChildren().addAll(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
+			Scene scene = new Scene(this.contenedorJuego);
+			this.primaryStage.setScene(scene);
+		}
 	}
 
 	public ContenedorJuego mostrar() {

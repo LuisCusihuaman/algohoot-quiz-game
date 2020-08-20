@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 public class JuegoMock implements Observable {
 	private ArrayList<Observer> observers;
+
+	public ArrayList<Jugador> getJugadores() {
+		return jugadores;
+	}
+
 	private ArrayList<Jugador> jugadores;
 	private ArrayList<Pregunta> preguntas;
 	ArrayList<ArrayList<Opcion>> respuestasDeJugadores;
@@ -46,11 +51,9 @@ public class JuegoMock implements Observable {
 		indexJugadorActual++;
 		indexJugadorActual %= jugadores.size();
 		if (indexJugadorActual == 0) {
-			//preguntas.get(indexPreguntaActual).darPuntosAJugadores(jugadores.get(0), jugadores.get(1), respuestasDeJugadores.get(0), respuestasDeJugadores.get(1));
+			preguntas.get(indexPreguntaActual).darPuntosAJugadores(jugadores.get(0), jugadores.get(1), respuestasDeJugadores.get(0), respuestasDeJugadores.get(1));
 			if (preguntas.size() - 1 != indexPreguntaActual) {
 				indexPreguntaActual++;
-			} else {
-				Platform.exit();
 			}
 		}
 		this.notifyObservers();
