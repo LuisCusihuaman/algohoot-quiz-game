@@ -2,6 +2,9 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import poo.coders.main.controlador.Botones.MultiplicadorExclusividadHandlerBoton;
+import poo.coders.main.controlador.Botones.MultiplicadorX2HandlerBoton;
+import poo.coders.main.controlador.Botones.MultiplicadorX3HandlerBoton;
 import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Observer;
 import poo.coders.main.modelo.Opcion;
@@ -29,10 +32,10 @@ public class JuegoVista implements Observer {
 		ContenedorModificadores contenedorModificadores = new ContenedorModificadores();
 
 		if (tipoDePregunta.contains("Penalidad")) {
-			contenedorModificadores.agregarBoton(new BotonX2());
-			contenedorModificadores.agregarBoton(new BotonX3());
+			contenedorModificadores.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juegoMock)));
+			contenedorModificadores.agregarBoton(new BotonX3(new MultiplicadorX3HandlerBoton(this.juegoMock)));
 		} else {
-			contenedorModificadores.agregarBoton(new BotonExclusividad());
+			contenedorModificadores.agregarBoton(new BotonExclusividad(new MultiplicadorExclusividadHandlerBoton(this.juegoMock)));
 		}
 		return contenedorModificadores;
 	}

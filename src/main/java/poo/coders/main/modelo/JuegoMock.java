@@ -71,6 +71,16 @@ public class JuegoMock implements Observable {
 		return preguntas.get(indexPreguntaActual).getTipoPregunta();
 	}
 
+	public void activarMultiplicadorX2(){
+		this.getJugadorActual().usarMultiplicadorX2EnPregunta(this.getPreguntaActual());
+	}
+	public void activarMultiplicadorX3(){
+		this.getJugadorActual().usarMultiplicadorX3EnPregunta(this.getPreguntaActual());
+	}
+	public void activarMultiplicadorExclusividad(){
+		this.getJugadorActual().activarExclusividadEnPregunta(this.getPreguntaActual());
+	}
+
 	public Opcion evaluarOpcion(Opcion opcionActual) {
 		Opcion opConvertida = this.getPreguntaActual().evaluarOpcion(opcionActual);
 		return opConvertida;
