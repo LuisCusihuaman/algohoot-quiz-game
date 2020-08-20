@@ -21,7 +21,7 @@
   },
   {
     "type": "order",
-    "enunciado": "Ordene los viejos estos",
+    "enunciado": "Ordene las siguientes personas segun el anio de nacimiento",
     "options": [
       { "clave": "1", "texto": "jesus" },
       { "clave": "2", "texto": "peron" },
