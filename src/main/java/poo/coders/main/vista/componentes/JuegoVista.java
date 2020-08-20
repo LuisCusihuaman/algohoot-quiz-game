@@ -2,10 +2,7 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import poo.coders.main.modelo.JuegoMock;
-import poo.coders.main.modelo.Observer;
-import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.Pregunta;
+import poo.coders.main.modelo.*;
 import poo.coders.main.vista.OpcionVista;
 import poo.coders.main.vista.componentes.botones.BotonExclusividad;
 import poo.coders.main.vista.componentes.botones.BotonX2;
@@ -43,26 +40,27 @@ public class JuegoVista implements Observer {
 		List<OpcionVista> opcionesVista = new ArrayList<>();
 
 		if (tipoDePregunta.contains("Verdadero o Falso")) {
-			OpcionVista opcionVistaVOF = new OpcionVista("OPCIONES");
-			opciones.forEach(o -> opcionVistaVOF.agregarOpcionSeleccionBox(o.getTextoOpcion()));
+			OpcionVista opcionVistaVOF = new OpcionVista(opciones.get(0).getClave(), opciones.get(0).getTextoOpcion());
+			opcionVistaVOF.agregarOpcionSeleccionBox("Verdadero");
+			opcionVistaVOF.agregarOpcionSeleccionBox("Falso");
 			opcionesVista.add(opcionVistaVOF);
 
 		} else if (tipoDePregunta.contains("Multiple Choice")) {
 			for (Opcion opcion : opciones) {
-				OpcionVista opcionMCActual = new OpcionVista(opcion.getTextoOpcion());
+				OpcionVista opcionMCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				// el texto muy largo no se muestra completo
 				opcionMCActual.agregarOpcionesSeleccionBox(claves);
 				opcionesVista.add(opcionMCActual);
 			}
 		} else if (tipoDePregunta.contains("Group Choice")) {
 			for (Opcion opcion : opciones) {
-				OpcionVista opcionGCActual = new OpcionVista(opcion.getTextoOpcion());
+				OpcionVista opcionGCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				opcionGCActual.agregarOpcionesSeleccionBox(claves);
 				opcionesVista.add(opcionGCActual);
 			}
 		} else {
 			for (Opcion opcion : opciones) {
-				OpcionVista opcionOCActual = new OpcionVista(opcion.getTextoOpcion());
+				OpcionVista opcionOCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				opcionOCActual.agregarOpcionesSeleccionBox(claves);
 				opcionesVista.add(opcionOCActual);
 			}
@@ -76,7 +74,7 @@ public class JuegoVista implements Observer {
 		this.contenedorInformacion = new ContenedorInformacion(tipoDePregunta, nombreJugador, pregunta.getEnunciado());
 		this.contenedorModificadores = getContenedorModificadores(tipoDePregunta);
 		this.contenedorOpciones = getContenedorOpciones(tipoDePregunta, opciones, claves);
-		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock,this);
+		this.contenedorSiguiente = new ContenedorSiguiente(this.juegoMock, this);
 	}
 
 
@@ -89,6 +87,11 @@ public class JuegoVista implements Observer {
 	public void update() {
 		//OBTENES DATOS DEL MODELO
 		Pregunta pregunta = juegoMock.getPreguntaActual();
+		//if(!pregunta.getEnunciado().equals("")){
+		//Jugador JugadorModeloGanador = this.juegoMock.ganador();
+		//	Scene scene = new Scene(new VistaFinal(JugadorModeloGanador).mostrar() -> VBOX)
+		// 	this.primaryStage.setScene(scene);
+		//}
 		String nombreJugador = juegoMock.getJugadorActual().getNombre();
 		String tipoDePregunta = pregunta.getTipoPregunta();
 		List<Opcion> opciones = pregunta.getOpciones();
