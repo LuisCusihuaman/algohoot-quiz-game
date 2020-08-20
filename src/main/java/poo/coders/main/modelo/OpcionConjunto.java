@@ -22,5 +22,7 @@ public class OpcionConjunto extends Opcion {
 		return this.claveElegida.equals(super.getClave()) ? new RespuestaCorrecta("Correcta") : new RespuestaIncorrecta("Incorrecta");
 	}
 
-
+	public String getClaveElegida() {
+		return claveElegida;
+	}
 }

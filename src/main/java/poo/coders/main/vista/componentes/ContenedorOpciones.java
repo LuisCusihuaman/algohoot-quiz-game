@@ -26,8 +26,15 @@ public class ContenedorOpciones extends VBox {
 		ObservableList<Node> opcionesVista = this.getChildren();
 		for (Node opcion : opcionesVista) {
 			OpcionVista opc = (OpcionVista) opcion;
-			opcionModelo.add(opc.obtenerOpcionActual());
+			if(laOpcionNoEstaVacia(opc)){
+				opcionModelo.add(opc.obtenerOpcionActual());
+			}
 		}
 		return opcionModelo;
+	}
+
+	private boolean laOpcionNoEstaVacia(OpcionVista opc) {
+		OpcionConjunto temp = opc.obtenerOpcionActual();
+		return temp.getClaveElegida() != null;
 	}
 }
