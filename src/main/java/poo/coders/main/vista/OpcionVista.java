@@ -42,6 +42,6 @@ public class OpcionVista extends AnchorPane {
 	public Opcion obtenerOpcionActual() {
 		String opcionSelecion = (String) this.opcionSelecion.getValue();
 		String opcionTexto = this.opcionTexto.getText();
-		return new Opcion(opcionTexto, opcionSelecion);
+		return new Opcion(opcionSelecion,opcionTexto);
 	}
 }
