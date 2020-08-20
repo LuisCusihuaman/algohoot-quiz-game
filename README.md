@@ -1,4 +1,7 @@
 ![Java CI with Maven](https://github.com/LuisCusihuaman/tp2-algo3/workflows/Java%20CI%20with%20Maven/badge.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/luiscusihuaman/tp2-algo3/badge?s=b92eb8e943f12ba807bb5451b87fd52fad3e2196)](https://www.codefactor.io/repository/github/luiscusihuaman/tp2-algo3)
+[![codecov](https://codecov.io/gh/LuisCusihuaman/tp2-algo3/branch/release/graph/badge.svg?token=RVU3RHXHU6)](https://codecov.io/gh/LuisCusihuaman/tp2-algo3)
+
 # ☕🚀 Trabajo Práctico 2
 
 ## ℹ️ Introducción
