@@ -1,11 +1,7 @@
 package poo.coders.main.modelo.modificadores;
 
 import poo.coders.main.modelo.Jugador;
-import poo.coders.main.modelo.Modificador;
-import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.Pregunta;
-
-import java.util.ArrayList;
 
 public class ExclusividadX2 implements Exclusividad{
 	public int valorExclusividad;
