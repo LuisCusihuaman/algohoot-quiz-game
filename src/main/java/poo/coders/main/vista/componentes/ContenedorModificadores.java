@@ -24,4 +24,10 @@ public class ContenedorModificadores extends AnchorPane {
 	public void agregarBoton(Button button) {
 		this.getChildren().add(button);
 	}
+
+	public void bloquearBoton(String botonID) {
+		Button botonBuscado = (Button) this.lookup("#" + botonID);
+		botonBuscado.setStyle("-fx-opacity: 0.5");
+		botonBuscado.setDisable(true);
+	}
 }
