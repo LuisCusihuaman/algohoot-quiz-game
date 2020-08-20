@@ -10,7 +10,6 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import poo.coders.main.controlador.Botones.EmpezarHandlerBoton;
 import poo.coders.main.modelo.Juego;
-import poo.coders.main.modelo.JuegoMock;
 
 public class BienvenidoVista {
 	JuegoVista juegoVista;

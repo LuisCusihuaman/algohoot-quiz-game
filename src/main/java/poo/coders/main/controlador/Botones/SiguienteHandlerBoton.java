@@ -3,13 +3,10 @@ package poo.coders.main.controlador.Botones;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import poo.coders.main.modelo.Juego;
-import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Opcion;
-import poo.coders.main.modelo.OpcionConjunto;
 import poo.coders.main.vista.componentes.JuegoVista;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SiguienteHandlerBoton implements EventHandler<ActionEvent> {
 	Juego juego;

@@ -5,7 +5,6 @@ import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import poo.coders.main.modelo.Opcion;
 import poo.coders.main.modelo.OpcionConjunto;
-import poo.coders.main.vista.OpcionVista;
 
 import java.util.ArrayList;
 import java.util.List;

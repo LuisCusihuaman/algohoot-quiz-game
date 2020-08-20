@@ -6,7 +6,6 @@ import poo.coders.main.controlador.Botones.MultiplicadorExclusividadHandlerBoton
 import poo.coders.main.controlador.Botones.MultiplicadorX2HandlerBoton;
 import poo.coders.main.controlador.Botones.MultiplicadorX3HandlerBoton;
 import poo.coders.main.modelo.*;
-import poo.coders.main.vista.OpcionVista;
 import poo.coders.main.vista.componentes.botones.BotonExclusividad;
 import poo.coders.main.vista.componentes.botones.BotonX2;
 import poo.coders.main.vista.componentes.botones.BotonX3;
