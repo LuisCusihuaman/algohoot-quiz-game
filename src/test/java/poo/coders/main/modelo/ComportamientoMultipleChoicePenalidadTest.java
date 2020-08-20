@@ -10,11 +10,11 @@ public class ComportamientoMultipleChoicePenalidadTest {
 	@Test
 	public void test01SeCreaElComportamientoCon5OpcionesYNoLanzaException(){
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
-		opcionesOriginales.add(new Opcion("1", ""));
-		opcionesOriginales.add(new Opcion("2", ""));
-		opcionesOriginales.add(new Opcion("3", ""));
-		opcionesOriginales.add(new Opcion("4", ""));
-		opcionesOriginales.add(new Opcion("5", ""));
+		opcionesOriginales.add(new OpcionConjunto("1", "","1"));
+		opcionesOriginales.add(new OpcionConjunto("2", "","2"));
+		opcionesOriginales.add(new OpcionConjunto("3", "","3"));
+		opcionesOriginales.add(new OpcionConjunto("4", "","4"));
+		opcionesOriginales.add(new OpcionConjunto("5", "","5"));
 
 		Assertions.assertDoesNotThrow(() -> {
 			ComportamientoMultipleChoicePenalidad comportamiento = new ComportamientoMultipleChoicePenalidad(opcionesOriginales);
@@ -34,12 +34,12 @@ public class ComportamientoMultipleChoicePenalidadTest {
 	@Test
 	public void test03SeCreaElComportamientoCon6OpcionesYLanzaException(){
 		ArrayList<Opcion> opcionesOriginales = new ArrayList<>();
-		opcionesOriginales.add(new Opcion("1", ""));
-		opcionesOriginales.add(new Opcion("2", ""));
-		opcionesOriginales.add(new Opcion("3", ""));
-		opcionesOriginales.add(new Opcion("4", ""));
-		opcionesOriginales.add(new Opcion("5", ""));
-		opcionesOriginales.add(new Opcion("6", ""));
+		opcionesOriginales.add(new OpcionConjunto("1", "","1"));
+		opcionesOriginales.add(new OpcionConjunto("2", "","2"));
+		opcionesOriginales.add(new OpcionConjunto("3", "","3"));
+		opcionesOriginales.add(new OpcionConjunto("4", "","4"));
+		opcionesOriginales.add(new OpcionConjunto("5", "","5"));
+		opcionesOriginales.add(new OpcionConjunto("6", "","6"));
 
 		Assertions.assertThrows(RuntimeException.class, () -> {
 			ComportamientoMultipleChoicePenalidad comportamiento = new ComportamientoMultipleChoicePenalidad(opcionesOriginales);
