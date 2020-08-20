@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ParserTest {
 	@Test
 	void testElParserDeberiaDevolverUnaListaDePreguntas() {
-		ArrayList<Pregunta> preguntas = new Parser().parsear();
+		Pregunta pregunta = new Parser().parsear();
 		Assertions.assertTrue(true);
 	}
 }

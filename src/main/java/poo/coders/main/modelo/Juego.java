@@ -22,7 +22,7 @@ public class Juego {
 		//this.turno = new Turno();
 		//this.estado = Estado.INICIO;
 
-		this.preguntaActual = new Pregunta("", new ComportamientoMultipleChoiceClasico());
+		this.preguntaActual = new Parser().parsear();
 		this.respuestasDeJugadores = new ArrayList<>();
 		this.respuestasDeJugadores.add(new ArrayList<>());
 		this.respuestasDeJugadores.add(new ArrayList<>());
@@ -40,7 +40,7 @@ public class Juego {
 		this.jugadorInicial = jugador1;
 		this.jugadorActual = jugadorInicial;
 		exclusividadActual = new SinExclusividad();
-
+		//this.notifyObservers();
 	}
 
 	private Jugador elegirRespuestasAPreguntaActual(ArrayList<Opcion> respuestasElegidas){
