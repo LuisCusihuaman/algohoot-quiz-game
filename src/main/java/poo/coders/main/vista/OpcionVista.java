@@ -48,4 +48,7 @@ public class OpcionVista extends AnchorPane {
 		OpcionConjunto opc = new OpcionConjunto(new Opcion(this.claveOriginal, opcionTexto), opcionSelecion);
 		return opc;
 	}
+	public void setearPrimeraOpcion(){
+		this.opcionSelecion.getSelectionModel().selectFirst();
+	}
 }

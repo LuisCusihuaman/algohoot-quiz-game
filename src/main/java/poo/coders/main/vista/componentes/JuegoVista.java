@@ -49,6 +49,7 @@ public class JuegoVista implements Observer {
 			OpcionVista opcionVistaVOF = new OpcionVista(opciones.get(0).getClave(), opciones.get(0).getTextoOpcion());
 			opcionVistaVOF.agregarOpcionSeleccionBox("Verdadero");
 			opcionVistaVOF.agregarOpcionSeleccionBox("Falso");
+			opcionVistaVOF.setearPrimeraOpcion();
 			opcionesVista.add(opcionVistaVOF);
 
 		} else if (tipoDePregunta.contains("Multiple Choice")) {
@@ -56,18 +57,21 @@ public class JuegoVista implements Observer {
 				OpcionVista opcionMCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				// el texto muy largo no se muestra completo
 				opcionMCActual.agregarOpcionesSeleccionBox(claves);
+				opcionMCActual.setearPrimeraOpcion();
 				opcionesVista.add(opcionMCActual);
 			}
 		} else if (tipoDePregunta.contains("Group Choice")) {
 			for (Opcion opcion : opciones) {
 				OpcionVista opcionGCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				opcionGCActual.agregarOpcionesSeleccionBox(claves);
+				opcionGCActual.setearPrimeraOpcion();
 				opcionesVista.add(opcionGCActual);
 			}
 		} else {
 			for (Opcion opcion : opciones) {
 				OpcionVista opcionOCActual = new OpcionVista(opcion.getClave(), opcion.getTextoOpcion());
 				opcionOCActual.agregarOpcionesSeleccionBox(claves);
+				opcionOCActual.setearPrimeraOpcion();
 				opcionesVista.add(opcionOCActual);
 			}
 		}
