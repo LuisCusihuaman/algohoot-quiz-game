@@ -5,25 +5,26 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import poo.coders.main.modelo.Juego;
 import poo.coders.main.modelo.JuegoMock;
 import poo.coders.main.modelo.Jugador;
 
 import java.util.ArrayList;
 
 public class VistaPuntajes {
-	JuegoMock juegoMock;
+	Juego juego;
 	ContenedorJuego contenedorJuego;
 
-	public VistaPuntajes(JuegoMock juegoMock) {
-		this.juegoMock = juegoMock;
+	public VistaPuntajes(Juego juego) {
+		this.juego = juego;
 	}
 
 	public ContenedorJuego mostrar() {
-		ArrayList<Jugador> jugadores = this.juegoMock.getJugadores();
-		String nombreJugador1 = jugadores.get(0).getNombre();
-		String nombreJugador2 = jugadores.get(1).getNombre();
-		int puntajeJugador1 = jugadores.get(0).getPuntos();
-		int puntajeJugador2 = jugadores.get(1).getPuntos();
+		Jugador jugadorGanador = this.juego.getGanador();
+		String jugadorGanadorNombre =jugadorGanador.getNombre();
+		String jugadorPerdedorNombre = jugadorGanador.getJugadorSiguiente().getNombre();
+		int jugadorGanadorPuntos = jugadorGanador.getPuntos();
+		int jugadorPerdorPuntos = jugadorGanador.getJugadorSiguiente().getPuntos();
 
 		this.contenedorJuego = new ContenedorJuego();
 		AnchorPane anchorPane = new AnchorPane();
@@ -47,14 +48,14 @@ public class VistaPuntajes {
 		anchorPane1.setId("PUNTAJE J1");
 
 		Label label1 = new Label();
-		label1.setText(nombreJugador1);
+		label1.setText(jugadorGanadorNombre);
 		label1.setLayoutX(60);
 		label1.setLayoutY(27);
 		label1.setPrefHeight(18);
 		label1.setPrefWidth(85);
 
 		Label p1 = new Label();
-		p1.setText(String.valueOf(puntajeJugador1));
+		p1.setText(String.valueOf(jugadorGanadorPuntos));
 		p1.setLayoutX(248);
 		p1.setLayoutY(27);
 		p1.setPrefHeight(18);
@@ -66,14 +67,14 @@ public class VistaPuntajes {
 		anchorPane2.setId("PUNTAJE J2");
 
 		Label label2 = new Label();
-		label2.setText(nombreJugador2);
+		label2.setText(jugadorPerdedorNombre);
 		label2.setLayoutX(60);
 		label2.setLayoutY(27);
 		label2.setPrefHeight(18);
 		label2.setPrefWidth(85);
 
 		Label p2 = new Label();
-		p2.setText(String.valueOf(puntajeJugador2));
+		p2.setText(String.valueOf(jugadorPerdorPuntos));
 		p2.setLayoutX(248);
 		p2.setLayoutY(27);
 		p2.setPrefHeight(18);

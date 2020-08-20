@@ -3,7 +3,7 @@ package poo.coders.main.vista;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import poo.coders.main.modelo.JuegoMock;
+import poo.coders.main.modelo.Juego;
 import poo.coders.main.vista.componentes.BienvenidoVista;
 import poo.coders.main.vista.componentes.ContenedorJuego;
 import poo.coders.main.vista.componentes.JuegoVista;
@@ -30,12 +30,12 @@ public class Main extends Application {
 
 		primaryStage.setTitle("algohoot");
 		//CREATE MODEL AND CONFIGURE IN FLIGHT
-		JuegoMock juegoMock = new JuegoMock();
+		Juego juego = new Juego();
 		//CREATE OBSERVER VIEW OBSERVER
-		JuegoVista juegoVista = new JuegoVista(juegoMock);
-		juegoMock.addObserver(juegoVista);
+		JuegoVista juegoVista = new JuegoVista(juego);
+		juego.addObserver(juegoVista);
 		// COMPOSE WITH OTHER VIEWS
-		BienvenidoVista bienvenidoVista = new BienvenidoVista(juegoVista, juegoMock, primaryStage);
+		BienvenidoVista bienvenidoVista = new BienvenidoVista(juegoVista, juego, primaryStage);
 		ContenedorJuego contenedorJuego = bienvenidoVista.mostrar();
 		Scene primaryScene = new Scene(contenedorJuego, 360, 640);
 		primaryStage.setScene(primaryScene);

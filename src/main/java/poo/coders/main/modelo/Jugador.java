@@ -50,6 +50,7 @@ public class Jugador{
 
 	public void ganarPuntaje(int puntaje) {
 		this.puntajeJugador += this.multiplicadorClase.modificarPuntos(puntaje);
+		this.setMultiplicador(new MultiplicadorBasico());
 	}
 
 	public void procesarPregunta(Pregunta pregunta, List<Opcion> respuestas) {
