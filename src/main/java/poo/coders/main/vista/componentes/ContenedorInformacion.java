@@ -30,7 +30,7 @@ public class ContenedorInformacion extends AnchorPane {
 		this.preguntaEnunciado.setText(preguntaEnunciado);
 		this.preguntaEnunciado.setWrapText(true);
 		this.preguntaEnunciado.setTextAlignment(TextAlignment.JUSTIFY);
-		this.preguntaEnunciado.setMaxWidth(320);
+		this.preguntaEnunciado.setMaxWidth(220);
 
 		this.getChildren().addAll(this.tipoPregunta, this.nombreJugador, this.preguntaEnunciado);
 

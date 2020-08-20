@@ -6,5 +6,6 @@ public class ContenedorJuego extends VBox {
 	public ContenedorJuego() {
 		this.setId("ContenedorJuego");
 		this.setStyle("-fx-background-color: FFFFFF");
+		this.maxHeight(640);
 	}
 }
