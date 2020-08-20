@@ -55,8 +55,7 @@ public class Juego {
 
 		this.jugadorActual = this.elegirRespuestasAPreguntaActual(respuestasElegidas);
 		if(jugadorActual == jugadorInicial){
-			//exclusividadActual.definirPuntosJugadoresEnPregunta(preguntaActual, jugadorActual, jugadorActual.siguienteJugador,
-			// jugadorActual.respuestasElegidas(), jugadorActual.siguienteJugador.respuestasElegidas);
+			exclusividadActual.definirPuntosJugadoresEnPregunta(preguntaActual, jugadorActual);
 
 			this.preguntaActual = preguntaActual.getSiguientePregunta();
 			exclusividadActual = new SinExclusividad();
@@ -65,23 +64,6 @@ public class Juego {
 		//notifyObservers();
 		// |--> change() -> if(preguntaActual == Invalida (null, o enunciado == "", u otra alternativa) => mostrarFinDelJuego();
 
-		//this.jugadorActual = jugadorActual.procesarPreguntaActual();
-
-
-/*
-		respuestasDeJugadores.set(indexJugadorActual, respuestasJugadorActual);
-		indexJugadorActual++;
-		indexJugadorActual %= jugadores.size();
-
- */
-	/*	if (indexJugadorActual == 0) {
-			preguntas.get(indexPreguntaActual).darPuntosAJugadores(jugadores.get(0), jugadores.get(1), respuestasDeJugadores.get(0), respuestasDeJugadores.get(1));
-			if (preguntas.size() - 1 != indexPreguntaActual) {
-				indexPreguntaActual++;
-			} else {
-				Platform.exit();
-			}
-		}*/
 	}
 
 	public Jugador getJugadorActual() {

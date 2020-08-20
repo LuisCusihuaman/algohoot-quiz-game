@@ -65,5 +65,7 @@ public class Jugador{
 		this.respuestasElegidas = respuestasElegidas;
 	}
 
-
+	public ArrayList<Opcion> getRespuestasElegidas() {
+		return this.respuestasElegidas;
+	}
 }

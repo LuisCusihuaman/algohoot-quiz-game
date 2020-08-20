@@ -29,16 +29,16 @@ public class ExclusividadX4 implements Exclusividad {
 	}
 
 	@Override
-	public void definirPuntosJugadoresEnPregunta(Pregunta pregunta, Jugador jugador1, Jugador jugador2, ArrayList<Opcion> opcionesJugador1, ArrayList<Opcion> opcionesJugador2) {
-		int puntosJugador1 = pregunta.obtenerPuntaje(opcionesJugador1);
-		int puntosJugador2 = pregunta.obtenerPuntaje(opcionesJugador2);
+	public void definirPuntosJugadoresEnPregunta(Pregunta pregunta, Jugador jugadorActual) {
+		int puntosJugador1 = pregunta.obtenerPuntaje(jugadorActual.getRespuestasElegidas());
+		int puntosJugador2 = pregunta.obtenerPuntaje(jugadorActual.getJugadorSiguiente().getRespuestasElegidas());
 		if(puntosJugador1 == puntosJugador2) return;
 		if(puntosJugador1 > puntosJugador2) {
-			this.darPuntosAGanador(jugador1, puntosJugador1);
-			this.darPuntosAPerdedor(jugador2, puntosJugador2);
+			this.darPuntosAGanador(jugadorActual, puntosJugador1);
+			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador2);
 		} else if (puntosJugador1 < puntosJugador2) {
-			this.darPuntosAGanador(jugador1, puntosJugador2);
-			this.darPuntosAPerdedor(jugador2, puntosJugador1);
+			this.darPuntosAGanador(jugadorActual, puntosJugador2);
+			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador1);
 		}
 	}
 }
