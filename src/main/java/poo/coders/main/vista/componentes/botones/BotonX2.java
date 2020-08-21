@@ -1,7 +1,7 @@
 package poo.coders.main.vista.componentes.botones;
 
 import javafx.scene.control.Button;
-import poo.coders.main.controlador.Botones.MultiplicadorX2HandlerBoton;
+import poo.coders.main.controlador.botones.MultiplicadorX2HandlerBoton;
 
 public class BotonX2 extends Button {
 	public BotonX2(MultiplicadorX2HandlerBoton multiplicadorX2HandlerBoton) {

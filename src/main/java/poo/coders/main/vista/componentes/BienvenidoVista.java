@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import poo.coders.main.controlador.Botones.EmpezarHandlerBoton;
+import poo.coders.main.controlador.botones.EmpezarHandlerBoton;
 import poo.coders.main.modelo.Juego;
 
 public class BienvenidoVista {

@@ -2,7 +2,7 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import poo.coders.main.controlador.Botones.SiguienteHandlerBoton;
+import poo.coders.main.controlador.botones.SiguienteHandlerBoton;
 import poo.coders.main.modelo.Juego;
 
 public class ContenedorSiguiente extends AnchorPane {

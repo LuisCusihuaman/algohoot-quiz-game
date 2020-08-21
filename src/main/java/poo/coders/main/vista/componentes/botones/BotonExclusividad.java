@@ -1,7 +1,7 @@
 package poo.coders.main.vista.componentes.botones;
 
 import javafx.scene.control.Button;
-import poo.coders.main.controlador.Botones.MultiplicadorExclusividadHandlerBoton;
+import poo.coders.main.controlador.botones.MultiplicadorExclusividadHandlerBoton;
 
 public class BotonExclusividad extends Button {
 

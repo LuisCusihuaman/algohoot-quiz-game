@@ -2,9 +2,9 @@ package poo.coders.main.vista.componentes;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import poo.coders.main.controlador.Botones.MultiplicadorExclusividadHandlerBoton;
-import poo.coders.main.controlador.Botones.MultiplicadorX2HandlerBoton;
-import poo.coders.main.controlador.Botones.MultiplicadorX3HandlerBoton;
+import poo.coders.main.controlador.botones.MultiplicadorExclusividadHandlerBoton;
+import poo.coders.main.controlador.botones.MultiplicadorX2HandlerBoton;
+import poo.coders.main.controlador.botones.MultiplicadorX3HandlerBoton;
 import poo.coders.main.modelo.*;
 import poo.coders.main.vista.componentes.botones.BotonExclusividad;
 import poo.coders.main.vista.componentes.botones.BotonX2;

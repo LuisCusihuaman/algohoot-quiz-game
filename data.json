@@ -5,7 +5,7 @@
     "options": [
       { "clave": "Falso", "texto": "Respuesta" }
     ],
-    "puntaje_type": "Clasico"
+    "puntaje_type": "Penalidad"
   },
   {
     "type": "multiple",

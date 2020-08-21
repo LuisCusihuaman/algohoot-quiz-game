@@ -1,4 +1,4 @@
-package poo.coders.main.controlador.Botones;
+package poo.coders.main.controlador.botones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
