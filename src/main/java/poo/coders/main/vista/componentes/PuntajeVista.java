@@ -17,6 +17,26 @@ public class PuntajeVista {
 		this.juego = juego;
 	}
 
+	private void construirPuntaje(String jugadorGanadorNombre, int jugadorGanadorPuntos, AnchorPane contenedorPuntaje) {
+		Label nombreJugador = new Label();
+		nombreJugador.setText(jugadorGanadorNombre);
+		nombreJugador.setLayoutX(60);
+		nombreJugador.setLayoutY(27);
+		nombreJugador.setPrefHeight(18);
+		nombreJugador.setPrefWidth(85);
+		nombreJugador.setStyle("-fx-font-weight: bold");
+
+
+		Label puntajeJugador = new Label();
+		puntajeJugador.setText(String.valueOf(jugadorGanadorPuntos));
+		puntajeJugador.setLayoutX(248);
+		puntajeJugador.setLayoutY(27);
+		puntajeJugador.setPrefHeight(18);
+		puntajeJugador.setPrefWidth(85);
+
+		contenedorPuntaje.getChildren().addAll(nombreJugador, puntajeJugador);
+	}
+
 	public ContenedorJuego mostrar() {
 		Jugador jugadorGanador = this.juego.getGanador();
 		String jugadorGanadorNombre = jugadorGanador.getNombre();
@@ -42,49 +62,15 @@ public class PuntajeVista {
 		vBox.setStyle("-fx-background-color: #C4C4C4");
 		vBox.setMinHeight(124);
 
-		AnchorPane anchorPane1 = new AnchorPane();
-		anchorPane1.setId("PUNTAJE J1");
+		AnchorPane puntajeJ1 = new AnchorPane();
+		puntajeJ1.setId("PUNTAJE J1");
+		construirPuntaje(jugadorGanadorNombre, jugadorGanadorPuntos, puntajeJ1);
 
-		Label label1 = new Label();
-		label1.setText(jugadorGanadorNombre);
-		label1.setLayoutX(60);
-		label1.setLayoutY(27);
-		label1.setPrefHeight(18);
-		label1.setPrefWidth(85);
-		label1.setStyle("-fx-font-weight: bold");
+		AnchorPane puntajeJ2 = new AnchorPane();
+		puntajeJ2.setId("PUNTAJE J2");
+		construirPuntaje(jugadorPerdedorNombre, jugadorPerdorPuntos, puntajeJ2);
 
-
-		Label p1 = new Label();
-		p1.setText(String.valueOf(jugadorGanadorPuntos));
-		p1.setLayoutX(248);
-		p1.setLayoutY(27);
-		p1.setPrefHeight(18);
-		p1.setPrefWidth(85);
-
-		anchorPane1.getChildren().addAll(label1, p1);
-
-		AnchorPane anchorPane2 = new AnchorPane();
-		anchorPane2.setId("PUNTAJE J2");
-
-		Label label2 = new Label();
-		label2.setText(jugadorPerdedorNombre);
-		label2.setLayoutX(60);
-		label2.setLayoutY(27);
-		label2.setPrefHeight(18);
-		label2.setPrefWidth(85);
-		label2.setStyle("-fx-font-weight: bold");
-
-		Label p2 = new Label();
-		p2.setText(String.valueOf(jugadorPerdorPuntos));
-		p2.setLayoutX(248);
-		p2.setLayoutY(27);
-		p2.setPrefHeight(18);
-		p2.setPrefWidth(85);
-
-		anchorPane2.getChildren().addAll(label2, p2);
-
-
-		vBox.getChildren().addAll(anchorPane1, anchorPane2);
+		vBox.getChildren().addAll(puntajeJ1, puntajeJ2);
 		anchorPane.getChildren().add(label);
 		this.contenedorJuego.getChildren().addAll(anchorPane, vBox);
 		return this.contenedorJuego;
