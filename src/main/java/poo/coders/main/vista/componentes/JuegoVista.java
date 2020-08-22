@@ -14,8 +14,9 @@ import poo.coders.main.vista.componentes.botones.BotonX2;
 import poo.coders.main.vista.componentes.botones.BotonX3;
 import poo.coders.main.vista.componentes.contenedores.ContenedorInformacion;
 import poo.coders.main.vista.componentes.contenedores.ContenedorJuego;
-import poo.coders.main.vista.componentes.contenedores.ContenedorModificadores;
+import poo.coders.main.vista.componentes.contenedores.modificadores.ContenedorModificadores;
 import poo.coders.main.vista.componentes.contenedores.ContenedorSiguiente;
+import poo.coders.main.vista.componentes.contenedores.modificadores.Temporizador;
 import poo.coders.main.vista.componentes.contenedores.opciones.ContenedorOpcion;
 import poo.coders.main.vista.componentes.contenedores.opciones.ContenedorOpciones;
 
@@ -54,7 +55,8 @@ public class JuegoVista implements Observer {
 	}
 
 	private ContenedorModificadores construirModificadores(String tipoDePregunta) {
-		ContenedorModificadores modificadoresConBotones = new ContenedorModificadores();
+		Temporizador temporizador = new Temporizador(this.juego, this);
+		ContenedorModificadores modificadoresConBotones = new ContenedorModificadores(temporizador);
 
 		if (tipoDePregunta.contains("Penalidad")) {
 			modificadoresConBotones.agregarBoton(new BotonX2(new MultiplicadorX2HandlerBoton(this.juego)));

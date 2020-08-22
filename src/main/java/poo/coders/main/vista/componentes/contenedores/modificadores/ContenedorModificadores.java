@@ -1,24 +1,15 @@
-package poo.coders.main.vista.componentes.contenedores;
+package poo.coders.main.vista.componentes.contenedores.modificadores;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 public class ContenedorModificadores extends AnchorPane {
-	Label timer;
 
-	public ContenedorModificadores() {
+	public ContenedorModificadores(Temporizador temporizador) {
 		this.setId("ContenedorModificadores");
 		this.setMinHeight(66);
 		this.setPrefWidth(360);
-
-		this.timer = new Label();
-		this.timer.setLayoutX(27);
-		this.timer.setLayoutY(20);
-		this.timer.setPrefHeight(28);
-		this.timer.setPrefWidth(69);
-		this.timer.setText("TIMER");//falta setear su tamaño a 17
-		this.getChildren().add(this.timer);
+		this.getChildren().add(temporizador);
 	}
 
 	public void agregarBoton(Button button) {

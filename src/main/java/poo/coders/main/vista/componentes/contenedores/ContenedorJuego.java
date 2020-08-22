@@ -1,6 +1,7 @@
 package poo.coders.main.vista.componentes.contenedores;
 
 import javafx.scene.layout.VBox;
+import poo.coders.main.vista.componentes.contenedores.modificadores.ContenedorModificadores;
 import poo.coders.main.vista.componentes.contenedores.opciones.ContenedorOpciones;
 
 public class ContenedorJuego extends VBox {
