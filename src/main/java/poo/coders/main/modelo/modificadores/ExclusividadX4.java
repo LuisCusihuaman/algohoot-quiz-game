@@ -34,8 +34,8 @@ public class ExclusividadX4 implements Exclusividad {
 			this.darPuntosAGanador(jugadorActual, puntosJugador1);
 			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador2);
 		} else {
-			this.darPuntosAGanador(jugadorActual, puntosJugador2);
-			this.darPuntosAPerdedor(jugadorActual.getJugadorSiguiente(), puntosJugador1);
+			this.darPuntosAGanador(jugadorActual.getJugadorSiguiente(), puntosJugador2);
+			this.darPuntosAPerdedor(jugadorActual, puntosJugador1);
 		}
 	}
 }
