@@ -1,4 +1,4 @@
-package poo.coders.main.vista.componentes;
+package poo.coders.main.vista.componentes.contenedores.opciones;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -9,12 +9,12 @@ import poo.coders.main.modelo.OpcionConjunto;
 
 import java.util.Set;
 
-public class OpcionVista extends AnchorPane {
-	private Label opcionTexto;
+public class ContenedorOpcion extends AnchorPane {
+	private final Label opcionTexto;
 	ComboBox opcionSelecion;
 	String claveOriginal;
 
-	public OpcionVista(String claveOriginal,String texto) {
+	public ContenedorOpcion(String claveOriginal, String texto) {
 		this.setPrefHeight(72);
 		this.setPrefWidth(360);
 
@@ -51,7 +51,8 @@ public class OpcionVista extends AnchorPane {
 		String opcionTextoUI = this.opcionTexto.getText();
 		return new OpcionConjunto(new Opcion(this.claveOriginal, opcionTextoUI), opcionSelecionUsuario);
 	}
-	public void setearPrimeraOpcion(){
+
+	public void setearPrimeraOpcion() {
 		this.opcionSelecion.getSelectionModel().selectFirst();
 	}
 }

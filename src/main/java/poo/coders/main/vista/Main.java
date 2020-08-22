@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import poo.coders.main.modelo.Juego;
 import poo.coders.main.vista.componentes.BienvenidoVista;
-import poo.coders.main.vista.componentes.ContenedorJuego;
 import poo.coders.main.vista.componentes.JuegoVista;
 
 public class Main extends Application {
@@ -15,18 +14,17 @@ public class Main extends Application {
 	}
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage ventana) {
 
-		primaryStage.setTitle("algohoot");
+		ventana.setTitle("ALGOHOOT");
 		Juego juego = new Juego();
 		JuegoVista juegoVista = new JuegoVista(juego);
 		juego.addObserver(juegoVista);
-		BienvenidoVista bienvenidoVista = new BienvenidoVista(juegoVista, juego, primaryStage);
-		ContenedorJuego contenedorJuego = bienvenidoVista.mostrar();
-		Scene primaryScene = new Scene(contenedorJuego, 360, 640);
-		primaryScene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
-		primaryStage.setScene(primaryScene);
-		primaryStage.setResizable(false);
-		primaryStage.show();
+		BienvenidoVista bienvenidoVista = new BienvenidoVista(juegoVista, juego, ventana);
+		Scene escena = new Scene(bienvenidoVista.mostrar(), 360, 640);
+		escena.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
+		ventana.setScene(escena);
+		ventana.setResizable(false);
+		ventana.show();
 	}
 }

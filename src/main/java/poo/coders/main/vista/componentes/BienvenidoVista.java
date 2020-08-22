@@ -10,6 +10,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import poo.coders.main.controlador.botones.EmpezarHandlerBoton;
 import poo.coders.main.modelo.Juego;
+import poo.coders.main.vista.componentes.contenedores.ContenedorJuego;
 
 public class BienvenidoVista {
 	JuegoVista juegoVista;
@@ -33,7 +34,7 @@ public class BienvenidoVista {
 
 		VBox vBox = new VBox();
 		vBox.setId("JUGADORES");
-		vBox.setStyle("-fx-background-color: #C4C4C4");
+		vBox.setStyle("-fx-background-color: #c4c4c4");
 		vBox.setMinHeight(124);
 
 		AnchorPane anchorPane1 = new AnchorPane();
@@ -74,7 +75,7 @@ public class BienvenidoVista {
 		button.setLayoutX(135);
 		button.setLayoutY(26);
 		button.setText("COMENZAR");
-		button.setOnAction(new EmpezarHandlerBoton(juego,textField1,textField2));
+		button.setOnAction(new EmpezarHandlerBoton(juego, textField1, textField2));
 		anchorPane3.getChildren().add(button);
 		vBox.getChildren().addAll(anchorPane1, anchorPane2);
 		anchorPane.getChildren().add(label);

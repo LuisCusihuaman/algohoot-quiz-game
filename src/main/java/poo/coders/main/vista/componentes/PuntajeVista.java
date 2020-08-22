@@ -7,18 +7,19 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import poo.coders.main.modelo.Juego;
 import poo.coders.main.modelo.Jugador;
+import poo.coders.main.vista.componentes.contenedores.ContenedorJuego;
 
-public class VistaPuntajes {
+public class PuntajeVista {
 	Juego juego;
 	ContenedorJuego contenedorJuego;
 
-	public VistaPuntajes(Juego juego) {
+	public PuntajeVista(Juego juego) {
 		this.juego = juego;
 	}
 
 	public ContenedorJuego mostrar() {
 		Jugador jugadorGanador = this.juego.getGanador();
-		String jugadorGanadorNombre =jugadorGanador.getNombre();
+		String jugadorGanadorNombre = jugadorGanador.getNombre();
 		String jugadorPerdedorNombre = jugadorGanador.getJugadorSiguiente().getNombre();
 		int jugadorGanadorPuntos = jugadorGanador.getPuntos();
 		int jugadorPerdorPuntos = jugadorGanador.getJugadorSiguiente().getPuntos();
