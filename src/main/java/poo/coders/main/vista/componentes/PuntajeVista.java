@@ -42,25 +42,25 @@ public class PuntajeVista {
 		String jugadorGanadorNombre = jugadorGanador.getNombre();
 		String jugadorPerdedorNombre = jugadorGanador.getJugadorSiguiente().getNombre();
 		int jugadorGanadorPuntos = jugadorGanador.getPuntos();
-		int jugadorPerdorPuntos = jugadorGanador.getJugadorSiguiente().getPuntos();
+		int jugadorPerdedorPuntos = jugadorGanador.getJugadorSiguiente().getPuntos();
 
 		this.contenedorJuego = new ContenedorJuego();
-		AnchorPane anchorPane = new AnchorPane();
-		anchorPane.setId("TITULO");
-		anchorPane.setPrefHeight(141);
-		anchorPane.setPrefWidth(360);
+		AnchorPane contenedorTitulo = new AnchorPane();
+		contenedorTitulo.setId("TITULO");
+		contenedorTitulo.setPrefHeight(141);
+		contenedorTitulo.setPrefWidth(360);
 
-		Label label = new Label();
-		label.setText("PUNTAJES");
-		label.setLayoutX(103);
-		label.setLayoutY(60);
-		label.setTextAlignment(TextAlignment.CENTER);
-		label.setFont(Font.font(33));
+		Label titulo = new Label();
+		titulo.setText("PUNTAJES");
+		titulo.setLayoutX(103);
+		titulo.setLayoutY(60);
+		titulo.setTextAlignment(TextAlignment.CENTER);
+		titulo.setFont(Font.font(33));
 
-		VBox vBox = new VBox();
-		vBox.setId("PUNTAJES_JUGADORES");
-		vBox.setStyle("-fx-background-color: #C4C4C4");
-		vBox.setMinHeight(124);
+		VBox puntajes = new VBox();
+		puntajes.setId("PUNTAJES_JUGADORES");
+		puntajes.setStyle("-fx-background-color: #C4C4C4");
+		puntajes.setMinHeight(124);
 
 		AnchorPane puntajeJ1 = new AnchorPane();
 		puntajeJ1.setId("PUNTAJE J1");
@@ -68,11 +68,11 @@ public class PuntajeVista {
 
 		AnchorPane puntajeJ2 = new AnchorPane();
 		puntajeJ2.setId("PUNTAJE J2");
-		construirPuntaje(jugadorPerdedorNombre, jugadorPerdorPuntos, puntajeJ2);
+		construirPuntaje(jugadorPerdedorNombre, jugadorPerdedorPuntos, puntajeJ2);
 
-		vBox.getChildren().addAll(puntajeJ1, puntajeJ2);
-		anchorPane.getChildren().add(label);
-		this.contenedorJuego.getChildren().addAll(anchorPane, vBox);
+		puntajes.getChildren().addAll(puntajeJ1, puntajeJ2);
+		contenedorTitulo.getChildren().add(titulo);
+		this.contenedorJuego.getChildren().addAll(contenedorTitulo, puntajes);
 		return this.contenedorJuego;
 	}
 }
