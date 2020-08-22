@@ -1,4 +1,4 @@
-package poo.coders.main.vista.componentes;
+package poo.coders.main.vista.componentes.contenedores;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

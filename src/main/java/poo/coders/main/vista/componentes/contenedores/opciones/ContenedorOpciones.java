@@ -1,4 +1,4 @@
-package poo.coders.main.vista.componentes;
+package poo.coders.main.vista.componentes.contenedores.opciones;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -17,23 +17,23 @@ public class ContenedorOpciones extends VBox {
 		this.setMinHeight(422);
 	}
 
-	public void agregarOpcion(OpcionVista opcionVista) {
-		this.getChildren().add(opcionVista);
+	public void agregarOpcion(ContenedorOpcion contenedorOpcion) {
+		this.getChildren().add(contenedorOpcion);
 	}
 
 	public List<Opcion> obtenerRespuestas() {
 		List<Opcion> opcionModelo = new ArrayList<>();
 		ObservableList<Node> opcionesVista = this.getChildren();
 		for (Node opcion : opcionesVista) {
-			OpcionVista opc = (OpcionVista) opcion;
-			if(laOpcionNoEstaVacia(opc)){
+			ContenedorOpcion opc = (ContenedorOpcion) opcion;
+			if (laOpcionNoEstaVacia(opc)) {
 				opcionModelo.add(opc.obtenerOpcionActual());
 			}
 		}
 		return opcionModelo;
 	}
 
-	private boolean laOpcionNoEstaVacia(OpcionVista opc) {
+	private boolean laOpcionNoEstaVacia(ContenedorOpcion opc) {
 		OpcionConjunto temp = opc.obtenerOpcionActual();
 		return temp.getClaveElegida() != null;
 	}
