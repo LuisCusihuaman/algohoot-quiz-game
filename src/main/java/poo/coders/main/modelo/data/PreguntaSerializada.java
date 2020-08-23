@@ -28,9 +28,6 @@ public class PreguntaSerializada {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
 
 
 	public String getEnunciado() {
@@ -46,17 +43,12 @@ public class PreguntaSerializada {
 		return options;
 	}
 
-	public void setOptions(List<OpcionSerializada> options) {
-		this.options = options;
-	}
 
 	public String getPuntajeType() {
 		return puntajeType;
 	}
 
-	public void setPuntajeType(String puntajeType) {
-		this.puntajeType = puntajeType;
-	}
+
 
 
 }

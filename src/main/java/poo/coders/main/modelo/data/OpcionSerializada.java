@@ -17,15 +17,10 @@ public class OpcionSerializada {
         return clave;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
+
 
     public String getTexto() {
         return texto;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
 }
