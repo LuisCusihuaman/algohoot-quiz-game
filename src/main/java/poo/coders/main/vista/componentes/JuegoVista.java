@@ -14,8 +14,8 @@ import poo.coders.main.vista.componentes.botones.BotonX2;
 import poo.coders.main.vista.componentes.botones.BotonX3;
 import poo.coders.main.vista.componentes.contenedores.ContenedorInformacion;
 import poo.coders.main.vista.componentes.contenedores.ContenedorJuego;
-import poo.coders.main.vista.componentes.contenedores.modificadores.ContenedorModificadores;
 import poo.coders.main.vista.componentes.contenedores.ContenedorSiguiente;
+import poo.coders.main.vista.componentes.contenedores.modificadores.ContenedorModificadores;
 import poo.coders.main.vista.componentes.contenedores.modificadores.Temporizador;
 import poo.coders.main.vista.componentes.contenedores.opciones.ContenedorOpcion;
 import poo.coders.main.vista.componentes.contenedores.opciones.ContenedorOpciones;
@@ -47,7 +47,7 @@ public class JuegoVista implements Observer {
 	}
 
 	private boolean esClasico(String tipoDePregunta) {
-		return tipoDePregunta.contains("Clasico");
+		return tipoDePregunta.contains("Clasico") || !(tipoDePregunta.contains("Multiple Choice"));
 	}
 
 	public List<Opcion> obtenerRespuestaJugador() {
@@ -79,26 +79,12 @@ public class JuegoVista implements Observer {
 			opcionVOF.setearPrimeraOpcion();
 			opcionesVista.add(opcionVOF);
 
-		} else if (tipoDePregunta.contains("Multiple Choice")) {
-			for (Opcion opcion : opciones) {
-				ContenedorOpcion opcionMCActual = new ContenedorOpcion(opcion.getClave(), opcion.getTextoOpcion());
-				opcionMCActual.agregarOpcionesSeleccionBox(claves);
-				if (esClasico(tipoDePregunta)) opcionMCActual.setearPrimeraOpcion();
-				opcionesVista.add(opcionMCActual);
-			}
-		} else if (tipoDePregunta.contains("Group Choice")) {
-			for (Opcion opcion : opciones) {
-				ContenedorOpcion opcionGCActual = new ContenedorOpcion(opcion.getClave(), opcion.getTextoOpcion());
-				opcionGCActual.agregarOpcionesSeleccionBox(claves);
-				opcionGCActual.setearPrimeraOpcion();
-				opcionesVista.add(opcionGCActual);
-			}
 		} else {
 			for (Opcion opcion : opciones) {
-				ContenedorOpcion opcionOCActual = new ContenedorOpcion(opcion.getClave(), opcion.getTextoOpcion());
-				opcionOCActual.agregarOpcionesSeleccionBox(claves);
-				opcionOCActual.setearPrimeraOpcion();
-				opcionesVista.add(opcionOCActual);
+				ContenedorOpcion opcionConjunto = new ContenedorOpcion(opcion.getClave(), opcion.getTextoOpcion());
+				opcionConjunto.agregarOpcionesSeleccionBox(claves);
+				if (esClasico(tipoDePregunta)) opcionConjunto.setearPrimeraOpcion();
+				opcionesVista.add(opcionConjunto);
 			}
 		}
 		opcionesVista.forEach(opcionesConPreguntas::agregarOpcion);
@@ -133,9 +119,11 @@ public class JuegoVista implements Observer {
 			String tipoDePregunta = pregunta.getTipoPregunta();
 			List<Opcion> opciones = pregunta.getOpciones();
 			Set<String> claves = opciones.stream().map(Opcion::getClave).collect(Collectors.toSet());
+
 			this.configurarVista(pregunta, tipoDePregunta, nombreJugador, opciones, claves);
 			this.contenedorJuego.limpiar();
 			this.contenedorJuego.construir(contenedorInformacion, contenedorModificadores, contenedorOpciones, contenedorSiguiente);
+
 			Scene scene = new Scene(this.contenedorJuego);
 			scene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles.css")));
 			this.ventana.setScene(scene);
