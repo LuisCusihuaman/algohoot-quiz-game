@@ -5,6 +5,7 @@ import poo.coders.main.modelo.comportamientos.Comportamiento;
 import poo.coders.main.modelo.comportamientos.ComportamientoVoF;
 import poo.coders.main.modelo.comportamientos.ComportamientoVoFPenalidad;
 import poo.coders.main.modelo.data.OpcionSerializada;
+import poo.coders.main.modelo.excepciones.DiferenteTipoPreguntaException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ public class VoFBuilder implements Builder {
 			comportamiento = new ComportamientoVoF();
 		} else if (tipoPuntaje.equals("Penalidad")) {
 			comportamiento = new ComportamientoVoFPenalidad();
+		}else {
+			throw new DiferenteTipoPreguntaException();
 		}
 	}
 
