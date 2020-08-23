@@ -66,8 +66,9 @@
                 <version>0.8.5</version>
                 <configuration>
                     <excludes>
-                        <exclude>poo/coders/main/controlador/Botones/**/*</exclude>
+                        <exclude>poo/coders/main/controlador/botones/**/*</exclude>
                         <exclude>poo/coders/main/vista/**/*</exclude>
+                        <exclude>poo/coders/main/modelo/Parser.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
