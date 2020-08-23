@@ -11,20 +11,12 @@ public class Opcion {
 		this.textoOpcion = textoOpcion;
 	}
 
-	public boolean esMayorQue(Opcion opcion) {
-		return Integer.parseInt(clave) > Integer.parseInt(opcion.getClave());
-	}
-
 	public String getClave() {
 		return this.clave;
 	}
 
 	public String getTextoOpcion() {
 		return this.textoOpcion;
-	}
-
-	public boolean esIgualA(Opcion opcion) {
-		return clave.equals(opcion.getClave());
 	}
 
 	public Respuesta convertirEnRespuesta() {
