@@ -1,5 +1,5 @@
-![Java CI with Maven](https://github.com/LuisCusihuaman/tp2-algo3/workflows/Java%20CI%20with%20Maven/badge.svg)
-[![CodeFactor](https://www.codefactor.io/repository/github/luiscusihuaman/tp2-algo3/badge?s=b92eb8e943f12ba807bb5451b87fd52fad3e2196)](https://www.codefactor.io/repository/github/luiscusihuaman/tp2-algo3)
+![Java CI with Maven](https://github.com/LuisCusihuaman/algohoot-quiz-game/workflows/Java%20CI%20with%20Maven/badge.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/luiscusihuaman/algohoot-quiz-game/badge?s=cfd93816a1514d3484def9091b96a96aa7fbb223)](https://www.codefactor.io/repository/github/luiscusihuaman/algohoot-quiz-game)
 [![codecov](https://codecov.io/gh/LuisCusihuaman/tp2-algo3/branch/release/graph/badge.svg?token=RVU3RHXHU6)](https://codecov.io/gh/LuisCusihuaman/tp2-algo3)
 
 # ☕🚀 Trabajo Práctico 2
@@ -23,13 +23,19 @@ Informe: https://docs.google.com/document/d/1XKI0ZeenwJU9EhsrE2SpGps43ZtOaTs2Kcl
 - maven-compiler-plugin 3.8.0
 - maven-surefire-plugin 3.0.0-M3
 
-## 🏁🛠️ Cómo empezar
+## 🛠️ Cómo empezar
 1. Clonar este repositorio: `git clone https://github.com/LuisCusihuaman/tp2-algo3`.
 2. Ejecutar estas [Maven lifecycle tasks](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) en orden para verificar la integridad del proyecto:
     1. Compilar el modelo y los test: `mvn test-compile`
     2. Correr los tests, generará el reporte de coverage en **target/site/jacoco/index.html**: `mvn test`
-    ![make-a-report](https://raw.githubusercontent.com/LuisCusihuaman/java-getting-started/master/docs/jacoco_coverage_report.png)
 3. ¡Comienza a desarrollar!
+
+## 🏁 Cómo correr la aplicacion
+1. Compilar la aplicacion: `mvn javafx:compile`
+2. Correr la aplicacion: `mvn javafx:run`
+3. ¡Jugar!
+
+![app](https://raw.githubusercontent.com/LuisCusihuaman/algohoot-quiz-game/master/docs/algohoot.png)
 
 ## Grupo N06 - Integrantes
 
